@@ -3,7 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSkills", "GetSkills\GetSkills.csproj", "{60107BDF-A495-4808-B943-2A53818DF1F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSkills", "GetSkills\GetSkills.csproj", "{36A343B1-1CE3-4413-A8CA-AE76040050EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{BA14D504-6CCB-4A28-A17D-4FE1C1DF6F9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{D174CCA9-EE8F-4258-A03F-E501949251E8}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{136742D9-21CE-4A64-84CE-980F36703896}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\GetSkills.json = PublishScripts\Templates\GetSkills.json
+		PublishScripts\Templates\GetSkills.param.dev.json = PublishScripts\Templates\GetSkills.param.dev.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +24,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60107BDF-A495-4808-B943-2A53818DF1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60107BDF-A495-4808-B943-2A53818DF1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60107BDF-A495-4808-B943-2A53818DF1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60107BDF-A495-4808-B943-2A53818DF1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A343B1-1CE3-4413-A8CA-AE76040050EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A343B1-1CE3-4413-A8CA-AE76040050EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A343B1-1CE3-4413-A8CA-AE76040050EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A343B1-1CE3-4413-A8CA-AE76040050EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D174CCA9-EE8F-4258-A03F-E501949251E8} = {BA14D504-6CCB-4A28-A17D-4FE1C1DF6F9F}
+		{136742D9-21CE-4A64-84CE-980F36703896} = {BA14D504-6CCB-4A28-A17D-4FE1C1DF6F9F}
 	EndGlobalSection
 EndGlobal
