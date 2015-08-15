@@ -1,0 +1,96 @@
+body {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;
+	color: #747704;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.margin-large {
+	margin: 60px 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #C2C2C2;
+}
+
+.text-muted {
+	color: #BCBBBB;
+}
+
+.text-thin {
+	font-weight: 100;
+}
+
+.text-white {
+	color: #FFFFFF;
+}
+
+.text-with-padding {
+	padding: 10px;
+}
+
+.text-margin-left-right {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.title-super {
+	font-size: 60px;
+}
+
+.title-logo {
+	margin-top: 20px;
+}
+
+.background-grey {
+	background-color: #DFDFDF;
+}
+
+.btn {
+    margin: 2px 0;
+}
+
+.btn.btn-min-width-sm {
+    min-width: 10em;
+}
+
+.btn-primary {
+    background-color: #f08c35;
+    border-color: #f08c35;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 5px;
+}
+
+.logo-tiny {
+	margin-right: 5px;
+	margin-left: 5px;
+	width: 40px;
+	height: 40px;
+}
