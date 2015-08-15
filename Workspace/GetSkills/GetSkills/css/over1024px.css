@@ -41,7 +41,7 @@ hr {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #C2C2C2;
+  background-color: #414142;
 }
 
 .text-muted {
@@ -116,6 +116,7 @@ hr {
 	height: 40px;
 }
 
+/* ---------- SEARCH BOX---------- */
 fieldset {
 	border: 0;
 	margin: 0;
@@ -159,8 +160,6 @@ input[type="search"]::-webkit-search-decoration {
 	position: absolute;
 	top: 50%;
 }
-
-/* ---------- SEARCH ---------- */
 
 #search {
 	background: #42454e;
