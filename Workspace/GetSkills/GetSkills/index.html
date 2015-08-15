@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--html class="full" lang="en" -->
 <html lang="en">
 <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
@@ -17,7 +17,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/full.css" media="screen and (min-width:1024px)">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +25,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:1024px)" href="css/over1024px.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:500px) and (max-width:1023px)" href="css/500to1023px.css" type="text/css">
+    <link rel="stylesheet" media="screen and (max-width:499px)" href="css/under500px.css" type="text/css">
 
 </head>
 
@@ -107,7 +109,7 @@
     <footer class="footer vertical-center">
         <div class="container">
             <!-- Split button -->
-            <div class="btn-group dropup">
+            <div class="footer-btn-group btn-group dropup">
                 <button type="button" class="btn btn-success">Like us</button>
                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="caret"></span>
@@ -120,7 +122,7 @@
                     <li><a href="#">Google+</a></li>
                 </ul>
             </div>
-            <div class="btn-group dropup">
+            <div class="footer-btn-group btn-group dropup">
                 <button type="button" class="btn btn-info">Contact us</button>
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="caret"></span>
@@ -134,7 +136,7 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </div>
-            <div class="btn-group dropup">
+            <div class="footer-btn-group btn-group dropup">
                 <button type="button" class="btn btn-warning">About you</button>
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="caret"></span>
@@ -164,9 +166,7 @@
                 </a>
             </div>
             <div class="logo-tiny pull-right">
-                <a href="https://www.facebook.com/">
-                    <img class="img-responsive" src="images/facebook.png" alt="icon-facebook">
-                </a>
+                <img class="img-responsive" src="images/facebook.png" alt="icon-facebook">
             </div>
         </div>
     </footer>
