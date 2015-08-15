@@ -66,6 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="courses\courses.html" />
+    <Content Include="images\logo-android.png" />
+    <Content Include="images\logo-cisco.jpg" />
+    <Content Include="images\logo-istqb.png" />
+    <Content Include="images\logo-redhat.jpg" />
+    <Content Include="images\search-icon-hi.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
