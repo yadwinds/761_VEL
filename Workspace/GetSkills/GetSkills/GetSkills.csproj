@@ -67,10 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="courses\courses.html" />
+    <Content Include="css\global.css" />
     <Content Include="images\logo-android.png" />
     <Content Include="images\logo-cisco.jpg" />
     <Content Include="images\logo-istqb.png" />
     <Content Include="images\logo-redhat.jpg" />
+    <Content Include="images\no_image.jpg" />
     <Content Include="images\search-icon-hi.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -105,7 +107,9 @@
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\jquery.js" />
+    <Content Include="successes\successes.css" />
+    <Content Include="successes\successes.html" />
+    <Content Include="successes\successes.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
