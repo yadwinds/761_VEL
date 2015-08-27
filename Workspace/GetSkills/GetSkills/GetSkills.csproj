@@ -72,6 +72,8 @@
     <Content Include="css\carousel.css" />
     <Content Include="css\general.css" />
     <Content Include="css\global.css" />
+    <Content Include="footer.html" />
+    <Content Include="header.html" />
     <Content Include="images\ANZTB_Logo.jpg" />
     <Content Include="images\back-to-top.icon.png" />
     <Content Include="images\favicon.ico" />
