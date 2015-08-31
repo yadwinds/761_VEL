@@ -1,166 +1,120 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="content-type" content="text/html;charset=gb2312">
+    <meta name="keywords" content="站长,网页特效,网页特效代码,js特效,js脚本,脚本,广告代码,zzjs,zzjs.net,www.zzjs.net,站长特效 网" />
+    <meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。大量高质量js特效，提供高质量广告代码下载,尽在站长特效网" />
+    <title>网页特效 仿QQ好友选择效果 站长特效网欢迎您。</title>
+    <style type="text/css">
+        <!--
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    <title>Dashboard Template for Bootstrap</title>
+        body, td, th {
+            font-size: 12px;
+        }
 
-    <!-- Bootstrap core CSS -->
-    <link href="framework/dist/css/bootstrap.min.css" rel="stylesheet">
+        #rightbar, #zzjs_net {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 220px;
+            height: 300px;
+            overflow: auto;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="framework/dist/css/dashboard.css" rel="stylesheet">
+        #rightbar {
+            float: right;
+        }
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="framework/assets/js/ie-emulation-modes-warning.js"></script>
+        #zzjs_net {
+            float: left;
+        }
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        #www_zzjs_net {
+            width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        ul {
+            padding-top: 5px;
+        }
+
+            ul li {
+                line-height: 1.8;
+                cursor: pointer;
+                width: 100px;
+                height: 20px;
+                background: #eee;
+                margin: 3px 0;
+                list-style: none;
+            }
+
+        #num {
+            color: #f00;
+        }
+        -->
+    </style>
 </head>
-
 <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Back</a>
-                <a class="navbar-brand" href="#">BUY</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Regist</a></li>
-                    <li><a href="#">Logout</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </form>
-            </div>
+    <a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+    <!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+    <div id="www_zzjs_net">
+        <div id="zzjs_net">
+            <div id="_zzjs_net">你最多可以选择5个</div>
+            <ul id="www_zzjs_ne">
+                <li>选项一</li>
+                <li>选项二</li>
+                <li>选项三</li>
+                <li>选项四</li>
+                <li>选项五</li>
+                <li>选项六</li>
+                <li>选项七</li>
+                <li>选项八</li>
+                <li>选项九</li>
+                <li>选项十</li>
+                <li>选项十一</li>
+                <li>选项十二</li>
+                <li>选项十三</li>
+                <li>选项十四</li>
+                <li>选项十五</li>
+            </ul>
         </div>
-    </nav>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
-                <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Export</a></li>
-                </ul>
-                <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item</a></li>
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                    <li><a href="">More navigation</a></li>
-                </ul>
-                <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header">TO BE ONE OF THEM</h1>
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img class="img" src="images/student.jpg" width="200" height="200" alt="icon-twitter">
-                        <h4><a href="">KIWI</a></h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img class="img" src="images/student.jpg" width="200" height="200" alt="icon-twitter">
-                        <h4><a href="">Student</a></h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img class="img" src="images/work.jpg" width="200" height="200" alt="icon-twitter">
-                        <h4><a href="">Whith experence</a></h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img class="img" src="images/student.jpg" width="200" height="200" alt="icon-twitter">
-                        <h4><a href="">Whithout experence</a></h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                </div>
-                <h2 class="sub-header">Success stories</h2>
-                <article id="tab-1" data-appear-animation="fadeInUp" data-appear-animation-delay="450">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_20">
-                            <img src="images/home_img_1.jpg" class="r_corners" alt="">
-                        </div>
-                        <div class="col-lg-6 col-md-6 t_align_l fw_light">
-                            <p class="m_bottom_15">Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipis. </p>
-                            <p class="m_bottom_15">Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
-                        </div>
-                    </div>
-                    <hr>
-                </article>
-                <article id="tab-1" data-appear-animation="fadeInUp" data-appear-animation-delay="450">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_20">
-                            <img src="images/home_img_1.jpg" class="r_corners" alt="">
-                        </div>
-                        <div class="col-lg-6 col-md-6 t_align_l fw_light">
-                            <p class="m_bottom_15">Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipis. </p>
-                            <p class="m_bottom_15">Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
-
-                        </div>
-                    </div>
-                    <hr>
-                </article>
-                <article id="tab-1" data-appear-animation="fadeInUp" data-appear-animation-delay="450">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_20">
-                            <img src="images/home_img_1.jpg" class="r_corners" alt="">
-                        </div>
-                        <div class="col-lg-6 col-md-6 t_align_l fw_light">
-                            <p class="m_bottom_15">Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipis. </p>
-                            <p class="m_bottom_15">Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
-                        </div>
-                    </div>
-                    <hr>
-                </article>
-                <p class="text-center"><a href="">back</a> <a href="">next</a></p>
-            </div>
-
-
+        <div id="rightbar">
+            您已经选择了<strong id="num">0</strong>个！
+            <ul id="rightul"></ul>
         </div>
-</div>
-
-
-
-
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="framework/dist/js/bootstrap.min.js"></script>
-        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-        <script src="framework/assets/js/vendor/holder.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="framework/assets/js/ie10-viewport-bug-workaround.js"></script>
+    </div>
+    <script type="text/javascript">
+var maxNum = 5, Len=0, Nums=document.getElementById("num");
+var li = document.getElementById('www_zzjs_ne').getElementsByTagName('li');
+for(var i=li.length; i--; ){
+  li[i].id = i;
+  li[i].onclick = add;
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function add(){
+  if(++Len > maxNum){
+    document.getElementById("_zzjs_net").innerHTML = "<strong style='color:#f00'>你已经选择够了！</strong>"
+    --Len;
+    return false;
+  }
+  var newli = document.createElement("li");
+  newli.onclick = remove;
+  newli.setAttribute("title", this.id);
+  newli.appendChild(document.createTextNode(this.innerHTML));
+  document.getElementById("rightul").appendChild(newli);
+  this.style.display = "none";
+  Nums.innerHTML = Len
+}
+function remove(){
+  document.getElementById("_zzjs_net").innerHTML = "你最多可以选择五个！";
+  var title = this.getAttribute("title");
+  document.getElementById(title).style.display = "block";
+  Nums.innerHTML = --Len;
+  this.parentNode.removeChild(this);
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net， 很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+    </script>
 </body>
 </html>
