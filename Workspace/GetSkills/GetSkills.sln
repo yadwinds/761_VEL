@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSkills", "GetSkills\GetSkills.csproj", "{8C670C88-0000-42DA-9AEC-AA7ECB7BB600}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSkills", "GetSkills\GetSkills.csproj", "{BC341FE6-6336-4160-AA11-96C390177A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C670C88-0000-42DA-9AEC-AA7ECB7BB600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C670C88-0000-42DA-9AEC-AA7ECB7BB600}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C670C88-0000-42DA-9AEC-AA7ECB7BB600}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C670C88-0000-42DA-9AEC-AA7ECB7BB600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC341FE6-6336-4160-AA11-96C390177A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC341FE6-6336-4160-AA11-96C390177A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC341FE6-6336-4160-AA11-96C390177A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC341FE6-6336-4160-AA11-96C390177A48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
