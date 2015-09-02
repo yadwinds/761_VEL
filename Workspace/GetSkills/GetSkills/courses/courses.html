@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--html class="full" lang="en" -->
+<html lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" media="screen and (min-width:1024px)" href="../css/over1024px.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:500px) and (max-width:1023px)" href="../css/500to1023px.css" type="text/css">
+    <link rel="stylesheet" media="screen and (max-width:499px)" href="../css/under500px.css" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">GetSkills</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Put your page content here! -->
+    <div class="container-fluid banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="searchbox-container">
+                        <div id="search">
+                            <form action="javascript:void(0);" method="GET">
+                                <fieldset class="clearfix">
+                                    <input type="search" name="search" value="What are you looking for?" onBlur="if(this.value=='')this.value='What are you looking for?'" onFocus="if(this.value=='What are you looking for?')this.value='' "> <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
+                                    <input type="submit" value="Search" class="button">
+                                </fieldset>
+                            </form>
+                        </div> <!-- end search -->
+                    </div> <!-- end container -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Courses</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 table-course-category hidden-xs">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <a href="http://www.istqb.org/">ISTQB Software Testing</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="http://developer.android.com/">Android App Development</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.redhat.com/promo/Red_Hat_Enterprise_Linux6/">Linux RHEL6</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="http://www.cisco.com/web/learning/certifications/associate/ccna/index.html">
+                                Cisco CCNA</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row wrapper-course-list-item">
+                        <div class="col-xs-3 hidden-xs">
+                            <a href="#">
+                                <img class="img-responsive img-course-list-item" src="../images/logo-istqb.png">
+                            </a>
+                        </div>
+                        <div class="col-xs-9">
+                            <h2>ISTQB Certified Tester</h2>
+                            <p>ISTQB® Certified Tester is a standardized qualification for software testers 
+                                and the certification is offered by the ISTQB. The qualifications are based 
+                                on a syllabus, and there is a hierarchy of qualifications and guidelines 
+                                for accreditation and examination. The ISTQB® is a software testing 
+                                qualification certification organization having over 350,000 certifications 
+                                issued; the ISTQB® consists of 49 member boards worldwide representing 
+                                72 countries (date: June 2014).</p>
+                        </div>
+                    </div>
+                    <div class="row wrapper-course-list-item">
+                        <div class="col-xs-3 hidden-xs">
+                            <a href="#">
+                                <img class="img-responsive img-course-list-item" src="../images/logo-android.png">
+                            </a>
+                        </div>
+                        <div class="col-xs-9">
+                            <h2>Android app development</h2>
+                            <p>The Android software development kit (SDK) includes a comprehensive set of 
+                                development tools.[8] These include a debugger, libraries, a handset 
+                                emulator based on QEMU, documentation, sample code, and tutorials. 
+                                Currently supported development platforms include computers running Linux 
+                                , Mac OS X 10.5.8 or later, and Windows XP or later. As of March 2015, 
+                                the SDK is not available on Android itself, but the software development 
+                                is possible by using specialized Android applications.</p>
+                        </div>
+                    </div>
+                    <div class="row wrapper-course-list-item">
+                        <div class="col-xs-3 hidden-xs">
+                            <a href="#">
+                                <img class="img-responsive img-course-list-item" src="../images/logo-redhat.jpg">
+                            </a>
+                        </div>
+                        <div class="col-xs-9">
+                            <h2>Red Hat RHEL6</h2>
+                            <p>Red Hat creates, maintains, and contributes to many free software projects. 
+                                It has acquired several proprietary software product codebases through 
+                                corporate mergers and acquisitions and has released such software under 
+                                open source licenses. As of June 2013, Red Hat is the largest corporate 
+                                contributor to Linux.</p>
+                        </div>
+                    </div>
+                    <div class="row wrapper-course-list-item">
+                        <div class="col-xs-3 hidden-xs">
+                            <a href="#">
+                                <img class="img-responsive img-course-list-item" src="../images/logo-cisco.jpg">
+                            </a>
+                        </div>
+                        <div class="col-xs-9">
+                            <h2>Cisco CCNA</h2>
+                            <p>The Cisco exams have changed several times. In 2013, Cisco announced an 
+                                update to its certification program that "aligns certification and 
+                                training curricula with evolving industry job roles."[1] There are 
+                                now several different types of Cisco-Certified Network Associate, 
+                                with "CCNA Routing and Switching" being closest to the original CCNA 
+                                focus; other types of CCNA focus on security, collaboration, datacentres, 
+                                service providers, video, voice, and wireless.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer vertical-center">
+        <div class="container">
+            <!-- Split button -->
+            <div class="footer-btn-group btn-group dropup">
+                <button type="button" class="btn btn-success">Like us</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Google+</a></li>
+                </ul>
+            </div>
+            <div class="footer-btn-group btn-group dropup">
+                <button type="button" class="btn btn-info">Contact us</button>
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Tel. 020-6786-321</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="footer-btn-group btn-group dropup">
+                <button type="button" class="btn btn-warning">About you</button>
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="logo-tiny pull-right">
+                <a href="https://plus.google.com/">
+                    <img class="img-responsive" src="../images/google-plus.png" alt="icon-googleplus">
+                </a>
+            </div>
+            <div class="logo-tiny pull-right">
+                <a href="https://www.linkedin.com/">
+                    <img class="img-responsive" src="../images/linked-in.ico" alt="icon-linkedin">
+                </a>
+            </div>
+            <div class="logo-tiny pull-right">
+                <a href="https://www.linkedin.com/">
+                    <img class="img-responsive" src="../images/twitter2.ico" alt="icon-twitter">
+                </a>
+            </div>
+            <div class="logo-tiny pull-right">
+                <img class="img-responsive" src="../images/facebook.png" alt="icon-facebook">
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
