@@ -198,14 +198,47 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carousel.css" />
+    <Content Include="Content\general.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\ANZTB_Logo.jpg" />
+    <Content Include="images\back-to-top.icon.png" />
+    <Content Include="images\books_large-300x184.jpg" />
+    <Content Include="images\books_stores_bookshelf_blurred_1920x1080_vehiclehi.com.jpg" />
+    <Content Include="images\facebook.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\google-plus.png" />
+    <Content Include="images\ISTQB Accred Training Provider.jpeg" />
+    <Content Include="images\ISTQB International_original.jpeg" />
+    <Content Include="images\linked-in.ico" />
+    <Content Include="images\logo-android.png" />
+    <Content Include="images\logo-cisco.jpg" />
+    <Content Include="images\logo-istqb.png" />
+    <Content Include="images\logo-redhat.jpg" />
+    <Content Include="images\logo0.jpg" />
+    <Content Include="images\no_image.jpg" />
+    <Content Include="images\recruitment_hr.jpg" />
+    <Content Include="images\researchbooks-300x184.jpg" />
+    <Content Include="images\search-icon-hi.png" />
+    <Content Include="images\student_01.jpg" />
+    <Content Include="images\student_02.jpg" />
+    <Content Include="images\student_03.jpg" />
+    <Content Include="images\temp-books-place-holder-300x184.jpg" />
+    <Content Include="images\test-automation-header.jpg" />
+    <Content Include="images\Training-icon_droite.png" />
+    <Content Include="images\training-image.jpg" />
+    <Content Include="images\twitter2.ico" />
     <Content Include="Readme.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="images\.DS_Store" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\holder.min.js" />
+    <Content Include="Scripts\ie-emulation-modes-warning.js" />
+    <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -217,6 +250,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="StaticPages\footer.html" />
+    <Content Include="StaticPages\header.html" />
+    <Content Include="StaticPages\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -234,7 +270,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="StaticPages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
