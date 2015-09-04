@@ -239,6 +239,7 @@
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repository.cs" />
+    <Compile Include="Controllers\SuccessStoryController.cs" />
     <Compile Include="Models\specialization.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -404,6 +405,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SuccessStory\Create.cshtml" />
+    <Content Include="Views\SuccessStory\Delete.cshtml" />
+    <Content Include="Views\SuccessStory\Details.cshtml" />
+    <Content Include="Views\SuccessStory\Edit.cshtml" />
+    <Content Include="Views\SuccessStory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
