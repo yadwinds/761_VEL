@@ -8,17 +8,17 @@
 
     public class Repository<T> where T : class
     {
-        private GetSkillsDataContext context = null;
+        private GetSkillsEntities context = null;
 
         protected DbSet<T> DbSet { get; set; }
 
         public Repository()
         {
-            this.context = new GetSkillsDataContext();
+            this.context = new GetSkillsEntities();
             DbSet = context.Set<T>();
         } 
 
-        public Repository(GetSkillsDataContext context)
+        public Repository(GetSkillsEntities context)
         {
             this.context = context;
         }

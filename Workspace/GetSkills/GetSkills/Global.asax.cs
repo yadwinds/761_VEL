@@ -15,6 +15,8 @@ namespace GetSkills
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //This configration squash scripts to clients, minimizing file size and preventing hacking.
+            BundleTable.EnableOptimizations = true;
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

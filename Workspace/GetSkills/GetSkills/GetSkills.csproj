@@ -142,57 +142,169 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\board.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\class.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\class_students.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\client_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\contact_us.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\content.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cours.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\courses_category.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\courses_sort_order.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\course_price.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\demo_requests.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\email.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\email_group_contacts.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSkills.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetSkills.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSkills.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSkills.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetSkills.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\grade.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\interview.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\interview_schedules.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\interview_students.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\manager_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mapping.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mapping_subjects.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\newemailgroup.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order_days.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order_subjects.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\payment_log.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\permission.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\question_answers.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Repository.cs" />
-    <Compile Include="Models\Tables\board.cs" />
-    <Compile Include="Models\Tables\category.cs" />
-    <Compile Include="Models\Tables\class.cs" />
-    <Compile Include="Models\Tables\class_students.cs" />
-    <Compile Include="Models\Tables\client_details.cs" />
-    <Compile Include="Models\Tables\contact_us.cs" />
-    <Compile Include="Models\Tables\content.cs" />
-    <Compile Include="Models\Tables\cours.cs" />
-    <Compile Include="Models\Tables\courses_category.cs" />
-    <Compile Include="Models\Tables\courses_sort_order.cs" />
-    <Compile Include="Models\Tables\course_price.cs" />
-    <Compile Include="Models\Tables\demo_requests.cs" />
-    <Compile Include="Models\Tables\email.cs" />
-    <Compile Include="Models\Tables\email_group_contacts.cs" />
-    <Compile Include="Models\GetSkillsDataContext.cs" />
-    <Compile Include="Models\Tables\grade.cs" />
-    <Compile Include="Models\Tables\interview.cs" />
-    <Compile Include="Models\Tables\interview_schedules.cs" />
-    <Compile Include="Models\Tables\interview_students.cs" />
-    <Compile Include="Models\Tables\manager_details.cs" />
-    <Compile Include="Models\Tables\mapping.cs" />
-    <Compile Include="Models\Tables\mapping_subjects.cs" />
-    <Compile Include="Models\Tables\newemailgroup.cs" />
-    <Compile Include="Models\Tables\order_days.cs" />
-    <Compile Include="Models\Tables\order_subjects.cs" />
-    <Compile Include="Models\Tables\payment_log.cs" />
-    <Compile Include="Models\Tables\permission.cs" />
-    <Compile Include="Models\Tables\question_answers.cs" />
-    <Compile Include="Models\Tables\specialization.cs" />
-    <Compile Include="Models\Tables\student_courses.cs" />
-    <Compile Include="Models\Tables\student_details.cs" />
-    <Compile Include="Models\Tables\student_orders.cs" />
-    <Compile Include="Models\Tables\student_subject_details.cs" />
-    <Compile Include="Models\Tables\subject.cs" />
-    <Compile Include="Models\Tables\success_story.cs" />
-    <Compile Include="Models\Tables\success_story_category.cs" />
-    <Compile Include="Models\Tables\success_story_courses.cs" />
-    <Compile Include="Models\Tables\teacher_details.cs" />
-    <Compile Include="Models\Tables\teacher_subject_details.cs" />
-    <Compile Include="Models\Tables\teammember.cs" />
-    <Compile Include="Models\Tables\test.cs" />
-    <Compile Include="Models\Tables\test_attempts.cs" />
-    <Compile Include="Models\Tables\test_attempt_details.cs" />
-    <Compile Include="Models\Tables\test_questions.cs" />
-    <Compile Include="Models\Tables\topic.cs" />
-    <Compile Include="Models\Tables\uploadtest.cs" />
-    <Compile Include="Models\Tables\user.cs" />
-    <Compile Include="Models\Tables\users_permissions.cs" />
-    <Compile Include="Models\Tables\user_emails.cs" />
-    <Compile Include="Models\Tables\video.cs" />
+    <Compile Include="Models\specialization.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student_courses.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student_orders.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student_subject_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\subject.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\success_story.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\success_story_category.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\success_story_courses.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teacher_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teacher_subject_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teammember.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_attempts.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_attempt_details.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_questions.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\topic.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uploadtest.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\users_permissions.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user_emails.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\video.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,10 +342,27 @@
     <Content Include="images\Training-icon_droite.png" />
     <Content Include="images\training-image.jpg" />
     <Content Include="images\twitter2.ico" />
+    <Content Include="Models\GetSkills.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GetSkills.edmx</DependentUpon>
+      <LastGenOutput>GetSkills.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GetSkills.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GetSkills.edmx</DependentUpon>
+      <LastGenOutput>GetSkills.cs</LastGenOutput>
+    </Content>
     <Content Include="Readme.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="images\.DS_Store" />
+    <EntityDeploy Include="Models\GetSkills.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GetSkills.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GetSkills.edmx.diagram">
+      <DependentUpon>GetSkills.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\holder.min.js" />
@@ -277,6 +406,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
