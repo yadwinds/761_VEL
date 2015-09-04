@@ -312,16 +312,21 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carousel.css" />
     <Content Include="Content\general.css" />
+    <Content Include="Content\login2.css" />
+    <Content Include="Content\login.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\ANZTB_Logo.jpg" />
     <Content Include="images\back-to-top.icon.png" />
+    <Content Include="images\bg.jpg" />
     <Content Include="images\books_large-300x184.jpg" />
     <Content Include="images\books_stores_bookshelf_blurred_1920x1080_vehiclehi.com.jpg" />
     <Content Include="images\facebook.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\google-plus.png" />
+    <Content Include="images\icons.png" />
+    <Content Include="images\into.png" />
     <Content Include="images\ISTQB Accred Training Provider.jpeg" />
     <Content Include="images\ISTQB International_original.jpeg" />
     <Content Include="images\linked-in.ico" />
@@ -371,6 +376,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -382,6 +388,8 @@
     <Content Include="StaticPages\footer.html" />
     <Content Include="StaticPages\header.html" />
     <Content Include="StaticPages\index.html" />
+    <Content Include="StaticPages\login.html" />
+    <Content Include="StaticPages\login2.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
