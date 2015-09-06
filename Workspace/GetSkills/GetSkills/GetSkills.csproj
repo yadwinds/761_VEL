@@ -325,8 +325,9 @@
     <Content Include="images\books_stores_bookshelf_blurred_1920x1080_vehiclehi.com.jpg" />
     <Content Include="images\facebook.png" />
     <Content Include="images\favicon.ico" />
-    <Content Include="images\File-Justin_Bieber_NRJ_Music_Awards_2012.jpg" />
-    <Content Include="images\File-Scarlett_Johansson_SDCC_2013_by_Gage_Skidmore_1.jpg" />
+    <Content Include="images\justin-bieber.jpg" />
+    <Content Include="images\Justin_Bieber.jpg" />
+    <Content Include="images\Scarlett-Johansson.jpg" />
     <Content Include="images\google-plus.png" />
     <Content Include="images\icons.png" />
     <Content Include="images\into.png" />
