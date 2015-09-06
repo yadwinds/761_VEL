@@ -20,6 +20,12 @@ namespace GetSkills.Models
             return View(await db.success_story.ToListAsync());
         }
 
+        // LIST: SuccessStory
+        public async Task<ActionResult> List()
+        {
+            return View(await db.success_story.ToListAsync());
+        }
+
         // GET: SuccessStory/Details/5
         public async Task<ActionResult> Details(int? id)
         {
