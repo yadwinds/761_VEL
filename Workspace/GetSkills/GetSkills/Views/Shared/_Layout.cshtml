@@ -32,13 +32,13 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div id="page_container" class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - GetSkills</p>
-        </footer>
     </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - GetSkills</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

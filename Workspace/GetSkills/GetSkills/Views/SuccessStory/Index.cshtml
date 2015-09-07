@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GetSkills.Models.success_story>
+﻿@model IEnumerable<GetSkills.Models.StoryIndexViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -20,19 +20,27 @@
         text-shadow: 0 1px 0 #000;
         text-align: center;
     }
+
+    story_font_h2 {
+        color:#393939;
+    }
 </style>
 <script type="text/javascript">
-
+    function removeWidthLimit() {
+        document.getElementById('page_container').style.maxWidth = 'none';
+        document.getElementById('page_container').style.paddingRight = '20px';
+    }
+    window.onload = removeWidthLimit;
 </script>
 
-<h2 class="text-primary">Success Stories</h2>
+<h2 class="story_font_h2">Success Stories</h2>
 
-<p style="height:32px;">
+<p style="padding-right:5px; padding-bottom:10px;">
     @Html.ActionLink(" Add Story", "Create", new { }, new { @class = "fa fa-plus fa-lg pull-right" })
 </p>
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered no_max_width">
     <thead>
-        <tr>
+        <tr style="white-space:nowrap">
             <th>
                 ID
             </th>
@@ -62,36 +70,46 @@
             </th>
         </tr>
     </thead>
-    <tbody style="color:darkslategray;">
+    <tbody style="color:darkslategray; font-size:small;">
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.success_story_id)
+                    @Html.DisplayFor(modelItem => item.successStory.success_story_id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.user_name)
+                    @Html.DisplayFor(modelItem => item.successStory.user_name)
                 </td>
                 <td>
-                    @if (item.pic != "")
+                    @if (item.successStory.pic != "")
                     {
-                        <img src="@Url.Content(item.pic)" alt="User Image" style="width:160px;" />
+                        <img src="@Url.Content(item.successStory.pic)" alt="User Image" style="width:140px;" />
                     }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.sort_number)
+                    @Html.DisplayFor(modelItem => item.successStory.sort_number)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.brief)
+                    @Html.DisplayFor(modelItem => item.successStory.brief)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.detail_description)
+                <td style="width:25%;">
+                    @Html.DisplayFor(modelItem => item.successStory.detail_description)
                 </td>
-                <td></td>
-                <td></td>
                 <td style="white-space:nowrap">
-                    @Html.ActionLink(" Edit", "Edit", new { id = item.success_story_id }, new { @class = "fa fa-pencil-square-o" }) &nbsp;|&nbsp;
-                    @Html.ActionLink(" Delete", "Delete", new { id = item.success_story_id }, new { @class = "fa fa-trash-o" })
+                    @foreach (var cat in item.categoryList)
+                    {
+                        @String.Format("{0}", cat.category_name) <br>
+                    }
+                </td>
+                <td style="white-space:nowrap">
+                    @foreach (var cor in item.coursesList)
+                    {
+                        @String.Format("{0} : {1}", cor.course_id, cor.course_name) <br>
+                    }
+                </td>
+                <td style="white-space:nowrap">
+                    @Html.ActionLink(" Edit", "Edit", new { id = item.successStory.success_story_id }, new { @class = "fa fa-pencil-square-o" }) &nbsp;|&nbsp;
+                    @Html.ActionLink(" Delete", "Delete", new { id = item.successStory.success_story_id }, new { @class = "fa fa-trash-o" })
                 </td>
             </tr>
         }

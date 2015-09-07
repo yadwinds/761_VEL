@@ -17,7 +17,42 @@ namespace GetSkills.Models
         // GET: SuccessStory
         public async Task<ActionResult> Index()
         {
-            return View(await db.success_story.ToListAsync());
+            List<StoryIndexViewModel> storyList = new List<StoryIndexViewModel>();
+
+            foreach (var rec in db.success_story.OrderBy(e=>e.sort_number).ToList())
+            {
+                StoryIndexViewModel st = new StoryIndexViewModel();
+                st.successStory = rec;
+
+                st.categoryList = (from cat in db.success_story_category
+                                   join cam in db.categories on cat.category_id equals cam.category_id
+                                   where cat.success_story_id == rec.success_story_id && cat.status == 1
+                                   select new StoryCategoryViewModel
+                                   {
+                                       story_category_id = cat.story_category_id,
+                                       success_story_id = cat.success_story_id,
+                                       category_id = cat.category_id,
+                                       category_name = cam.category_name,
+                                       status = cat.status
+                                   }).ToList();
+
+                st.coursesList = (from ssc in db.success_story_courses
+                                   join cos in db.courses on ssc.course_id equals cos.course_id
+                                   where ssc.success_story_id == rec.success_story_id && ssc.status == 1
+                                   select new StoryCourseViewModel
+                                   {
+                                       story_course_id = ssc.story_course_id,
+                                       success_story_id = ssc.success_story_id,
+                                       course_id = ssc.course_id,
+                                       course_name = cos.course_name,
+                                       status = ssc.status
+                                   }).ToList();
+
+                storyList.Add(st);
+            }
+
+            //return View(await db.success_story.ToListAsync());
+            return View(storyList.ToList());
         }
 
         // LIST: SuccessStory
