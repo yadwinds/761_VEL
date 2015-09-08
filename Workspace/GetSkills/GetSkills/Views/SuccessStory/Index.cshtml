@@ -24,6 +24,8 @@
     story_font_h2 {
         color:#393939;
     }
+
+
 </style>
 <script type="text/javascript">
     function removeWidthLimit() {
@@ -33,7 +35,7 @@
     window.onload = removeWidthLimit;
 </script>
 
-<h2 class="story_font_h2">Success Stories</h2>
+<h2 style="color:#393939;">Success Stories</h2>
 
 <p style="padding-right:5px; padding-bottom:10px;">
     @Html.ActionLink(" Add Story", "Create", new { }, new { @class = "fa fa-plus fa-lg pull-right" })
@@ -43,6 +45,18 @@
         <tr style="white-space:nowrap">
             <th>
                 ID
+                @if (ViewBag.IDSortParm == "ID_desc")
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "ID_asc" }, new { @class = "fa fa-sort-up" })
+                }
+                else if (ViewBag.IDSortParm == "ID_asc")
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "ID_desc" }, new { @class = "fa fa-sort-down" })
+                }
+                else
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "ID_asc" }, new { @class = "fa fa-sort" })
+                }
             </th>
             <th>
                 Name
@@ -52,6 +66,18 @@
             </th>
             <th>
                 Order
+                @if (ViewBag.OrderSortParm == "Order_desc")
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "Order_asc" }, new { @class = "fa fa-sort-up" })
+                }
+                else if (ViewBag.OrderSortParm == "Order_asc")
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "Order_desc" }, new { @class = "fa fa-sort-down" })
+                }
+                else
+                {
+                    @Html.ActionLink(" ", "Index", new { sortOrder = "Order_asc" }, new { @class = "fa fa-sort" })
+                }
             </th>
             <th>
                 Breif Story
@@ -70,11 +96,11 @@
             </th>
         </tr>
     </thead>
-    <tbody style="color:darkslategray; font-size:small;">
+    <tbody style="color:#393939; font-size:small;">
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td style="text-align:center;">
                     @Html.DisplayFor(modelItem => item.successStory.success_story_id)
                 </td>
                 <td>
@@ -86,7 +112,7 @@
                         <img src="@Url.Content(item.successStory.pic)" alt="User Image" style="width:140px;" />
                     }
                 </td>
-                <td>
+                <td style="text-align:center;">
                     @Html.DisplayFor(modelItem => item.successStory.sort_number)
                 </td>
                 <td>
@@ -108,7 +134,7 @@
                     }
                 </td>
                 <td style="white-space:nowrap">
-                    @Html.ActionLink(" Edit", "Edit", new { id = item.successStory.success_story_id }, new { @class = "fa fa-pencil-square-o" }) &nbsp;|&nbsp;
+                    @Html.ActionLink(" Edit", "Edit", new { id = item.successStory.success_story_id }, new { @class = "fa fa-pencil-square-o" }) <br>
                     @Html.ActionLink(" Delete", "Delete", new { id = item.successStory.success_story_id }, new { @class = "fa fa-trash-o" })
                 </td>
             </tr>
