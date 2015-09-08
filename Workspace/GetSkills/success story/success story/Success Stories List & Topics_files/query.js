@@ -1,1 +1,0 @@
-try { parent.rubberDuck.response({ responseTypeId: 1, ifb: false }); } catch(e) {};
