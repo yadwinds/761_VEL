@@ -15,11 +15,38 @@ namespace GetSkills.Models
         private GetSkillsEntities db = new GetSkillsEntities();
 
         // GET: SuccessStory
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string sortOrder)
         {
-            List<StoryIndexViewModel> storyList = new List<StoryIndexViewModel>();
 
-            foreach (var rec in db.success_story.OrderBy(e=>e.sort_number).ToList())
+            List<success_story> outList;
+
+            ViewBag.IDSortParm = sortOrder;
+            ViewBag.OrderSortParm = sortOrder;
+
+            if ("ID_asc".Equals(sortOrder))
+            {
+                outList = db.success_story.OrderBy(e => e.success_story_id).ToList();
+            }
+            else if ("ID_desc".Equals(sortOrder))
+            {
+                outList = db.success_story.OrderByDescending(e => e.success_story_id).ToList();
+            }
+            else if ("Order_desc".Equals(sortOrder))
+            {
+                outList = db.success_story.OrderByDescending(e => e.sort_number).ToList();
+            }
+            else if ("Order_asc".Equals(sortOrder))
+            {
+                outList = db.success_story.OrderBy(e => e.sort_number).ToList();
+            }
+            else
+            {
+                ViewBag.OrderSortParm = "Order_asc";
+                outList = db.success_story.OrderBy(e => e.sort_number).ToList();
+            }
+
+            List<StoryIndexViewModel> storyList = new List<StoryIndexViewModel>();
+            foreach (var rec in outList)
             {
                 StoryIndexViewModel st = new StoryIndexViewModel();
                 st.successStory = rec;
