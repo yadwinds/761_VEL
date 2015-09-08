@@ -26,5 +26,15 @@ namespace GetSkills.Controllers
 
             return View();
         }
+
+        public ActionResult TeamProfile()
+        {
+            return View();
+        }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        }
     }
 }

@@ -4,27 +4,37 @@
     ViewBag.Title = "List";
 }
 
-<h2>Success Story List</h2>
 
-@foreach (var item in Model)
-{
-    <div class="container-fluid marketing">
-        <!-- START THE FEATURETTES -->
-        <div class="row featurette">
-            <div class="col-sm-7">
-                <h1>@Html.DisplayFor(modelItem => item.brief)</h1>
-                <p class="lead featurette-description">
-                    @Html.DisplayFor(modelItem => item.detail_description)
-                </p>
-            </div>
-            <div class="col-sm-5">
-                <img class="featurette-image img-responsive center-block"
-                     src="@Url.Content(item.pic)"
-                     alt="Generic placeholder image">
-                
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+        </div><!-- /.sidebar -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main marketing">
+            @foreach (var item in Model)
+            {
+                <!-- START THE FEATURETTES -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <div class="col-md-7">
+                        <h1>@Html.DisplayFor(modelItem => item.brief)</h1>
+                        <p class="lead featurette-description">
+                            @Html.DisplayFor(modelItem => item.detail_description)
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="featurette-image img-responsive center-block"
+                             src="@Url.Content(item.pic)"
+                             alt="Generic placeholder image">
+                    </div>
+                </div>
+                <!-- /END THE FEATURETTES -->
+            }
         </div>
-        <hr class="featurette-divider">
-        <!-- /END THE FEATURETTES -->
-    </div><!-- /.container -->
-}
+    </div><!-- /.row -->
+</div><!-- /.container -->

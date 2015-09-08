@@ -13,7 +13,7 @@
     <link href="../Content/general.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!--div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,17 +31,20 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </!--div>-->
     <div id="page_container" class="container body-content">
         @RenderBody()
         <hr />
     </div>
-    <footer>
+    <!--footer>
         <p>&copy; @DateTime.Now.Year - GetSkills</p>
-    </footer>
+    </!--footer>-->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>$("<div>").load("../../StaticPages/header.html").appendTo("body")</script>
+    <script>$("<div>").load("../../StaticPages/footer.html").appendTo("body")</script>
 </body>
 </html>
