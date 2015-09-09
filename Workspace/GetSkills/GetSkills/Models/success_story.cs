@@ -11,14 +11,17 @@ namespace GetSkills.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class success_story
     {
         public int success_story_id { get; set; }
         public string user_name { get; set; }
         public string pic { get; set; }
         public Nullable<int> sort_number { get; set; }
+        [DataType(DataType.MultilineText)]
         public string brief { get; set; }
+        [DataType(DataType.MultilineText)]
         public string detail_description { get; set; }
         public int status { get; set; }
     }

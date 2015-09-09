@@ -148,6 +148,7 @@
     <Compile Include="Models\category.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryCheckBoxModel.cs" />
     <Compile Include="Models\class.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -166,6 +167,7 @@
     <Compile Include="Models\cours.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CourseCheckboxModel.cs" />
     <Compile Include="Models\courses_category.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -350,6 +352,7 @@
     <Content Include="images\recruitment_hr.jpg" />
     <Content Include="images\researchbooks-300x184.jpg" />
     <Content Include="images\search-icon-hi.png" />
+    <Content Include="images\Story_20150909155340255_untitled.png" />
     <Content Include="images\student_01.jpg" />
     <Content Include="images\student_02.jpg" />
     <Content Include="images\student_03.jpg" />
