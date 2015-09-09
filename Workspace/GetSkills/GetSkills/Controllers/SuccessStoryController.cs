@@ -148,7 +148,28 @@ namespace GetSkills.Models
         // GET: SuccessStory/Create
         public ActionResult Create()
         {
-            return View();
+            StoryIndexViewModel editView = new StoryIndexViewModel();
+
+            editView.successStory = new success_story();
+            editView.successStory.pic = "~/Images/no_image.jpg";
+
+            editView.allCategoryList = (from ca in db.categories
+                                        select new CategoryCheckBoxModel
+                                        {
+                                            category_id = ca.category_id,
+                                            category_name = ca.category_name,
+                                            isSelected = false
+                                        }).ToList();
+
+            editView.allCourseList = (from co in db.courses
+                                      select new CourseCheckboxModel
+                                      {
+                                          course_id = co.course_id,
+                                          course_name = co.course_name,
+                                          isSelected = false
+                                      }).ToList();
+
+            return View(editView);
         }
 
         // POST: SuccessStory/Create
@@ -156,16 +177,70 @@ namespace GetSkills.Models
         // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "success_story_id,user_name,pic,sort_number,brief,detail_description,status")] success_story success_story)
+        public async Task<ActionResult> Create(StoryIndexViewModel editView)
         {
             if (ModelState.IsValid)
             {
-                db.success_story.Add(success_story);
+                success_story story = editView.successStory;
+
+                var validImageTypes = new string[]
+                {
+                "image/gif",
+                "image/jpeg",
+                "image/jpg",
+                "image/png"
+                };
+
+                if (editView.picFile != null && editView.picFile.ContentLength > 0)
+                {
+                    if (!validImageTypes.Contains(editView.picFile.ContentType))
+                    {
+                        ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
+                    }
+
+                    var uploadDir = "~/images";
+                    var newFileName = String.Format("{0}_{1}_{2}", "Story", DateTime.Now.ToString("yyyyMMddHHmmssfff"), Path.GetFileName(editView.picFile.FileName));
+                    var imagePath = Path.Combine(Server.MapPath(uploadDir), newFileName);
+                    editView.picFile.SaveAs(imagePath);
+
+                    var imageUrl = Path.Combine(uploadDir, Path.GetFileName(imagePath));
+                    story.pic = "~/images/" + newFileName;
+                }
+
+                story.status = 1;
+                db.success_story.Add(story);
                 await db.SaveChangesAsync();
+
+                foreach (CategoryCheckBoxModel cat in editView.allCategoryList)
+                {
+                    if (cat.isSelected == true)
+                    {
+                        success_story_category newSsc = new success_story_category();
+                        newSsc.success_story_id = story.success_story_id;
+                        newSsc.category_id = cat.category_id;
+                        newSsc.status = 1;
+                        db.success_story_category.Add(newSsc);
+                        await db.SaveChangesAsync();
+                    }
+                }
+
+                foreach (CourseCheckboxModel cor in editView.allCourseList)
+                {
+                    if (cor.isSelected == true)
+                    {
+                        success_story_courses newSsc = new success_story_courses();
+                        newSsc.success_story_id = story.success_story_id;
+                        newSsc.course_id = cor.course_id;
+                        newSsc.status = 1;
+                        db.success_story_courses.Add(newSsc);
+                        await db.SaveChangesAsync();
+                    }
+                }
+
                 return RedirectToAction("Index");
             }
 
-            return View(success_story);
+            return View(editView);
         }
 
         // GET: SuccessStory/Edit/5
@@ -253,6 +328,7 @@ namespace GetSkills.Models
                 }
 
                 db.Entry(story).State = EntityState.Modified;
+                await db.SaveChangesAsync();
 
                 foreach (CategoryCheckBoxModel cat in editView.allCategoryList)
                 {
@@ -263,6 +339,7 @@ namespace GetSkills.Models
                         newSsc.category_id = cat.category_id;
                         newSsc.status = 1;
                         db.success_story_category.Add(newSsc);
+                        await db.SaveChangesAsync();
                     }
                     if (cat.story_category_id != 0 && cat.isSelected == false)
                     {
@@ -272,6 +349,7 @@ namespace GetSkills.Models
                         updateSsc.category_id = cat.category_id;
                         updateSsc.status = 0;
                         db.Entry(updateSsc).State = EntityState.Modified;
+                        await db.SaveChangesAsync();
                     }
                 }
 
@@ -284,6 +362,7 @@ namespace GetSkills.Models
                         newSsc.course_id = cor.course_id;
                         newSsc.status = 1;
                         db.success_story_courses.Add(newSsc);
+                        await db.SaveChangesAsync();
                     }
                     if (cor.story_course_id != 0 && cor.isSelected == false)
                     {
@@ -293,13 +372,12 @@ namespace GetSkills.Models
                         updateSsc.course_id = cor.course_id;
                         updateSsc.status = 0;
                         db.Entry(updateSsc).State = EntityState.Modified;
+                        await db.SaveChangesAsync();
                     }
                 }
-
-                await db.SaveChangesAsync();
-
                 return RedirectToAction("Index");
             }
+
             return View(editView);
         }
 
@@ -361,6 +439,7 @@ namespace GetSkills.Models
 
             story.status = 0;
             db.Entry(story).State = EntityState.Modified;
+            await db.SaveChangesAsync();
             //db.success_story.Remove(story);
 
             List<success_story_category> categoryList = (from ca in db.success_story_category
@@ -371,6 +450,7 @@ namespace GetSkills.Models
             {
                 storyCategory.status = 0;
                 db.Entry(storyCategory).State = EntityState.Modified;
+                await db.SaveChangesAsync();
             }
 
             List<success_story_courses> courseList = (from ca in db.success_story_courses
@@ -381,9 +461,9 @@ namespace GetSkills.Models
             {
                 storyCourse.status = 0;
                 db.Entry(storyCourse).State = EntityState.Modified;
+                await db.SaveChangesAsync();
             }
 
-            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

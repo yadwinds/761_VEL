@@ -74,6 +74,7 @@
             <div class="col-md-10 ">
                 @Html.HiddenFor(model => model.successStory.pic)
                 @Html.TextBoxFor(model => Model.picFile, new { type = "file", @class = "story_image_box" })
+                @Html.ValidationMessageFor(model => model.successStory.pic, "", new { @class = "text-danger" })
                 <div>
                     @if (Model.successStory.pic != "")
                     {
