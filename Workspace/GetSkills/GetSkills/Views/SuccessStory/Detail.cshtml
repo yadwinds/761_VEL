@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GetSkills.Models.StoryIndexViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container-fluid">
+    <div class="container">
+        <hr class="featurette-divider">
+        <div class="row">
+            <!-- Story row -->
+            <div class="col-sm-5">
+                <img class="featurette-image img-responsive center-block"
+                     src="@Url.Content(Model.successStory.pic)"
+                     alt="Story teller's portrait img">
+            </div>
+            <div class="col-sm-7">
+                <h1>@Html.DisplayFor(modelItem => Model.successStory.brief)</h1>
+                <p class="lead featurette-description">
+                    @Html.DisplayFor(modelItem => Model.successStory.detail_description)
+                </p>
+            </div>
+        </div><!-- Story row end -->
+
+        <hr class="featurette-divider">
+
+        <h2>Learning Trace</h2>
+        <div class="row">
+            <!-- Course list row -->
+            <table class="table table-hover table-bordered no_max_width">
+                <thead>
+                    <tr style="white-space:nowrap">
+                        <th>Course Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.courses)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.course_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.description)</td>
+                            <td>@Html.DisplayFor(modelItem => item.price)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!-- Course list row end -->
+    </div><!-- Container end -->
+    <p>
+        @Html.ActionLink("Back to List", "List")
+    </p>
+</div><!-- /.container -->

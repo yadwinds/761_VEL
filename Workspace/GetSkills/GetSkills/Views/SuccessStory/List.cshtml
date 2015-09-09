@@ -7,22 +7,24 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-3">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
+                <li class="active"><a href="#"><h4>Overview</h4></a></li>
+                <li><a href="#">Kiwi</a></li>
+                <li><a href="#">Resident</a></li>
+                <li><a href="#">Student</a></li>
+                <li><a href="#">Immigrant</a></li>
             </ul>
         </div><!-- /.sidebar -->
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main marketing">
+        <div class="col-sm-9">
             @foreach (var item in Model)
             {
                 <!-- START THE FEATURETTES -->
                 <hr class="featurette-divider">
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h1>@Html.DisplayFor(modelItem => item.brief)</h1>
+                        <!--h1>@Html.DisplayFor(modelItem => item.brief)</!--h1>-->
+                        <h1>@Html.ActionLink(item.brief, "Detail", new { id = item.success_story_id })</h1>
                         <p class="lead featurette-description">
                             @Html.DisplayFor(modelItem => item.detail_description)
                         </p>
@@ -30,7 +32,7 @@
                     <div class="col-md-5">
                         <img class="featurette-image img-responsive center-block"
                              src="@Url.Content(item.pic)"
-                             alt="Generic placeholder image">
+                             alt="Story teller's portrait img">
                     </div>
                 </div>
                 <!-- /END THE FEATURETTES -->
