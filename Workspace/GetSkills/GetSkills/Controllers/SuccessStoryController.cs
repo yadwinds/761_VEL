@@ -89,18 +89,56 @@ namespace GetSkills.Models
         }
 
         // GET: SuccessStory/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public async Task<ActionResult> Detail(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            success_story success_story = await db.success_story.FindAsync(id);
-            if (success_story == null)
+            StoryIndexViewModel stViewModel = new StoryIndexViewModel();
+            stViewModel.successStory = await db.success_story.FindAsync(id);
+            if (stViewModel.successStory == null)
             {
                 return HttpNotFound();
             }
-            return View(success_story);
+            stViewModel.categoryList = (from cat in db.success_story_category
+                                        join cam in db.categories on cat.category_id equals cam.category_id
+                                        where cat.success_story_id == stViewModel.successStory.success_story_id && cat.status == 1
+                                        select new StoryCategoryViewModel
+                                        {
+                                            story_category_id = cat.story_category_id,
+                                            success_story_id = cat.success_story_id,
+                                            category_id = cat.category_id,
+                                            category_name = cam.category_name,
+                                            status = cat.status
+                                        }).ToList();
+
+            stViewModel.coursesList = (from ssc in db.success_story_courses
+                                       join cos in db.courses on ssc.course_id equals cos.course_id
+                                       where ssc.success_story_id == stViewModel.successStory.success_story_id && ssc.status == 1
+                                       select new StoryCourseViewModel
+                                       {
+                                           story_course_id = ssc.story_course_id,
+                                           success_story_id = ssc.success_story_id,
+                                           course_id = ssc.course_id,
+                                           course_name = cos.course_name,
+                                           status = ssc.status
+                                       }).ToList();
+            stViewModel.courses = (from ssc in db.success_story_courses
+                                   join cos in db.courses on ssc.course_id equals cos.course_id
+                                   where ssc.success_story_id == stViewModel.successStory.success_story_id && ssc.status == 1
+                                   select new CourseViewModel
+                                   {
+                                       course_id = cos.course_id,
+                                       course_name = cos.course_name,
+                                       course_code = cos.course_code,
+                                       subject_id = cos.subject_id,
+                                       topic_id = cos.topic_id,
+                                       description = cos.description,
+                                       price = cos.price,
+                                       status = cos.status
+                                   }).ToList();
+            return View(stViewModel);
         }
 
         // GET: SuccessStory/Create

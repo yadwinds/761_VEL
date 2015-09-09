@@ -805,7 +805,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="price_per_hour" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="cours">
+        <EntityType Name="course">
           <Key>
             <PropertyRef Name="course_id" />
           </Key>
@@ -1343,7 +1343,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <EntitySet Name="contact_us" EntityType="Self.contact_us" />
           <EntitySet Name="contents" EntityType="Self.content" />
           <EntitySet Name="course_price" EntityType="Self.course_price" />
-          <EntitySet Name="courses" EntityType="Self.cours" />
+          <EntitySet Name="courses" EntityType="GetSkillsModel.course" />
           <EntitySet Name="courses_category" EntityType="Self.courses_category" />
           <EntitySet Name="courses_sort_order" EntityType="Self.courses_sort_order" />
           <EntitySet Name="demo_requests" EntityType="Self.demo_requests" />
@@ -1485,7 +1485,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="courses">
-            <EntityTypeMapping TypeName="GetSkillsModel.cours">
+            <EntityTypeMapping TypeName="GetSkillsModel.course">
               <MappingFragment StoreEntitySet="courses">
                 <ScalarProperty Name="course_id" ColumnName="course_id" />
                 <ScalarProperty Name="course_name" ColumnName="course_name" />

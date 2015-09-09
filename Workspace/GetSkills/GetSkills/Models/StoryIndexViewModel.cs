@@ -12,6 +12,7 @@ namespace GetSkills.Models
         public virtual success_story successStory { get; set; }
         public virtual List<StoryCategoryViewModel> categoryList { get; set; }
         public virtual List<StoryCourseViewModel> coursesList { get; set; }
+        public virtual List<CourseViewModel> courses { get; set; }
         public string sortorder { get; set; }
     }
 
