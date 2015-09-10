@@ -54,15 +54,15 @@ namespace GetSkills
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "861305833925174",
+               appSecret: "8c654781f8af1b389eadfec9698e4ca9");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "47738947356-4r4e562npugafg98ogloa63740bhgjjv.apps.googleusercontent.com",
+                ClientSecret = "WVy1J2XZBtf0qECD13e5HBTW"
+            });
         }
     }
 }
