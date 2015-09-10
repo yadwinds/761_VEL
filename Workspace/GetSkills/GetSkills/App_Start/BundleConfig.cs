@@ -9,7 +9,8 @@ namespace GetSkills
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/ie-emulation-modes-warning.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -27,7 +28,8 @@ namespace GetSkills
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/carousel.css",
-                      "~/Content/general.css"));
+                      "~/Content/general.css",
+                      "~/Content/login2.css"));
         }
     }
 }
