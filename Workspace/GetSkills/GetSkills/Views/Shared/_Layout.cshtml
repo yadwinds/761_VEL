@@ -7,44 +7,19 @@
     <title>@ViewBag.Title - GetSkills</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/carousel.css" rel="stylesheet">
-    <link href="~/Content/general.css" rel="stylesheet">
 </head>
 <body>
-    <!--div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("GetSkills", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Success Story", "List", "SuccessStory")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </!--div>-->
+
     <div id="page_container" class="container body-content">
         @RenderBody()
         <hr />
     </div>
-    <!--footer>
-        <p>&copy; @DateTime.Now.Year - GetSkills</p>
-    </!--footer>-->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <script>$("<div>").load("../../StaticPages/header.html").appendTo("body")</script>
-    <script>$("<div>").load("../../StaticPages/footer.html").appendTo("body")</script>
+    <script>$("<div>").load("/StaticPages/header.html").appendTo("body")</script>
+    <script>$("<div>").load("/StaticPages/footer.html").appendTo("body")</script>
 </body>
 </html>

@@ -6,29 +6,19 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-// 08 Sep. 2015     Kaii    Add datatype for textarea edit.  
-// 09 Sep. 2015     Kaii    Add Validation to varchar items.  
-//------------------------------------------------------------------------------
 
 namespace GetSkills.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class success_story
     {
         public int success_story_id { get; set; }
-        [StringLength(100)]
         public string user_name { get; set; }
-        [StringLength(100)]
         public string pic { get; set; }
         public Nullable<int> sort_number { get; set; }
-        [DataType(DataType.MultilineText)]
-        [StringLength(1200)]
         public string brief { get; set; }
-        [DataType(DataType.MultilineText)]
-        [StringLength(6000)]
         public string detail_description { get; set; }
         public int status { get; set; }
     }
