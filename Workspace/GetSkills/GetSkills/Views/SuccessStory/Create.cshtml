@@ -1,7 +1,7 @@
 ﻿@model GetSkills.Models.StoryIndexViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
 <link rel="stylesheet" href="~/Content/font-awesome.css">
@@ -51,8 +51,7 @@
     window.onload = removeWidthLimit;
 </script>
 
-
-<h2>Edit Success Story</h2>
+<h2>Create Success Story</h2>
 
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -123,7 +122,6 @@
                             @Html.CheckBoxFor(m => Model.allCategoryList[i].isSelected)
                             @Html.LabelFor(m => Model.allCategoryList[i].isSelected, Model.allCategoryList[i].category_name)
                             @Html.HiddenFor(m => Model.allCategoryList[i].category_id)
-                            @Html.HiddenFor(m => Model.allCategoryList[i].story_category_id)
                         </div>
                     }
                 </fieldset>
@@ -140,7 +138,6 @@
                             @Html.CheckBoxFor(m => Model.allCourseList[i].isSelected)
                             @Html.LabelFor(m => Model.allCourseList[i].isSelected, String.Format("{0}: {1}", Model.allCourseList[i].course_id, Model.allCourseList[i].course_name))
                             @Html.HiddenFor(m => Model.allCourseList[i].course_id)
-                            @Html.HiddenFor(m => Model.allCourseList[i].story_course_id)
                         </div>
                     }
                 </fieldset>
