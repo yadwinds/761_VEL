@@ -55,13 +55,13 @@ namespace GetSkills
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "861305833925174",
-               appSecret: "8c654781f8af1b389eadfec9698e4ca9");
+               appId: "1661967800687272",
+               appSecret: "2fb7bd63db6a9709042d6fbec13ed243");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "47738947356-4r4e562npugafg98ogloa63740bhgjjv.apps.googleusercontent.com",
-                ClientSecret = "WVy1J2XZBtf0qECD13e5HBTW"
+                ClientId = "47738947356-ep496gvfvb58on3n82j9h7heu37sdtrb.apps.googleusercontent.com",
+                ClientSecret = "kgLxbdSozey-1gBpgorKkQSc"
             });
         }
     }
