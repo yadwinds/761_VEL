@@ -510,6 +510,7 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\TeamProfile.cshtml" />
+    <Content Include="Views\SuccessStory\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
