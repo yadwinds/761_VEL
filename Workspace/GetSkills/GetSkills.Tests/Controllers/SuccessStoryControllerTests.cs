@@ -56,5 +56,16 @@ namespace GetSkills.Models.Tests
             var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
             Assert.AreEqual(6, modelList.Count());
         }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Index_Test05()
+        {
+            SuccessStoryController ctl = new SuccessStoryController();
+            var result = await ctl.Index("Order_asc");
+
+            Assert.IsNotNull(result);
+            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+            Assert.AreEqual(6, modelList.Count());
+        }
     }
 }
