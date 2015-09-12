@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GetSkills.Controllers;
+using System.Web.Mvc;
 
 namespace GetSkills.Models.Tests
 {
@@ -12,9 +14,14 @@ namespace GetSkills.Models.Tests
     public class SuccessStoryControllerTests
     {
         [TestMethod()]
-        public void DetailsTest()
+        public async Task SuccessStoryController_Index_Test01()
         {
-            Assert.Fail();
+            SuccessStoryController ctl = new SuccessStoryController();
+            var result = await ctl.Index("ID_asc");
+
+            Assert.IsNotNull(result);
+            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+            Assert.AreEqual(6, modelList.Count());
         }
     }
 }
