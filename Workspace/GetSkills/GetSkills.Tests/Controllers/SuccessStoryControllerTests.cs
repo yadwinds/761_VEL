@@ -18,21 +18,43 @@ namespace GetSkills.Models.Tests
         {
             SuccessStoryController ctl = new SuccessStoryController();
             var result = await ctl.Index("ID_asc");
+
+            Assert.IsNotNull(result);
+            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+            Assert.AreEqual(6, modelList.Count());
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Index_Test02()
+        {
+            SuccessStoryController ctl = new SuccessStoryController();
+            var result = await ctl.Index("ID_desc");
+
+            Assert.IsNotNull(result);
+            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+            Assert.AreEqual(6, modelList.Count());
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Index_Test03()
+        {
+            SuccessStoryController ctl = new SuccessStoryController();
+            var result = await ctl.Index("Order_desc");
+
+            Assert.IsNotNull(result);
+            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+            Assert.AreEqual(6, modelList.Count());
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Index_Test04()
+        {
+            SuccessStoryController ctl = new SuccessStoryController();
+            var result = await ctl.Index("Order_asc");
+
             Assert.IsNotNull(result);
             var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
             Assert.AreEqual(6, modelList.Count());
         }
     }
-
-    [TestMethod()]
-    public async Task SuccessStoryController_Index_Test02()
-    {
-        SuccessStoryController ctl = new SuccessStoryController();
-        var result = await ctl.Index("ID_as");
-        Assert.IsNotNull(result);
-        var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
-        Assert.AreEqual(6, modelList.Count());
-    }
-}
-
 }
