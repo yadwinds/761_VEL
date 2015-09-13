@@ -24,16 +24,16 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual(6, modelList.Count());
         }
 
-        [TestMethod()]
-        public async Task SuccessStoryController_Index_Test02()
-        {
-            SuccessStoryController ctl = new SuccessStoryController();
+    [TestMethod()]
+    public async Task SuccessStoryController_Index_Test02()
+    {
+        SuccessStoryController ctl = new SuccessStoryController();
             var result = await ctl.Index("ID_desc");
 
-            Assert.IsNotNull(result);
-            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
-            Assert.AreEqual(6, modelList.Count());
-        }
+        Assert.IsNotNull(result);
+        var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
+        Assert.AreEqual(6, modelList.Count());
+    }
 
         [TestMethod()]
         public async Task SuccessStoryController_Index_Test03()
@@ -44,17 +44,6 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(result);
             var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
             Assert.AreEqual(6, modelList.Count());
-        }
+}
 
-        [TestMethod()]
-        public async Task SuccessStoryController_Index_Test04()
-        {
-            SuccessStoryController ctl = new SuccessStoryController();
-            var result = await ctl.Index("Order_asc");
-
-            Assert.IsNotNull(result);
-            var modelList = (List<StoryIndexViewModel>)((ViewResult)result).Model;
-            Assert.AreEqual(6, modelList.Count());
-        }
-    }
 }
