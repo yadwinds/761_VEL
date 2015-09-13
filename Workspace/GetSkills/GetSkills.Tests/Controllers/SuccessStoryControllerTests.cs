@@ -18,6 +18,7 @@ namespace GetSkills.Models.Tests
         {
             SuccessStoryController ctl = new SuccessStoryController();
 
+
             var result = await ctl.Index("ID_asc");
             Assert.IsNotNull(result);
 
