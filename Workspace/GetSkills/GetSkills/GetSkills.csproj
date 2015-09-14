@@ -415,6 +415,7 @@
     <Content Include="images\student_01.jpg" />
     <Content Include="images\student_02.jpg" />
     <Content Include="images\student_03.jpg" />
+    <Content Include="images\student_04.jpg" />
     <Content Include="images\teacher.png" />
     <Content Include="images\temp-books-place-holder-300x184.jpg" />
     <Content Include="images\test-automation-header.jpg" />
