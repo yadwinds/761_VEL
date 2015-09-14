@@ -15,6 +15,7 @@ namespace GetSkills.Tests.Controllers
         [TestMethod]
         public void AccountController_Login_Test01()
         {
+<<<<<<< HEAD
             // Initialization
             AccountController ctl = new AccountController();
             String url = "http://getskills.azurewebsites.net/";
@@ -48,6 +49,36 @@ namespace GetSkills.Tests.Controllers
             VerifyCodeViewModel model = null;
 
             // To test if it is null
+=======
+            AccountController ctl = new AccountController();
+            String url = "http://getskills.azurewebsites.net/";
+          
+            ViewResult result = ctl.Login(url) as ViewResult; 
+            Assert.IsNotNull(result);
+        }
+
+         [TestMethod]
+         public void AccountController_Login_Test02()
+         {
+             AccountController ctl = new AccountController();
+             LoginViewModel model = new LoginViewModel();
+             model.Email = "aaaa";
+             model.Password = "123456";
+             model.RememberMe = false;
+
+             String url = "http://getskills.azurewebsites.net/";
+
+             var result = ctl.Login(model,url);
+             Assert.IsNotNull(result);
+         }
+
+        [TestMethod]
+        public void AccountController_VerifyCode_Test()
+        {
+            AccountController ctl = new AccountController();
+            VerifyCodeViewModel model = null;
+
+>>>>>>> origin/master
             var result = ctl.VerifyCode(model);
             Assert.IsNotNull(result);
         }
@@ -55,6 +86,7 @@ namespace GetSkills.Tests.Controllers
         [TestMethod]
         public void AccountController_Regitser_Test01()
         {
+<<<<<<< HEAD
             // Initialization
             AccountController ctl = new AccountController();
 
@@ -86,6 +118,21 @@ namespace GetSkills.Tests.Controllers
             var result = ctl.Register(model);
             Assert.IsNotNull(result);
         }
+=======
+            AccountController ctl = new AccountController();
+>>>>>>> origin/master
 
+            var result = ctl.Register();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_Regitser_Test02()
+        {
+            AccountController ctl = new AccountController();
+            RegisterViewModel model = null;
+            var result = ctl.Register(model);
+            Assert.IsNotNull(result);
+        }
     }
 }

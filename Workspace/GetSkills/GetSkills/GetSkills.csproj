@@ -512,8 +512,11 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\TeamProfile.cshtml" />
     <Content Include="Views\SuccessStory\Create.cshtml" />
+    <Content Include="Views\Account\AdminLogin.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
