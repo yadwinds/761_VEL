@@ -258,5 +258,161 @@ namespace GetSkills.Models.Tests
             var result = ctl.Create(editView);
             Assert.IsNotNull(result);
         }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test01()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(1);
+            Assert.IsNotNull(result);
+
+            // To test if it is a valid id
+            var model = (StoryIndexViewModel)((ViewResult)result).Model;
+            Assert.IsNotNull(model);
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test02()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(21);
+            Assert.IsNotNull(result);
+
+            // To test if it is a valid id
+            var model = (StoryIndexViewModel)((ViewResult)result).Model;
+            Assert.IsNotNull(model);
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test03()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(31);
+            Assert.IsNotNull(result);
+
+            // To test if it is a valid id
+            var model = (StoryIndexViewModel)((ViewResult)result).Model;
+            Assert.IsNotNull(model);
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test04()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(41);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when status == 0
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test05()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(51);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when status == 0
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test06()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(61);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when status == 0
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test07()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(71);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when status == 0
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test08()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(0);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when the id is invalid
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test09()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(-11);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when the id is invalid
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public async Task SuccessStoryController_Edit_Test10()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = await ctl.Edit(101);
+            Assert.IsNotNull(result);
+
+            // To test if it is a HttpNotFoundResult when the id is invalid
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
+
+        [TestMethod()]
+        public void SuccessStoryController_Edit_Test11()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+            StoryIndexViewModel editView = new StoryIndexViewModel();
+
+            // To test if it is null
+            var result = ctl.Edit(editView);
+            Assert.IsNotNull(result);
+        }
+
     }
 }
