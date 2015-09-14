@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GetSkills.Models;
+using System.Collections.Generic;
 
 namespace GetSkills.Controllers
 {
@@ -17,6 +18,7 @@ namespace GetSkills.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private GetSkillsEntities db = new GetSkillsEntities();
 
         public AccountController()
         {
@@ -49,6 +51,43 @@ namespace GetSkills.Controllers
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        //
+        // GET: /Account/AdminLogin
+        [AllowAnonymous]
+        public ActionResult AdminLogin(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        //
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminLogin(user model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            List<user> storyList = (from u in db.users
+                                    where u.email_address == model.email_address &&
+                                    u.user_pswd == model.user_pswd &&
+                                    u.user_type == "1"
+                                    select u).ToList();
+            if(storyList.Count > 0)
+            {
+                //return View(storyList.First());
+                return RedirectToAction("Index", "SuccessStory", new { sortOrder = "ID_asc" });
+            }
+            else
+            {
+                return View(model);
             }
         }
 
