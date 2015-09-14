@@ -12,24 +12,30 @@ namespace GetSkills.Tests.Controllers
     [TestClass]
     public class AccountControllerTest
     {
-        private string returnUrl;
-
-        public object ViewBag { get; private set; }
-
         [TestMethod]
-        public void Login()
+        public void AccountController_Login_Test01()
         {
-            // Arrange
-            AccountController controller = new AccountController();
-            String f=returnUrl;
-            // Act
-
-            ViewResult result = controller.Login(returnUrl) as ViewResult; 
-
-            // Assert
+            AccountController ctl = new AccountController();
+            String url = "http://getskills.azurewebsites.net/";
+          
+            ViewResult result = ctl.Login(url) as ViewResult; 
             Assert.IsNotNull(result);
         }
 
+        [TestMethod]
+        public async Task AccountController_Login_Test02()
+        {
+            AccountController ctl = new AccountController();
+            LoginViewModel mo = new LoginViewModel();
+            mo.Email = "aaaa";
+            mo.Password = "123456";
+            mo.RememberMe = false;
+
+            String url = "http://getskills.azurewebsites.net/";
+
+            var result = await ctl.Login(mo,url);
+            Assert.IsNotNull(result);
+        }
 
     }
-    }
+}
