@@ -22,20 +22,47 @@ namespace GetSkills.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
+         [TestMethod]
+         public void AccountController_Login_Test02()
+         {
+             AccountController ctl = new AccountController();
+             LoginViewModel model = new LoginViewModel();
+             model.Email = "aaaa";
+             model.Password = "123456";
+             model.RememberMe = false;
+
+             String url = "http://getskills.azurewebsites.net/";
+
+             var result = ctl.Login(model,url);
+             Assert.IsNotNull(result);
+         }
+
         [TestMethod]
-        public async Task AccountController_Login_Test02()
+        public void AccountController_VerifyCode_Test()
         {
             AccountController ctl = new AccountController();
-            LoginViewModel mo = new LoginViewModel();
-            mo.Email = "aaaa";
-            mo.Password = "123456";
-            mo.RememberMe = false;
+            VerifyCodeViewModel model = null;
 
-            String url = "http://getskills.azurewebsites.net/";
-
-            var result = await ctl.Login(mo,url);
+            var result = ctl.VerifyCode(model);
             Assert.IsNotNull(result);
         }
 
+        [TestMethod]
+        public void AccountController_Regitser_Test01()
+        {
+            AccountController ctl = new AccountController();
+
+            var result = ctl.Register();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_Regitser_Test02()
+        {
+            AccountController ctl = new AccountController();
+            RegisterViewModel model = null;
+            var result = ctl.Register(model);
+            Assert.IsNotNull(result);
+        }
     }
 }
