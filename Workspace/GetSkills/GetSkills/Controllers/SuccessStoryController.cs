@@ -76,6 +76,7 @@ namespace GetSkills.Controllers
                                       story_course_id = ssc.story_course_id,
                                       success_story_id = ssc.success_story_id,
                                       course_id = ssc.course_id,
+                                      course_code = cos.course_code,
                                       course_name = cos.course_name,
                                       status = ssc.status
                                   }).ToList();
@@ -126,6 +127,7 @@ namespace GetSkills.Controllers
                                            story_course_id = ssc.story_course_id,
                                            success_story_id = ssc.success_story_id,
                                            course_id = ssc.course_id,
+                                           course_code = cos.course_code,
                                            course_name = cos.course_name,
                                            status = ssc.status
                                        }).ToList();
@@ -135,8 +137,8 @@ namespace GetSkills.Controllers
                                    select new CourseViewModel
                                    {
                                        course_id = cos.course_id,
-                                       course_name = cos.course_name,
                                        course_code = cos.course_code,
+                                       course_name = cos.course_name,
                                        subject_id = cos.subject_id,
                                        topic_id = cos.topic_id,
                                        description = cos.description,
@@ -166,6 +168,7 @@ namespace GetSkills.Controllers
                                       select new CourseCheckboxModel
                                       {
                                           course_id = co.course_id,
+                                          course_code = co.course_code,
                                           course_name = co.course_name,
                                           isSelected = false
                                       }).ToList();
@@ -285,6 +288,7 @@ namespace GetSkills.Controllers
                                       select new CourseCheckboxModel
                                       {
                                           course_id = co.course_id,
+                                          course_code = co.course_code,
                                           course_name = co.course_name,
                                           story_course_id = (ssc == null ? 0 : ssc.story_course_id),
                                           isSelected = (ssc == null ? false : true)
@@ -423,6 +427,7 @@ namespace GetSkills.Controllers
                                       select new CourseCheckboxModel
                                       {
                                           course_id = co.course_id,
+                                          course_code = co.course_code,
                                           course_name = co.course_name,
                                           story_course_id = (ssc == null ? 0 : ssc.story_course_id),
                                           isSelected = (ssc == null ? false : true)
