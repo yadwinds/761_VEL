@@ -19,13 +19,24 @@ namespace GetSkills.Models
     public partial class success_story
     {
         public int success_story_id { get; set; }
+
+        [StringLength(100)]
+        [Required(ErrorMessage = "User name is Required")]
         public string user_name { get; set; }
+
+        [StringLength(100)]
         public string pic { get; set; }
+
         public Nullable<int> sort_number { get; set; }
+
         [DataType(DataType.MultilineText)]
+        [StringLength(1200)]
         public string brief { get; set; }
+
         [DataType(DataType.MultilineText)]
+        [StringLength(6000)]
         public string detail_description { get; set; }
+
         public int status { get; set; }
     }
 }
