@@ -178,5 +178,147 @@ namespace GetSkills.Tests.Controllers
             var result = ctl.VerifyPhoneNumber(model);
             Assert.IsNotNull(result);
         }
+
+
+        [TestMethod]
+        public void ManageController_ChangePassword_Test01()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+
+            // To test if it is null
+            var result = ctl.ChangePassword();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ChangePassword_Test02()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ChangePasswordViewModel model = new ChangePasswordViewModel();
+
+            // To test if it is null
+            var result = ctl.ChangePassword(model);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_SetPassword_Test01()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+
+            // To test if it is null
+            var result = ctl.SetPassword();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_SetPassword_Test02()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            SetPasswordViewModel model = new SetPasswordViewModel();
+
+            // To test if it is null
+            var result = ctl.SetPassword(model);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test01()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.AddPhoneSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test02()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.ChangePasswordSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test03()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.Error;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test04()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.RemoveLoginSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test05()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.RemovePhoneSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test06()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.SetPasswordSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_ManageLogins_Test07()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+            ManageController.ManageMessageId message = ManageController.ManageMessageId.SetTwoFactorSuccess;
+
+            // To test if it is null
+            var result = ctl.ManageLogins(message);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManageController_LinkLoginCallback_Test()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+
+            // To test if it is null
+            var result = ctl.LinkLoginCallback();
+            Assert.IsNotNull(result);
+        }
     }
 }

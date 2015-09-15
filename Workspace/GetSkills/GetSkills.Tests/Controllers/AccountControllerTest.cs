@@ -174,5 +174,80 @@ namespace GetSkills.Tests.Controllers
             var result = ctl.ResetPassword(model);
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void AccountController_ResetPasswordConfirmation_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+
+            // To test if it is null
+            var result = ctl.ResetPasswordConfirmation();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_ExternalLogin_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            string provider = "admin";
+            string url = "http://getskills.azurewebsites.net/";
+
+            // To test if it is null
+            //var result = ctl.ExternalLogin(provider, url);
+            //Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_SendCode_Test01()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            string url = "http://getskills.azurewebsites.net/";
+            bool rememberMe = false;
+
+            // To test if it is null
+            var result = ctl.SendCode(url, rememberMe);
+            Assert.IsNotNull(result);
+        }
+
+
+        [TestMethod]
+        public void AccountController_SendCode_Test02()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            SendCodeViewModel model = new SendCodeViewModel();
+
+            // To test if it is null
+            var result = ctl.SendCode(model);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_ExternalLoginCallback_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            string url = "http://getskills.azurewebsites.net/";
+
+            // To test if it is null
+            var result = ctl.ExternalLoginCallback(url);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_ExternalLoginConfirmation_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            ExternalLoginConfirmationViewModel model = new ExternalLoginConfirmationViewModel();
+            string url = "http://getskills.azurewebsites.net/";
+
+            // To test if it is null
+            var result = ctl.ExternalLoginConfirmation(model,url);
+            Assert.IsNotNull(result);
+        }
     }
 }
