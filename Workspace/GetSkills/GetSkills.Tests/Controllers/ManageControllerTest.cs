@@ -309,5 +309,16 @@ namespace GetSkills.Tests.Controllers
             var result = ctl.ManageLogins(message);
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void ManageController_LinkLoginCallback_Test()
+        {
+            // Initialization
+            ManageController ctl = new ManageController();
+
+            // To test if it is null
+            var result = ctl.LinkLoginCallback();
+            Assert.IsNotNull(result);
+        }
     }
 }
