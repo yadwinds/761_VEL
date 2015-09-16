@@ -21,9 +21,14 @@
         text-align: center;
     }
 
-    story_font_h2 {
+    .story_font_h2 {
         color: #393939;
     }
+
+    header .container {
+        max-width: none;
+    }
+
 </style>
 <script type="text/javascript">
     function removeWidthLimit() {
@@ -79,7 +84,7 @@
                 }
             </th>
             <th>
-                Breif Story
+                Brief Story
             </th>
             <th>
                 Detail Story
@@ -117,7 +122,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.successStory.brief)
                 </td>
-                <td style="width:25%;">
+                <td style="">
                     @Html.DisplayFor(modelItem => item.successStory.detail_description)
                 </td>
                 <td style="white-space:nowrap">
@@ -129,7 +134,7 @@
                 <td style="white-space:nowrap">
                     @foreach (var cor in item.coursesList)
                     {
-                        @String.Format("{0} : {1}", cor.course_id, cor.course_name) <br>
+                        @String.Format("{0} : {1}", cor.course_code, cor.course_name) <br>
                     }
                 </td>
                 <td style="white-space:nowrap">

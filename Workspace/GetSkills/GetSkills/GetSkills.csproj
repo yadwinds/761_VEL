@@ -415,6 +415,8 @@
     <Content Include="images\student_01.jpg" />
     <Content Include="images\student_02.jpg" />
     <Content Include="images\student_03.jpg" />
+    <Content Include="images\student_04.jpg" />
+    <Content Include="images\teacher.png" />
     <Content Include="images\temp-books-place-holder-300x184.jpg" />
     <Content Include="images\test-automation-header.jpg" />
     <Content Include="images\Training-icon_droite.png" />
@@ -509,8 +511,12 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\TeamProfile.cshtml" />
+    <Content Include="Views\SuccessStory\Create.cshtml" />
+    <Content Include="Views\Account\AdminLogin.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

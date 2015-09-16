@@ -8,7 +8,7 @@
 <style>
     .floating-box {
         float: left;
-        width: 120px;
+        min-width: 180px;
         height: 24px;
         margin: 5px;
         color: #555;
@@ -17,7 +17,7 @@
 
     .floating-box-course {
         float: left;
-        width: 300px;
+        min-width: 300px;
         height: 24px;
         margin: 5px;
         color: #555;
@@ -28,6 +28,11 @@
         margin-bottom: 4px;
         width: 300px;
     }
+
+    header .container {
+        max-width: none;
+    }
+
 </style>
 <script type="text/javascript">
     function removeWidthLimit() {
@@ -133,7 +138,7 @@
                     {
                         <div class="floating-box-course">
                             @Html.CheckBoxFor(m => Model.allCourseList[i].isSelected)
-                            @Html.LabelFor(m => Model.allCourseList[i].isSelected, String.Format("{0}: {1}", Model.allCourseList[i].course_id, Model.allCourseList[i].course_name))
+                            @Html.LabelFor(m => Model.allCourseList[i].isSelected, String.Format("{0}: {1}", Model.allCourseList[i].course_code, Model.allCourseList[i].course_name))
                             @Html.HiddenFor(m => Model.allCourseList[i].course_id)
                             @Html.HiddenFor(m => Model.allCourseList[i].story_course_id)
                         </div>
