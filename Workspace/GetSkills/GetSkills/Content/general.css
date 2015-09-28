@@ -66,10 +66,10 @@ footer {
 	margin: 0 5px;
 	position: relative;
 	text-align: center;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+	-webkit-users-select: none;
+	   -moz-users-select: none;
+	    -ms-users-select: none;
+	        users-select: none;
 	width: 3.6rem;
 }
 

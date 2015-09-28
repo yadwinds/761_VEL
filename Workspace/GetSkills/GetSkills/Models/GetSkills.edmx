@@ -350,6 +350,17 @@
           <Property Name="file_name" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="permission_order" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="profile_id" />
+          </Key>
+          <Property Name="profile_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pic" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="detail" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="linked_url" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="question_answers">
           <Key>
             <PropertyRef Name="answerid" />
@@ -444,8 +455,8 @@
           <Property Name="user_name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="pic" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="sort_number" Type="int" />
-          <Property Name="brief" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="detail_description" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="brief" Type="varchar" MaxLength="1200" Nullable="false" />
+          <Property Name="detail_description" Type="varchar" MaxLength="6000" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="success_story_category">
@@ -626,6 +637,24 @@
           <Property Name="status" Type="bool" Nullable="false" />
           <Property Name="time" Type="bigint" Nullable="false" />
         </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“def.getskills.visitor_enquiry”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="visitor_enquiry">
+          <Key>
+            <PropertyRef Name="VisitorEnquiryID" />
+            <PropertyRef Name="VisitorName" />
+            <PropertyRef Name="visitor_mobile" />
+            <PropertyRef Name="visitor_email" />
+            <PropertyRef Name="visitor_enquiry" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="VisitorEnquiryID" Type="int" Nullable="false" />
+          <Property Name="VisitorName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="visitor_mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="visitor_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="visitor_enquiry" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="status" Type="tinyint" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="GetSkillsModelStoreContainer">
           <EntitySet Name="board" EntityType="Self.board" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="category" EntityType="Self.category" Schema="getskills" store:Type="Tables" />
@@ -651,6 +680,7 @@
           <EntitySet Name="order_subjects" EntityType="Self.order_subjects" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="payment_log" EntityType="Self.payment_log" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="permissions" EntityType="Self.permissions" Schema="getskills" store:Type="Tables" />
+          <EntitySet Name="profile" EntityType="Self.profile" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="question_answers" EntityType="Self.question_answers" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="specializations" EntityType="Self.specializations" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="student_courses" EntityType="Self.student_courses" Schema="getskills" store:Type="Tables" />
@@ -714,6 +744,16 @@ FROM `interview_students` AS `interview_students`</DefiningQuery>
 `users_permissions`.`permission_id`
 FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="visitor_enquiry" EntityType="Self.visitor_enquiry" store:Type="Tables" store:Schema="getskills">
+            <DefiningQuery>SELECT
+`visitor_enquiry`.`VisitorEnquiryID`, 
+`visitor_enquiry`.`VisitorName`, 
+`visitor_enquiry`.`visitor_mobile`, 
+`visitor_enquiry`.`visitor_email`, 
+`visitor_enquiry`.`visitor_enquiry`, 
+`visitor_enquiry`.`status`
+FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -736,7 +776,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="category_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="class">
+        <EntityType Name="classes">
           <Key>
             <PropertyRef Name="class_id" />
           </Key>
@@ -805,7 +845,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="price_per_hour" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="course">
+        <EntityType Name="courses">
           <Key>
             <PropertyRef Name="course_id" />
           </Key>
@@ -860,7 +900,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="addemail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="email">
+        <EntityType Name="emails">
           <Key>
             <PropertyRef Name="emailid" />
           </Key>
@@ -895,7 +935,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="class_session_code" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="interview">
+        <EntityType Name="interviews">
           <Key>
             <PropertyRef Name="interview_id" />
           </Key>
@@ -949,7 +989,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="subject_id" Type="Int32" Nullable="false" />
           <Property Name="isChecked" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="newemailgroup">
+        <EntityType Name="newemailgroups">
           <Key>
             <PropertyRef Name="sno" />
           </Key>
@@ -990,7 +1030,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="payment_status" Type="Int32" Nullable="false" />
           <Property Name="datetime" Type="DateTime" Nullable="false" />
         </EntityType>
-        <EntityType Name="permission">
+        <EntityType Name="permissions">
           <Key>
             <PropertyRef Name="permission_id" />
           </Key>
@@ -998,6 +1038,17 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="module_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="file_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="permission_order" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="profile_id" />
+          </Key>
+          <Property Name="profile_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="linked_url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="question_answers">
           <Key>
@@ -1009,12 +1060,12 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="correct" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="specialization">
+        <EntityType Name="specializations">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="specialization1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="student_courses">
@@ -1093,8 +1144,8 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sort_number" Type="Int32" />
-          <Property Name="brief" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="detail_description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="brief" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detail_description" Type="String" MaxLength="6000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="success_story_category">
@@ -1141,7 +1192,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="subjects" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="attendence" Type="Single" Nullable="false" />
         </EntityType>
-        <EntityType Name="teammember">
+        <EntityType Name="teammembers">
           <Key>
             <PropertyRef Name="teammember_id" />
           </Key>
@@ -1187,7 +1238,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="question" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="test">
+        <EntityType Name="tests">
           <Key>
             <PropertyRef Name="testid" />
           </Key>
@@ -1202,12 +1253,12 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="ispublished" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="topic">
+        <EntityType Name="topics">
           <Key>
             <PropertyRef Name="topic_id" />
           </Key>
           <Property Name="topic_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="topic1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="topic" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="uploadtest">
@@ -1236,7 +1287,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="datetime" Type="DateTime" Nullable="false" />
         </EntityType>
-        <EntityType Name="user">
+        <EntityType Name="users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
@@ -1256,12 +1307,12 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="fb_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="signup_source" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="video">
+        <EntityType Name="videos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="video1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="video" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
           <Property Name="time" Type="Int64" Nullable="false" />
         </EntityType>
@@ -1335,56 +1386,74 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
           <Property Name="user_type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="permission_id" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="visitor_enquiry">
+          <Key>
+            <PropertyRef Name="VisitorEnquiryID" />
+            <PropertyRef Name="VisitorName" />
+            <PropertyRef Name="visitor_mobile" />
+            <PropertyRef Name="visitor_email" />
+            <PropertyRef Name="visitor_enquiry1" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="VisitorEnquiryID" Type="Int32" Nullable="false" />
+          <Property Name="VisitorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="visitor_mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="visitor_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="visitor_enquiry1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="SByte" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="GetSkillsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="boards" EntityType="Self.board" />
-          <EntitySet Name="categories" EntityType="Self.category" />
-          <EntitySet Name="classes" EntityType="Self.class" />
+          <EntitySet Name="board" EntityType="Self.board" />
+          <EntitySet Name="category" EntityType="Self.category" />
+          <EntitySet Name="classes" EntityType="Self.classes" />
           <EntitySet Name="client_details" EntityType="Self.client_details" />
           <EntitySet Name="contact_us" EntityType="Self.contact_us" />
-          <EntitySet Name="contents" EntityType="Self.content" />
+          <EntitySet Name="content" EntityType="Self.content" />
           <EntitySet Name="course_price" EntityType="Self.course_price" />
-          <EntitySet Name="courses" EntityType="GetSkillsModel.course" />
+          <EntitySet Name="courses" EntityType="Self.courses" />
           <EntitySet Name="courses_category" EntityType="Self.courses_category" />
           <EntitySet Name="courses_sort_order" EntityType="Self.courses_sort_order" />
           <EntitySet Name="demo_requests" EntityType="Self.demo_requests" />
           <EntitySet Name="email_group_contacts" EntityType="Self.email_group_contacts" />
-          <EntitySet Name="emails" EntityType="Self.email" />
-          <EntitySet Name="grades" EntityType="Self.grade" />
+          <EntitySet Name="emails" EntityType="Self.emails" />
+          <EntitySet Name="grade" EntityType="Self.grade" />
           <EntitySet Name="interview_schedules" EntityType="Self.interview_schedules" />
-          <EntitySet Name="interviews" EntityType="Self.interview" />
+          <EntitySet Name="interviews" EntityType="Self.interviews" />
           <EntitySet Name="manager_details" EntityType="Self.manager_details" />
-          <EntitySet Name="mappings" EntityType="Self.mapping" />
+          <EntitySet Name="mapping" EntityType="Self.mapping" />
           <EntitySet Name="mapping_subjects" EntityType="Self.mapping_subjects" />
-          <EntitySet Name="newemailgroups" EntityType="Self.newemailgroup" />
+          <EntitySet Name="newemailgroups" EntityType="Self.newemailgroups" />
           <EntitySet Name="order_days" EntityType="Self.order_days" />
           <EntitySet Name="order_subjects" EntityType="Self.order_subjects" />
           <EntitySet Name="payment_log" EntityType="Self.payment_log" />
-          <EntitySet Name="permissions" EntityType="Self.permission" />
+          <EntitySet Name="permissions" EntityType="Self.permissions" />
+          <EntitySet Name="profile" EntityType="Self.profile" />
           <EntitySet Name="question_answers" EntityType="Self.question_answers" />
-          <EntitySet Name="specializations" EntityType="Self.specialization" />
+          <EntitySet Name="specializations" EntityType="Self.specializations" />
           <EntitySet Name="student_courses" EntityType="Self.student_courses" />
           <EntitySet Name="student_details" EntityType="Self.student_details" />
           <EntitySet Name="student_orders" EntityType="Self.student_orders" />
           <EntitySet Name="student_subject_details" EntityType="Self.student_subject_details" />
-          <EntitySet Name="subjects" EntityType="Self.subject" />
+          <EntitySet Name="subject" EntityType="Self.subject" />
           <EntitySet Name="success_story" EntityType="Self.success_story" />
           <EntitySet Name="success_story_category" EntityType="Self.success_story_category" />
           <EntitySet Name="success_story_courses" EntityType="Self.success_story_courses" />
           <EntitySet Name="teacher_details" EntityType="Self.teacher_details" />
           <EntitySet Name="teacher_subject_details" EntityType="Self.teacher_subject_details" />
-          <EntitySet Name="teammembers" EntityType="Self.teammember" />
+          <EntitySet Name="teammembers" EntityType="Self.teammembers" />
           <EntitySet Name="test_attempt_details" EntityType="Self.test_attempt_details" />
           <EntitySet Name="test_attempts" EntityType="Self.test_attempts" />
           <EntitySet Name="test_questions" EntityType="Self.test_questions" />
-          <EntitySet Name="tests" EntityType="Self.test" />
-          <EntitySet Name="topics" EntityType="Self.topic" />
-          <EntitySet Name="uploadtests" EntityType="Self.uploadtest" />
+          <EntitySet Name="tests" EntityType="Self.tests" />
+          <EntitySet Name="topics" EntityType="Self.topics" />
+          <EntitySet Name="uploadtest" EntityType="Self.uploadtest" />
           <EntitySet Name="user_emails" EntityType="Self.user_emails" />
-          <EntitySet Name="users" EntityType="Self.user" />
-          <EntitySet Name="videos" EntityType="Self.video" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="videos" EntityType="Self.videos" />
           <EntitySet Name="class_students" EntityType="Self.class_students" />
           <EntitySet Name="interview_students" EntityType="Self.interview_students" />
           <EntitySet Name="users_permissions" EntityType="Self.users_permissions" />
+          <EntitySet Name="visitor_enquiry" EntityType="Self.visitor_enquiry" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -1392,7 +1461,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GetSkillsModelStoreContainer" CdmEntityContainer="GetSkillsEntities">
-          <EntitySetMapping Name="boards">
+          <EntitySetMapping Name="board">
             <EntityTypeMapping TypeName="GetSkillsModel.board">
               <MappingFragment StoreEntitySet="board">
                 <ScalarProperty Name="board_id" ColumnName="board_id" />
@@ -1401,7 +1470,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="categories">
+          <EntitySetMapping Name="category">
             <EntityTypeMapping TypeName="GetSkillsModel.category">
               <MappingFragment StoreEntitySet="category">
                 <ScalarProperty Name="category_id" ColumnName="category_id" />
@@ -1411,7 +1480,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="classes">
-            <EntityTypeMapping TypeName="GetSkillsModel.class">
+            <EntityTypeMapping TypeName="GetSkillsModel.classes">
               <MappingFragment StoreEntitySet="classes">
                 <ScalarProperty Name="class_id" ColumnName="class_id" />
                 <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
@@ -1461,7 +1530,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="contents">
+          <EntitySetMapping Name="content">
             <EntityTypeMapping TypeName="GetSkillsModel.content">
               <MappingFragment StoreEntitySet="content">
                 <ScalarProperty Name="contentid" ColumnName="contentid" />
@@ -1485,7 +1554,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="courses">
-            <EntityTypeMapping TypeName="GetSkillsModel.course">
+            <EntityTypeMapping TypeName="GetSkillsModel.courses">
               <MappingFragment StoreEntitySet="courses">
                 <ScalarProperty Name="course_id" ColumnName="course_id" />
                 <ScalarProperty Name="course_name" ColumnName="course_name" />
@@ -1545,7 +1614,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="emails">
-            <EntityTypeMapping TypeName="GetSkillsModel.email">
+            <EntityTypeMapping TypeName="GetSkillsModel.emails">
               <MappingFragment StoreEntitySet="emails">
                 <ScalarProperty Name="emailid" ColumnName="emailid" />
                 <ScalarProperty Name="subject" ColumnName="subject" />
@@ -1557,7 +1626,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="grades">
+          <EntitySetMapping Name="grade">
             <EntityTypeMapping TypeName="GetSkillsModel.grade">
               <MappingFragment StoreEntitySet="grade">
                 <ScalarProperty Name="grade_id" ColumnName="grade_id" />
@@ -1583,7 +1652,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="interviews">
-            <EntityTypeMapping TypeName="GetSkillsModel.interview">
+            <EntityTypeMapping TypeName="GetSkillsModel.interviews">
               <MappingFragment StoreEntitySet="interviews">
                 <ScalarProperty Name="interview_id" ColumnName="interview_id" />
                 <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
@@ -1620,7 +1689,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="mappings">
+          <EntitySetMapping Name="mapping">
             <EntityTypeMapping TypeName="GetSkillsModel.mapping">
               <MappingFragment StoreEntitySet="mapping">
                 <ScalarProperty Name="mapping_id" ColumnName="mapping_id" />
@@ -1641,7 +1710,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="newemailgroups">
-            <EntityTypeMapping TypeName="GetSkillsModel.newemailgroup">
+            <EntityTypeMapping TypeName="GetSkillsModel.newemailgroups">
               <MappingFragment StoreEntitySet="newemailgroups">
                 <ScalarProperty Name="sno" ColumnName="sno" />
                 <ScalarProperty Name="groupname" ColumnName="groupname" />
@@ -1686,12 +1755,24 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="permissions">
-            <EntityTypeMapping TypeName="GetSkillsModel.permission">
+            <EntityTypeMapping TypeName="GetSkillsModel.permissions">
               <MappingFragment StoreEntitySet="permissions">
                 <ScalarProperty Name="permission_id" ColumnName="permission_id" />
                 <ScalarProperty Name="module_name" ColumnName="module_name" />
                 <ScalarProperty Name="file_name" ColumnName="file_name" />
                 <ScalarProperty Name="permission_order" ColumnName="permission_order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="profile">
+            <EntityTypeMapping TypeName="GetSkillsModel.profile">
+              <MappingFragment StoreEntitySet="profile">
+                <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="linked_url" ColumnName="linked_url" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1707,10 +1788,10 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="specializations">
-            <EntityTypeMapping TypeName="GetSkillsModel.specialization">
+            <EntityTypeMapping TypeName="GetSkillsModel.specializations">
               <MappingFragment StoreEntitySet="specializations">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="specialization1" ColumnName="specialization" />
+                <ScalarProperty Name="specialization" ColumnName="specialization" />
                 <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1779,7 +1860,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="subjects">
+          <EntitySetMapping Name="subject">
             <EntityTypeMapping TypeName="GetSkillsModel.subject">
               <MappingFragment StoreEntitySet="subject">
                 <ScalarProperty Name="subject_id" ColumnName="subject_id" />
@@ -1850,7 +1931,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="teammembers">
-            <EntityTypeMapping TypeName="GetSkillsModel.teammember">
+            <EntityTypeMapping TypeName="GetSkillsModel.teammembers">
               <MappingFragment StoreEntitySet="teammembers">
                 <ScalarProperty Name="teammember_id" ColumnName="teammember_id" />
                 <ScalarProperty Name="fname" ColumnName="fname" />
@@ -1900,7 +1981,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tests">
-            <EntityTypeMapping TypeName="GetSkillsModel.test">
+            <EntityTypeMapping TypeName="GetSkillsModel.tests">
               <MappingFragment StoreEntitySet="tests">
                 <ScalarProperty Name="testid" ColumnName="testid" />
                 <ScalarProperty Name="currentid" ColumnName="currentid" />
@@ -1916,15 +1997,15 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="topics">
-            <EntityTypeMapping TypeName="GetSkillsModel.topic">
+            <EntityTypeMapping TypeName="GetSkillsModel.topics">
               <MappingFragment StoreEntitySet="topics">
                 <ScalarProperty Name="topic_id" ColumnName="topic_id" />
-                <ScalarProperty Name="topic1" ColumnName="topic" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
                 <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="uploadtests">
+          <EntitySetMapping Name="uploadtest">
             <EntityTypeMapping TypeName="GetSkillsModel.uploadtest">
               <MappingFragment StoreEntitySet="uploadtest">
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -1953,7 +2034,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="GetSkillsModel.user">
+            <EntityTypeMapping TypeName="GetSkillsModel.users">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
@@ -1974,10 +2055,10 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="videos">
-            <EntityTypeMapping TypeName="GetSkillsModel.video">
+            <EntityTypeMapping TypeName="GetSkillsModel.videos">
               <MappingFragment StoreEntitySet="videos">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="video1" ColumnName="video" />
+                <ScalarProperty Name="video" ColumnName="video" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="time" ColumnName="time" />
               </MappingFragment>
@@ -2030,6 +2111,18 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="visitor_enquiry">
+            <EntityTypeMapping TypeName="GetSkillsModel.visitor_enquiry">
+              <MappingFragment StoreEntitySet="visitor_enquiry">
+                <ScalarProperty Name="VisitorEnquiryID" ColumnName="VisitorEnquiryID" />
+                <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+                <ScalarProperty Name="visitor_mobile" ColumnName="visitor_mobile" />
+                <ScalarProperty Name="visitor_email" ColumnName="visitor_email" />
+                <ScalarProperty Name="visitor_enquiry1" ColumnName="visitor_enquiry" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2044,7 +2137,7 @@ FROM `users_permissions` AS `users_permissions`</DefiningQuery>
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />

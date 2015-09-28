@@ -15,7 +15,7 @@
         white-space: nowrap;
     }
 
-    .floating-box-course {
+    .floating-box-courses {
         float: left;
         width: 300px;
         height: 24px;
@@ -129,7 +129,7 @@
                 <fieldset style="border:1px solid silver; width:90%; height:auto; vertical-align:central;">
                     @for (int i = 0; i < Model.allCourseList.Count; i++)
                     {
-                        <div class="floating-box-course">
+                        <div class="floating-box-courses">
                             @Html.CheckBoxFor(m => Model.allCourseList[i].isSelected)
                             @Html.LabelFor(m => Model.allCourseList[i].isSelected, String.Format("{0}: {1}", Model.allCourseList[i].course_id, Model.allCourseList[i].course_name))
                             @Html.HiddenFor(m => Model.allCourseList[i].course_id)

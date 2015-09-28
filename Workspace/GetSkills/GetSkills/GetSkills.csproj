@@ -187,6 +187,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TeamProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,7 +199,7 @@
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryCheckBoxModel.cs" />
-    <Compile Include="Models\class.cs">
+    <Compile Include="Models\classes.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\class_students.cs">
@@ -213,10 +214,10 @@
     <Compile Include="Models\content.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\course.cs">
+    <Compile Include="Models\CourseCheckboxModel.cs" />
+    <Compile Include="Models\courses.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CourseCheckboxModel.cs" />
     <Compile Include="Models\courses_category.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -230,7 +231,7 @@
     <Compile Include="Models\demo_requests.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\email.cs">
+    <Compile Include="Models\emails.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\email_group_contacts.cs">
@@ -255,7 +256,7 @@
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\interview.cs">
+    <Compile Include="Models\interviews.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\interview_schedules.cs">
@@ -274,7 +275,7 @@
     <Compile Include="Models\mapping_subjects.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\newemailgroup.cs">
+    <Compile Include="Models\newemailgroups.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\order_days.cs">
@@ -286,15 +287,19 @@
     <Compile Include="Models\payment_log.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\permission.cs">
+    <Compile Include="Models\permissions.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\profile.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileIndexViewModel.cs" />
     <Compile Include="Models\question_answers.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Controllers\SuccessStoryController.cs" />
-    <Compile Include="Models\specialization.cs">
+    <Compile Include="Models\specializations.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StoryCategoryViewModel.cs" />
@@ -330,10 +335,10 @@
     <Compile Include="Models\teacher_subject_details.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\teammember.cs">
+    <Compile Include="Models\teammembers.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\test.cs">
+    <Compile Include="Models\tests.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\test_attempts.cs">
@@ -345,13 +350,13 @@
     <Compile Include="Models\test_questions.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\topic.cs">
+    <Compile Include="Models\topics.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\uploadtest.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\user.cs">
+    <Compile Include="Models\users.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\users_permissions.cs">
@@ -360,7 +365,10 @@
     <Compile Include="Models\user_emails.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\video.cs">
+    <Compile Include="Models\videos.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\visitor_enquiry.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,6 +394,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Albert_Einstein.jpg" />
+    <Content Include="images\annie.jpg" />
     <Content Include="images\ANZTB_Logo.jpg" />
     <Content Include="images\back-to-top.icon.png" />
     <Content Include="images\books_large-300x184.jpg" />
@@ -424,6 +433,7 @@
     <Content Include="images\Training-icon_droite.png" />
     <Content Include="images\training-image.jpg" />
     <Content Include="images\twitter2.ico" />
+    <Content Include="images\yaochen.jpg" />
     <Content Include="Models\GetSkills.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GetSkills.edmx</DependentUpon>
@@ -438,6 +448,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="images\.DS_Store" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <EntityDeploy Include="Models\GetSkills.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GetSkills.Designer.cs</LastGenOutput>
@@ -445,11 +460,6 @@
     <Content Include="Models\GetSkills.edmx.diagram">
       <DependentUpon>GetSkills.edmx</DependentUpon>
     </Content>
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\holder.min.js" />
@@ -473,7 +483,9 @@
     <Content Include="StaticPages\login.html" />
     <Content Include="StaticPages\login2.html" />
     <Content Include="StaticPages\successstory.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -515,6 +527,16 @@
     <Content Include="Views\Home\TeamProfile.cshtml" />
     <Content Include="Views\SuccessStory\Create.cshtml" />
     <Content Include="Views\Account\AdminLogin.cshtml" />
+    <Content Include="Views\boards\Create.cshtml" />
+    <Content Include="Views\boards\Delete.cshtml" />
+    <Content Include="Views\boards\Details.cshtml" />
+    <Content Include="Views\boards\Edit.cshtml" />
+    <Content Include="Views\boards\Index.cshtml" />
+    <Content Include="Views\TeamProfiles\Create.cshtml" />
+    <Content Include="Views\TeamProfiles\Delete.cshtml" />
+    <Content Include="Views\TeamProfiles\Details.cshtml" />
+    <Content Include="Views\TeamProfiles\Edit.cshtml" />
+    <Content Include="Views\TeamProfiles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -528,6 +550,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\ProfileIndexViewModel\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

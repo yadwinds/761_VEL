@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GetSkills.Models
 {
-    public class CourseViewModel : course
+    public class CourseViewModel : courses
     {
     }
 }

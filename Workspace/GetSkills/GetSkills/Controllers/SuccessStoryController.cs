@@ -57,7 +57,7 @@ namespace GetSkills.Controllers
                 st.successStory = rec;
 
                 st.categoryList = (from cat in db.success_story_category
-                                   join cam in db.categories on cat.category_id equals cam.category_id
+                                   join cam in db.category on cat.category_id equals cam.category_id
                                    where cat.success_story_id == rec.success_story_id && cat.status == 1
                                    select new StoryCategoryViewModel
                                    {
@@ -108,7 +108,7 @@ namespace GetSkills.Controllers
                 return HttpNotFound();
             }
             stViewModel.categoryList = (from cat in db.success_story_category
-                                        join cam in db.categories on cat.category_id equals cam.category_id
+                                        join cam in db.category on cat.category_id equals cam.category_id
                                         where cat.success_story_id == stViewModel.successStory.success_story_id && cat.status == 1
                                         select new StoryCategoryViewModel
                                         {
@@ -156,7 +156,7 @@ namespace GetSkills.Controllers
             editView.successStory = new success_story();
             editView.successStory.pic = "~/Images/no_image.jpg";
 
-            editView.allCategoryList = (from ca in db.categories
+            editView.allCategoryList = (from ca in db.category
                                         select new CategoryCheckBoxModel
                                         {
                                             category_id = ca.category_id,
@@ -267,7 +267,7 @@ namespace GetSkills.Controllers
             StoryIndexViewModel editView = new StoryIndexViewModel();
             editView.successStory = story;
 
-            editView.allCategoryList = (from ca in db.categories
+            editView.allCategoryList = (from ca in db.category
                                         from ssc in db.success_story_category
                                              .Where(ssc => ssc.category_id == ca.category_id
                                                   && ssc.success_story_id == story.success_story_id
@@ -406,7 +406,7 @@ namespace GetSkills.Controllers
             StoryIndexViewModel editView = new StoryIndexViewModel();
             editView.successStory = story;
 
-            editView.allCategoryList = (from ca in db.categories
+            editView.allCategoryList = (from ca in db.category
                                         from ssc in db.success_story_category
                                              .Where(ssc => ssc.category_id == ca.category_id
                                                   && ssc.success_story_id == story.success_story_id
