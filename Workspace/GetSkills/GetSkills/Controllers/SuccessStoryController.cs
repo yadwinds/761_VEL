@@ -102,6 +102,7 @@ namespace GetSkills.Controllers
                                              join scat in db.success_story_category on story.success_story_id equals scat.success_story_id
                                              where story.status == 1 && scat.category_id == categoryId && scat.status == 1
                                              select story).ToList();
+                showList.category = categoryId.ToString();
             }
             showList.allCategoryList = (from cat in db.category where cat.status == 1 orderby cat.category_id select cat).ToList();
             //return View(await (from story in db.success_story where story.status == 1 select story).ToListAsync());

@@ -9,18 +9,26 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#"><h4>All success stories</h4></a></li>
+                <li><a href="#"><h4>Success Story Category</h4></a></li>
+                @if (Model.category == null)
+                {
+                    <li class="active"><a href="/SuccessStory/List">All success stories</a></li>
+                }
+                else
+                {
+                    <li><a href="/SuccessStory/List">All success stories</a></li>
+                }
                 @foreach (var item in Model.allCategoryList)
                 {
-                    <li>@Html.ActionLink(item.category_name, "List", new { categoryId = item.category_id })</li>
+                    if (Model.category == item.category_id.ToString())
+                    {
+                        <li class="active">@Html.ActionLink(item.category_name, "List", new { categoryId = item.category_id })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink(item.category_name, "List", new { categoryId = item.category_id })</li>
+                    }
                 }
-
-                <!--
-                <li><a href="#">Kiwi</a></li>
-                <li><a href="#">Resident</a></li>
-                <li><a href="#">Student</a></li>
-                <li><a href="#">Immigrant</a></li>
-                    -->
             </ul>
         </div><!-- /.sidebar -->
         <div class="col-sm-9">
