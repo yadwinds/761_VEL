@@ -305,6 +305,7 @@
     <Compile Include="Models\StoryCategoryViewModel.cs" />
     <Compile Include="Models\StoryCourseViewModel.cs" />
     <Compile Include="Models\StoryIndexViewModel.cs" />
+    <Compile Include="Models\StoryListViewModel.cs" />
     <Compile Include="Models\student_courses.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>

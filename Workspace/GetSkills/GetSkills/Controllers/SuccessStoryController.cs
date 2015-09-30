@@ -89,9 +89,23 @@ namespace GetSkills.Controllers
         }
 
         // LIST: SuccessStory
-        public async Task<ActionResult> List()
+        public async Task<ActionResult> List(int? categoryId)
         {
-            return View(await db.success_story.ToListAsync());
+
+            StoryListViewModel showList = new StoryListViewModel();
+            if (categoryId == null) {
+                showList.successStoryList = (from story in db.success_story where story.status == 1 select story).ToList();
+            }
+            else
+            {
+                showList.successStoryList = (from story in db.success_story 
+                                             join scat in db.success_story_category on story.success_story_id equals scat.success_story_id
+                                             where story.status == 1 && scat.category_id == categoryId && scat.status == 1
+                                             select story).ToList();
+            }
+            showList.allCategoryList = (from cat in db.category where cat.status == 1 orderby cat.category_id select cat).ToList();
+            //return View(await (from story in db.success_story where story.status == 1 select story).ToListAsync());
+            return View(showList);
         }
 
         // GET: SuccessStory/Details/5

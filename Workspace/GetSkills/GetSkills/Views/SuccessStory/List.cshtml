@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GetSkills.Models.success_story>
+﻿@model GetSkills.Models.StoryListViewModel
 
 @{
     ViewBag.Title = "List";
@@ -9,15 +9,22 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#"><h4>Overview</h4></a></li>
+                <li class="active"><a href="#"><h4>All success stories</h4></a></li>
+                @foreach (var item in Model.allCategoryList)
+                {
+                    <li>@Html.ActionLink(item.category_name, "List", new { categoryId = item.category_id })</li>
+                }
+
+                <!--
                 <li><a href="#">Kiwi</a></li>
                 <li><a href="#">Resident</a></li>
                 <li><a href="#">Student</a></li>
                 <li><a href="#">Immigrant</a></li>
+                    -->
             </ul>
         </div><!-- /.sidebar -->
         <div class="col-sm-9">
-            @foreach (var item in Model)
+            @foreach (var item in Model.successStoryList)
             {
                 <!-- START THE FEATURETTES -->
                 <hr class="featurette-divider">

@@ -30,7 +30,7 @@ namespace GetSkills.Tests.Controllers
         {
             // Initialization
             AccountController ctl = new AccountController();
-            user model = new user();
+            users model = new users();
             string url = "http://getskills.azurewebsites.net/";
 
             // To test if it is null
