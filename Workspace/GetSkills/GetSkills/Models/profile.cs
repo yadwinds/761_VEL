@@ -11,14 +11,26 @@ namespace GetSkills.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class profile
     {
         public int profile_id { get; set; }
+
+        [StringLength(100)]
         public string pic { get; set; }
+
+        [StringLength(50)]
+        [Required(ErrorMessage = "Member name is Required")]
         public string name { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [StringLength(1000)]
         public string detail { get; set; }
+
+        [StringLength(100)]
         public string linked_url { get; set; }
+
         public int status { get; set; }
     }
 }
