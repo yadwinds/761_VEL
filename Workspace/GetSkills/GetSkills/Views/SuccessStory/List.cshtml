@@ -4,6 +4,7 @@
     ViewBag.Title = "List";
 }
 
+@Scripts.Render("~/bundles/SDK")
 
 <div class="container-fluid">
     <div class="row">
@@ -49,9 +50,16 @@
                              src="@Url.Content(item.pic)"
                              alt="Story teller's portrait img">
                     </div>
+                    @{var link = "//" + item.brief + "/Detail/" + item.success_story_id.ToString();}
+                    <div class="col-md-5">
+                        <div class="fb-share-button" data-href=@link data-layout="button">FB</div>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url=@link data-count="none">Tweet</a> 
+                        <div class="g-plus" data-action="share" data-href=@link data-annotation="none">Google+</div>
+                        <script type="IN/Share" data-href=@link></script>
+                    </div>
                 </div>
                 <!-- /END THE FEATURETTES -->
-            }
+                            }
         </div>
     </div><!-- /.row -->
 </div><!-- /.container -->

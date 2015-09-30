@@ -8,6 +8,8 @@
     ViewBag.Title = "Details";
 }
 
+@Scripts.Render("~/bundles/SDK")
+
 <div class="container-fluid">
     <div class="container">
         <hr class="featurette-divider">
@@ -17,6 +19,13 @@
                 <img class="featurette-image img-responsive center-block"
                      src="@Url.Content(Model.successStory.pic)"
                      alt="Story teller's portrait img">
+            </div>           
+            <div class="col-md-5">
+                <div class="fb-share-button" data-href=@Url data-layout="button">FB</div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url=@Url data-count="none">Tweet</a>
+                <div class="g-plus" data-action="share" data-href=@Url data-annotation="none">Google+</div>
+                <script type="IN/Share" data-href=@Url>
+                </script>
             </div>
             <div class="col-sm-7">
                 <h1>@Html.DisplayFor(modelItem => Model.successStory.brief)</h1>

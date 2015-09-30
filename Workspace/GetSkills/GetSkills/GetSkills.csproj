@@ -463,6 +463,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\facebookSDK.js" />
     <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
     <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
@@ -474,9 +475,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\google+SDK.js" />
+    <Content Include="Scripts\linkedinSDK.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\twitterSDK.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="StaticPages\footer.html" />
     <Content Include="StaticPages\header.html" />
