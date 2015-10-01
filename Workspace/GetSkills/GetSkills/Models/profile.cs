@@ -21,14 +21,16 @@ namespace GetSkills.Models
         public string pic { get; set; }
 
         [StringLength(50)]
-        [Required(ErrorMessage = "Member name is Required")]
+        [Required(ErrorMessage = "Member name is required")]
         public string name { get; set; }
 
         [DataType(DataType.MultilineText)]
         [StringLength(1000)]
+        [Required(ErrorMessage = "Detail is required")]
         public string detail { get; set; }
 
-        [StringLength(100)]
+        [StringLength(256)]
+        [Required(ErrorMessage = "Linkedin profile is required")]
         public string linked_url { get; set; }
 
         public int status { get; set; }
