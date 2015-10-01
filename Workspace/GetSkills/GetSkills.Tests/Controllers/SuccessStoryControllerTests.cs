@@ -80,7 +80,7 @@ namespace GetSkills.Models.Tests
             SuccessStoryController ctl = new SuccessStoryController();
 
             // To test if it is null
-            var result = await ctl.List("");
+            var result = await ctl.List(null);
             Assert.IsNotNull(result);
         }
 
