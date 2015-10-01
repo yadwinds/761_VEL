@@ -83,7 +83,9 @@
                     @Html.DisplayFor(modelItem => item.teamProfile.detail)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.teamProfile.linked_url)
+                    <a href=@item.teamProfile.linked_url class="icon-button linkedin">
+                        <i class="fa fa-linkedin"></i><span></span>
+                    </a>
                 </td>             
                 <td style="white-space:nowrap">
                     @Html.ActionLink(" Edit", "Edit", new { id = item.teamProfile.profile_id }, new { @class = "fa fa-pencil-square-o" }) <br>
