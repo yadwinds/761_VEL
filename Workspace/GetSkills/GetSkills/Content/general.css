@@ -34,6 +34,10 @@ footer {
     margin-right: auto;
 }
 
+.marketing a {
+    color: inherit;
+}
+
 .site-map {
     margin-top: 20px;
     margin-bottom: 40px;

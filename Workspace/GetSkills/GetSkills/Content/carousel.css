@@ -36,7 +36,7 @@
 
 /* Carousel base class */
 .carousel {
-  height: 500px;
+  height: 240px;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -46,7 +46,7 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+  height: 240px;
   background-color: #777;
 }
 .carousel-inner > .item > img {
@@ -118,6 +118,26 @@
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
+
+  /* Carousel base class */
+    .carousel {
+      height: 500px;
+      margin-bottom: 60px;
+    }
+
+    /* Declare heights because of positioning of img element */
+    .carousel .item {
+      height: 500px;
+      background-color: #777;
+    }
+    .carousel-inner > .item > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: auto;
+      height: auto;
+    }
+
 
   /* Bump up size of carousel content */
   .carousel-caption p {
