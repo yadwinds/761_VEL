@@ -188,6 +188,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TeamProfilesController.cs" />
+    <Compile Include="Controllers\TestAutomationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -431,6 +432,11 @@
     <Content Include="images\teacher.png" />
     <Content Include="images\temp-books-place-holder-300x184.jpg" />
     <Content Include="images\test-automation-header.jpg" />
+    <Content Include="images\testautomation\BambooServer.png" />
+    <Content Include="images\testautomation\BitBucket.png" />
+    <Content Include="images\testautomation\CodeceptionResults.png" />
+    <Content Include="images\testautomation\TestExample.png" />
+    <Content Include="images\testautomation\Trello.png" />
     <Content Include="images\Training-icon_droite.png" />
     <Content Include="images\training-image.jpg" />
     <Content Include="images\twitter2.ico" />
@@ -542,6 +548,7 @@
     <Content Include="Views\TeamProfiles\Details.cshtml" />
     <Content Include="Views\TeamProfiles\Edit.cshtml" />
     <Content Include="Views\TeamProfiles\Index.cshtml" />
+    <Content Include="Views\TestAutomation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
