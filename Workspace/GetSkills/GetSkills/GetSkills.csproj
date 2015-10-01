@@ -407,6 +407,7 @@
     <Content Include="images\justin-bieber.jpg" />
     <Content Include="images\Ken_Stabler.jpg" />
     <Content Include="images\Profile_20151001203728372_1626040.jpg" />
+    <Content Include="images\Profile_20151001214302866_23bd9e8.jpg" />
     <Content Include="images\Scarlett-Johansson.jpg" />
     <Content Include="images\google-plus.png" />
     <Content Include="images\icons.png" />
@@ -546,7 +547,7 @@
     <Content Include="Views\boards\Index.cshtml" />
     <Content Include="Views\TeamProfiles\Create.cshtml" />
     <Content Include="Views\TeamProfiles\Delete.cshtml" />
-    <Content Include="Views\TeamProfiles\Details.cshtml" />
+    <Content Include="Views\TeamProfiles\List.cshtml" />
     <Content Include="Views\TeamProfiles\Edit.cshtml" />
     <Content Include="Views\TeamProfiles\Index.cshtml" />
     <Content Include="Views\TestAutomation\Index.cshtml" />

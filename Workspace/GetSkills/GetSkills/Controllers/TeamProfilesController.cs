@@ -30,6 +30,20 @@ namespace GetSkills.Controllers
             return View(viewList.ToList());
         }
 
+        // GET: TeamProfiles
+        public ActionResult List()
+        {
+            List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
+            List<ProfileIndexViewModel> viewList = new List<ProfileIndexViewModel>();
+            foreach (var pro in profileList)
+            {
+                ProfileIndexViewModel tp = new ProfileIndexViewModel();
+                tp.teamProfile = pro;
+                viewList.Add(tp);
+            }
+            return View(viewList.ToList());
+        }
+
         // GET: TeamProfiles/Details/5
         public ActionResult Details(int? id)
         {
