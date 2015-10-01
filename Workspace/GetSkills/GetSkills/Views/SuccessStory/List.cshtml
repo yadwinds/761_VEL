@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-sidebar">
-                <li><a href="#"><h4>Success Story Category</h4></a></li>
+                <li><h4>Success Story Category</h4></li>
                 @if (Model.category == null)
                 {
                     <li class="active"><a href="/SuccessStory/List">All success stories</a></li>
@@ -39,23 +39,23 @@
                 <hr class="featurette-divider">
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <!--h1>@Html.DisplayFor(modelItem => item.brief)</!--h1>-->
-                        <h1>@Html.ActionLink(item.brief, "Detail", new { id = item.success_story_id })</h1>
+                        <!--h1>@Html.DisplayFor(modelItem => item.user_name)</!--h1>-->
+                        <h1>@Html.ActionLink(item.user_name, "Detail", new { id = item.success_story_id })</h1>
                         <p class="lead featurette-description">
-                            @Html.DisplayFor(modelItem => item.detail_description)
+                            @Html.DisplayFor(modelItem => item.brief)
                         </p>
+
+                        @{var link = "//" + item.brief + "/Detail/" + item.success_story_id.ToString();}
+                        <div class="fb-share-button" data-href=@link data-layout="button">FB</div>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url=@link data-count="none">Tweet</a>
+                        <div class="g-plus" data-action="share" data-href=@link data-annotation="none">Google+</div>
+                        <script type="IN/Share" data-href=@link>
+                        </script>
                     </div>
                     <div class="col-md-5">
                         <img class="featurette-image img-responsive center-block"
                              src="@Url.Content(item.pic)"
                              alt="Story teller's portrait img">
-                    </div>
-                    @{var link = "//" + item.brief + "/Detail/" + item.success_story_id.ToString();}
-                    <div class="col-md-5">
-                        <div class="fb-share-button" data-href=@link data-layout="button">FB</div>
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-url=@link data-count="none">Tweet</a> 
-                        <div class="g-plus" data-action="share" data-href=@link data-annotation="none">Google+</div>
-                        <script type="IN/Share" data-href=@link></script>
                     </div>
                 </div>
                 <!-- /END THE FEATURETTES -->
