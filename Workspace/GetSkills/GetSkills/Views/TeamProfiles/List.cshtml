@@ -53,21 +53,19 @@
 
     @foreach (var item in Model)
     {
-        <div class="col-sm-4">
-            <div style="display:inline">
-                @if (item.teamProfile.pic != "")
-                {
-                    <img class="img-circle" src="@Url.Content(item.teamProfile.pic)" alt="Generic placeholder image" width="200" height="200" />
-                }
+        <div style="display:inline">
+            @if (item.teamProfile.pic != "")
+            {
+                <img class="img-circle" src="@Url.Content(item.teamProfile.pic)" alt="Generic placeholder image" width="200" height="200" />
+            }
 
-                <h4 class="control-label">@Html.DisplayFor(modelItem => item.teamProfile.name)</h4>
+            <h4 class="control-label">@Html.DisplayFor(modelItem => item.teamProfile.name)</h4>
 
-                <a href=@item.teamProfile.linked_url class="icon-button linkedin">
-                    <i class="fa fa-linkedin"></i><span></span>
-                </a>
+            <a href=@item.teamProfile.linked_url class="icon-button linkedin">
+                <i class="fa fa-linkedin"></i><span></span>
+            </a>
 
-                <p class="justify">@Html.DisplayFor(modelItem => item.teamProfile.detail)</p>
-            </div>
+            <p class="justify">@Html.DisplayFor(modelItem => item.teamProfile.detail)</p>
         </div>
     }
 </div>
