@@ -32,7 +32,7 @@ namespace GetSkills.Models
         [Required(ErrorMessage = "Detail is required")]
         public string detail { get; set; }
 
-        [StringLength(256)]
+        [StringLength(512)]
         [Required(ErrorMessage = "Linkedin profile is required")]
         public string linked_url { get; set; }
 

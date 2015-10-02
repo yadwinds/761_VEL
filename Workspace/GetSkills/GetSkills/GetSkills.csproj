@@ -540,11 +540,6 @@
     <Content Include="Views\Home\TeamProfile.cshtml" />
     <Content Include="Views\SuccessStory\Create.cshtml" />
     <Content Include="Views\Account\AdminLogin.cshtml" />
-    <Content Include="Views\boards\Create.cshtml" />
-    <Content Include="Views\boards\Delete.cshtml" />
-    <Content Include="Views\boards\Details.cshtml" />
-    <Content Include="Views\boards\Edit.cshtml" />
-    <Content Include="Views\boards\Index.cshtml" />
     <Content Include="Views\TeamProfiles\Create.cshtml" />
     <Content Include="Views\TeamProfiles\Delete.cshtml" />
     <Content Include="Views\TeamProfiles\List.cshtml" />
