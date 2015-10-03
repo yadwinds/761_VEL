@@ -50,5 +50,53 @@ namespace GetSkills.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+        /*
+          public ActionResult TeamProfile()
+         {
+             return View();
+         }
+
+         public ActionResult FAQ()
+         {
+             return View();
+         }
+        */
+        [TestMethod]
+        public void TeamProfile()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.TeamProfile() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+        /*
+      public ActionResult TeamProfile()
+     {
+         return View();
+     }
+
+     public ActionResult FAQ()
+     {
+         return View();
+     }
+    */
+
+        [TestMethod]
+        public void FAQ()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.FAQ() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
     }
 }
