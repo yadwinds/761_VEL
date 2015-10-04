@@ -9,7 +9,7 @@ GetSkills
 
 `GetSkills`
 
-	`App_Data`
+`App_Data`
 	The data which will be run by this app should be  saved here. Normally, it's database.
   
   	`App_Start` 
@@ -141,4 +141,13 @@ NUnit Test Project Organization
 	`App.config` 
 	The configuration file for NUnit test.
 	
+	
+## Compile
 
+1. Download or clone the whole project from github.
+2. Open 'Project Root'\Workspace\GetSkills\GetSkills.sln in Visual Studio 2015
+3. Complie and Run to launch the project
+
+## Run
+We have launched the project and publised it on a remote server, to check the website, please type 
+http://getskills.azurewebsites.net to find the main page.
