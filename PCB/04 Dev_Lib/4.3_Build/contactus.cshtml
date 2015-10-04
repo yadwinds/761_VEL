@@ -1,0 +1,297 @@
+﻿
+/*
+* This page is used to contact CEO of getskills. As the visitor comes to getskills
+* website and wants to know more about some features then the visitor can enter his
+* contact details like Name, Email, Message and click Send button. The system will send an email to CEO.
+* Further the visitor will receive the requested information through email.
+* Author: Vasanth
+*/
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <title>Getskills</title>
+    <link rel="stylesheet" href="css/main1.css">
+    <link rel="stylesheet" href="css/find-home.css">
+</head>
+<body>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37160731-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+    <div id="header" class="blackbg-grid" style="height:320px;">
+        <div class="header-aux wrap-960 clearfix">
+            <a href="index.php">
+                <div class="zerply-logo ht"></div>
+            </a>
+            <!--<div class="user-options br-5"> <a href="site_login.php" class="butt sign-in">Login</a>
+              <div class="butt butt-orange sign-up " style="float:left; margin-left:10px; margin-bottom:7px;"><a href="register.php" id="sign-up" mp-type="Orange header button" style="text-decoration:none">Sign Up</a> </div>
+            </div>-->
+        </div>
+        <div class="flexslider">
+            <ul id="slides" class="clearfix nl slides">
+                <!--Start Slides-->
+                <li id="faces-slide" class="slide">
+                    <!--Start faces slide-->
+                    <h1 class="wrap-960"> Get skills from IT industry experts using <a href="register.php" id="get-started" mp-type="Get Started link">"GetSkills"</a> unique Live interaction and training platform. </h1>
+                </li>
+                <!--End Faces slide-->
+                <div class="clearfix"></div>
+                </li>
+                <!--End Signup slide-->
+            </ul>
+            <!--End slides -->
+        </div>
+        <!--End Flexislider-->
+    </div>
+    <Script language='JavaScript'>
+function changePage()
+	{
+		if (window != top) top.location.href = location.href;
+	}
+	function numbersonly(myfield, e, dec)
+{
+var key;
+var keychar;
+if (window.event)
+   key = window.event.keyCode;
+else if (e)
+   key = e.which;
+else
+   return true;
+keychar = String.fromCharCode(key);
+// control keys
+if ((key==null) || (key==0) || (key==8) ||
+    (key==9) || (key==13) || (key==27) )
+   return true;
+
+// numbers
+else if ((("0123456789").indexOf(keychar) > -1))
+   return true;
+// decimal point jump
+else if (dec && (keychar == "."))
+   {
+   myfield.form.elements[dec].focus();
+   return false;
+   }
+else
+   return false;
+}
+    </Script>
+    <script type="text/javascript">
+// Registration details
+function formValidator(){
+	// Make quick references to our fields
+	var username = document.getElementById('username');
+	var fname = document.getElementById('fname');
+	var lname = document.getElementById('lname');
+	var pno = document.getElementById('pno');
+	var password = document.getElementById('password');
+	var cpassword = document.getElementById('cpassword');
+	// Check each input in the order that it appears in the form!
+	if(emailValidator('username', "Please enter a valid email address")){
+	if(isAlphabet('fname', "Please enter only letters for your name")){
+	if(isAlphabet('lname', "Please enter only letters for your name")){
+	if(notEmpty('pno', "Please enter only letters for your name")){
+
+	if(notEmpty('password', "Please enter only letters for your name")){
+	if(notEmpty('cpassword', "Please enter only letters for your name")){
+	if(confirmpass('password','cpassword', "Please enter Same Password")){
+							return true;
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+		return false;
+}
+function notEmpty(elem){
+
+	if(document.getElementById(elem).value.length == 0){
+		document.getElementById('error'+elem).innerHTML = 'You can\'t leave this field empty ';
+		document.getElementById(elem).focus(); // set the focus to this input
+		return false;
+	}
+	else
+	{
+	document.getElementById('error'+elem).innerHTML = '';
+	return true;
+	}
+}
+function notEmptyothers(elem){
+	if(document.getElementById(elem).value== "others"){
+	if(document.getElementById('others').value==""){
+		document.getElementById('errorothers').innerHTML = 'You can\'t leave this field empty ';
+		document.getElementById('others').focus(); // set the focus to this input
+		return false;
+		}
+		else{ document.getElementById('errorothers').innerHTML = ''; return true; }
+	}
+	else { return true; }
+}
+function confirmemail(elem,elem1){
+
+	if(document.getElementById(elem).value != document.getElementById(elem1).value){
+		document.getElementById('error'+elem1).innerHTML = 'Please Enter Same Email';
+		document.getElementById(elem1).focus(); // set the focus to this input
+		return false;
+	}
+	else
+	{
+	document.getElementById('error'+elem).innerHTML = '';
+	return true;
+	}
+}
+function confirmpass(elem,elem1){
+
+	if(document.getElementById(elem).value != document.getElementById(elem1).value){
+		document.getElementById('error'+elem1).innerHTML = 'Please Enter Same Password';
+		document.getElementById(elem1).focus(); // set the focus to this input
+		return false;
+	}
+	else
+	{
+	document.getElementById('error'+elem).innerHTML = '';
+	return true;
+	}
+}
+function emailValidator(elem, helperMsg){
+	var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+	if(notEmpty(elem))
+	{
+	if(document.getElementById(elem).value.match(emailExp)){
+		document.getElementById('error'+elem).innerHTML = '';
+		return true;
+	}else{
+		document.getElementById('error'+elem).innerHTML = helperMsg;
+		document.getElementById(elem).focus();
+		return false;
+	}
+	}
+}
+function isAlphabet(elem, helperMsg){
+	var alphaExp = /^[a-zA-Z]+$/;
+
+	if(notEmpty(elem))
+	{
+
+	if(document.getElementById(elem).value.match(alphaExp))
+	{
+		document.getElementById('error'+elem).innerHTML = '';
+		return true;
+	}else{
+		document.getElementById('error'+elem).innerHTML = helperMsg;
+		document.getElementById(elem).focus();
+		return false;
+	}
+	}
+}
+    </script>
+    <!--End Header-->
+    <div id="zerply-find">
+        <!--Start BG-->
+        <div class="three-reasons wrap-960"> </div>
+        <div class="wrap-960">
+            <div class="moduleCont">
+                <div class="txtLL">
+                    <span class="find">
+                        <h1 style="color:#990000;">Contact Form</h1>
+                    </span>
+                </div>
+                <div id="FindACenter_Panel1" style="background-color:#efefef; padding:10px; width:500px; margin-bottom:50px;">
+                    <div class="">
+                        <form action="" class="jNice" id="form1" name="form1" method="post" onsubmit='return formValidator()'>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td height="40" colspan="2" align="center" valign="middle">
+                                        <font color="#FF0000">
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" height="40">Email Address</td>
+                                    <td width="75%"><input name="username" id="username" required type="text" class="inputtext" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><span class="error" id="errorusername"></span></td>
+                                </tr>
+                                <tr>
+                                    <td height="40">First Name</td>
+                                    <td><input name="fname" id="fname" maxlength="12" required type="text" class="inputtext" onBlur="isAlphabet('fname','Please Enter First Name')" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><span class="error" id="errorfname"></span></td>
+                                </tr>
+                                <tr>
+                                    <td height="40">Last Name</td>
+                                    <td><input name="lname" id="lname" required maxlength="12" type="text" class="inputtext" onBlur="isAlphabet('lname','Please Enter Last Name')" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><span class="error" id="errorlname"></span></td>
+                                </tr>
+                                <tr>
+                                    <td height="40">&nbsp;</td>
+                                    <td width="300"><img id="captcha" src="securimage/securimage_show.php" height="50" width="200" alt="CAPTCHA Image" /> <a href="#" onClick="document.getElementById('captcha').src = 'securimage/securimage_show.php?' + Math.random(); return false" class=""><img src="images/refresh.png" width="32" height="32" alt="refresh" /></a></td>
+                                    <td height="40" align="left">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td height="40">Enter Code</td>
+                                    <td width="300"><input type="text" name="captcha_code" required class="textbox" size="10" maxlength="6" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <td height="40">Message</td>
+                                    <td><textarea name="message" id="message" required></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><input name="submit" value="Send" type="submit" class="butt butt-orange sign-up "></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <!-- <a id="FindACenter_lnkInternational"></a>-->
+                <!-- FindACenter Area End-->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--Finish bg-->
+    <div id="footer">
+        <div class="wrap-960 content">
+
+            <div class="footer-left ooc-sprite">
+                <a href="index.php">Home</a>   |   <a href="aboutus.php">About</a>    |    <a href="our_team.php">Team Profile</a>  |    <a href="partners.php">Partners</a> |    <a href="clientregistration.php">Register as  Client</a> | <a href="client_faq.php">Client Faq</a> | <a href="faq.php"> Faq</a> |  <a href="contactus.php">Contact Us</a>
+                <div style="padding-left: 210px;float:right;">
+                    <span class="icon1-footer"><img src="images/secure-icon"></span>
+                    <span class="icon"><a href="http://www.facebook.com/pages/Getskills/129101750605188?ref=hl"><img src="images/facebook-icon.png"></a></span>
+                    <span class="icon"><a href="https://twitter.com/beskillmentor"><img src="images/twitter-icon.png"></a></span>
+                    <span class="icon"><a href="https://www.linkedin.com/company/getskills-nz?goback=.fcs_GLHD_getskills_false_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2&trk=top_nav_home"><img src="images/Linkedin.png" width="30" height="30"></a></span>
+                    <span class="icon"><a href="https://www.youtube.com/GetSkillsChannel"><img src="images/youtube_logo.png" width="40"></a></span>
+                    <span class="icon"><a href="http://pinterest.com/getskillsnz/"><img src="images/pinterest_logo.png" width="30" height="30"></a></span>
+
+                    <br>
+                </div>
+                <span class="footer-copy"><br />Copyright &copy; 2012 Getskills. All rights reserved.</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
