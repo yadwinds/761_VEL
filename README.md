@@ -1,10 +1,11 @@
 # 761_VEL
 The project for VEL@SE761
 
-`Project Name`: 
+## Project Name
+
 GetSkills
 
-`Project Organization`:
+## Project Organization
 
 `GetSkills`
 
@@ -116,7 +117,7 @@ GetSkills
   	`Readme.html` 
   	The explaination of the project organization.
 
-`GetSkills.Tests` 
+`GetSkills.Tests`
 NUnit Test Project Organization
 
 	`Controllers` 
@@ -139,3 +140,5 @@ NUnit Test Project Organization
 				
 	`App.config` 
 	The configuration file for NUnit test.
+	
+
