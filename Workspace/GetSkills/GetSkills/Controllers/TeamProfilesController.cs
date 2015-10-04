@@ -17,6 +17,7 @@ namespace GetSkills.Controllers
         private GetSkillsEntities db = new GetSkillsEntities();
 
         // GET: TeamProfiles
+        // Team profile index page for administrators
         public ActionResult Index()
         {
             List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
@@ -31,6 +32,7 @@ namespace GetSkills.Controllers
         }
 
         // GET: TeamProfiles
+        // Team profile page for clients
         public ActionResult List()
         {
             List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
@@ -60,6 +62,7 @@ namespace GetSkills.Controllers
         }
 
         // GET: TeamProfiles/Create
+        // Team profile create page for administrators
         public ActionResult Create()
         {
             ProfileIndexViewModel editView = new ProfileIndexViewModel();
@@ -71,6 +74,7 @@ namespace GetSkills.Controllers
         }
 
         // POST: TeamProfiles/Create
+        // Team profile create page for administrators
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(ProfileIndexViewModel editView)
@@ -114,6 +118,7 @@ namespace GetSkills.Controllers
         }
 
         // GET: TeamProfiles/Edit/5
+        // Team profile edit page for administrators
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -137,6 +142,7 @@ namespace GetSkills.Controllers
         }
 
         // POST: TeamProfiles/Edit/5
+        // Team profile edit page for administrators
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(ProfileIndexViewModel editView)
@@ -178,6 +184,7 @@ namespace GetSkills.Controllers
         }
 
         // GET: TeamProfiles/Delete/5
+        // Team profile delete page for administrators
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -201,6 +208,7 @@ namespace GetSkills.Controllers
         }
 
         // POST: TeamProfiles/Delete/5
+        // Team profile delete page for administrators
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
