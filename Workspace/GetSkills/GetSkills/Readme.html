@@ -51,6 +51,12 @@
             <li>
                 <h3>Controllers</h3>
                 <label>Controller classes which response to clients should be saved here.</label>
+                <ul>
+                    <li>
+                        <h4>SuccessStoryController.cs</h4>
+                        <label>The control class of all the pages of success story.</label>
+                    </li>
+                <ul>
             </li>
             <li>
                 <h3>fonts</h3>
@@ -72,7 +78,29 @@
                         <h4>Repository.cs</h4>
                         <label>This file defines a generic class to access to table classes.</label>
                     </li>
-                </ul>
+
+                    <li>
+                        <h4>CategoryCheckBoxModel.cs</h4>
+                        <label>Data model class for the view of success story, show the check list of all success story category.</label>
+                    </li>
+                    <li>
+                        <h4>CourseCheckboxModel.cs</h4>
+                        <label>Data model class for the view of success story, show the check list of course.</label>
+                    </li>
+                    <li>
+                        <h4>StoryCategoryViewModel.cs</h4>
+                        <label>Data model class for the view of success story, show the category list of one success story.</label>
+                    </li>
+                    <li>
+                        <h4>StoryCourseViewModel.cs</h4>
+                        <label>Data model class for the view of success story, show the course list of one success story.</label>
+                    </li>
+                    <li>
+                        <h4>success_story.cs</h4>
+                        <label>Data model class for the table (success_story) with additional setting for data validation.</label>
+                    </li>
+				
+				</ul>
             </li>
             <li>
                 <h3>Scripts</h3>
@@ -85,6 +113,66 @@
             <li>
                 <h3>Views</h3>
                 <label>Dynamic htmls, which also known as views, should be saved here</label>
+				<ul>
+					<li>
+						<h4>SuccessStory</h4>
+						<label>All the pages of success story is saved in this folder.</label>
+						<ul>
+							<li>
+								<h5>Create.cshtml</h5>
+								<label>Add page of the success story admin function.</label>
+							</li>
+							<li>
+								<h5>Delete.cshtml</h5>
+								<label>Delete page of the success story admin function.</label>
+							</li>
+							<li>
+								<h5>Detail.cshtml</h5>
+								<label>Detail page of the success story for client view.</label>
+							</li>
+							<li>
+								<h5>Edit.cshtml</h5>
+								<label>Edit page of the success story admin function.</label>
+							</li>
+							<li>
+								<h5>Index.cshtml</h5>
+								<label>List page of the success story admin function.</label>
+							</li>
+							<li>
+								<h5>List.cshtml</h5>
+								<label>List page of the success story for client view.</label>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<h4>TeamProfile</h4>
+						<label>All the pages of team profile is saved in this folder.</label>
+						<ul>
+							<li>
+								<h5>Create.cshtml</h5>
+								<label>Add page of the team profile admin function.</label>
+							</li>
+							<li>
+								<h5>Delete.cshtml</h5>
+								<label>Delete page of the team profile admin function.</label>
+							</li>
+							<li>
+								<h5>Edit.cshtml</h5>
+								<label>Edit page of the success team profile function.</label>
+							</li>
+							<li>
+								<h5>Index.cshtml</h5>
+								<label>List page of the team profile admin function.</label>
+							</li>
+							<li>
+								<h5>List.cshtml</h5>
+								<label>List page of the team profile for client view.</label>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
             </li>
             <li>
                 <h3>Global.asax</h3>
@@ -100,5 +188,46 @@
             </li>
         </ul>
     </div>
+
+    <div id="header">
+        <h1>GetSkills.Tests</h1>
+        <p>NUnit Test Project Organization</p>
+    </div>
+    <div>    
+        <ul>
+            <li>
+                <h3>Controllers</h3>
+                <label>Sub folder for NUnit test of controller classes.</label>
+				<ul>
+					<li>
+						<h4>AccountControllerTest.cs</h3>
+						<label>NUnit test class.</label>
+					</li>
+					<li>
+						<h4>HomeControllerTest.cs</h3>
+						<label>NUnit test class.</label>
+					</li>
+					<li>
+						<h4>ManageControllerTest.cs</h3>
+						<label>NUnit test class.</label>
+					</li>
+
+					<li>
+						<h4>SuccessStoryControllerTests.cs</h3>
+						<label>NUnit test class for the controller of success story pages.</label>
+					</li>
+					<li>
+						<h4>TeamProfilesControllersTest.cs</h3>
+						<label>NUnit test class for the controller of team profile pages.</label>
+					</li>
+		        </ul>
+			</li>
+            <li>
+                <h3>App.config</h3>
+                <label>The configuration file for NUnit test.</label>
+            </li>
+        </ul>
+    </div>
+
 </body>
 </html>
