@@ -13,6 +13,9 @@ namespace GetSkills.Models.Tests
     [TestClass()]
     public class SuccessStoryControllerTests
     {
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Index_Test01()
         {
@@ -28,6 +31,9 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual(1, modelList.Count());
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Index_Test02()
         {
@@ -43,6 +49,9 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual(1, modelList.Count());
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Index_Test03()
         {
@@ -58,6 +67,9 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual(1, modelList.Count());
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Index_Test04()
         {
@@ -73,6 +85,9 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual(1, modelList.Count());
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_List_Test()
         {
@@ -84,6 +99,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(result);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test01()
         {
@@ -115,6 +133,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test03()
         {
@@ -130,6 +151,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test04()
         {
@@ -145,6 +169,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test05()
         {
@@ -160,6 +187,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test06()
         {
@@ -175,6 +205,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test07()
         {
@@ -190,6 +223,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test08()
         {
@@ -204,6 +240,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test09()
         {
@@ -218,6 +257,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Detail_Test10()
         {
@@ -232,6 +274,9 @@ namespace GetSkills.Models.Tests
             // Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public void SuccessStoryController_Create_Test01()
         {
@@ -247,6 +292,9 @@ namespace GetSkills.Models.Tests
             Assert.AreEqual("~/Images/no_image.jpg", model.successStory.pic);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public void SuccessStoryController_Create_Test02()
         {
@@ -259,6 +307,9 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(result);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test01()
         {
@@ -274,6 +325,9 @@ namespace GetSkills.Models.Tests
             // Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test02()
         {
@@ -289,6 +343,9 @@ namespace GetSkills.Models.Tests
             // Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test03()
         {
@@ -304,6 +361,9 @@ namespace GetSkills.Models.Tests
             // Assert.IsNotNull(model);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test04()
         {
@@ -318,6 +378,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test05()
         {
@@ -332,6 +395,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test06()
         {
@@ -346,6 +412,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test07()
         {
@@ -360,6 +429,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test08()
         {
@@ -374,6 +446,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test09()
         {
@@ -388,6 +463,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public async Task SuccessStoryController_Edit_Test10()
         {
@@ -402,6 +480,9 @@ namespace GetSkills.Models.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
         [TestMethod()]
         public void SuccessStoryController_Edit_Test11()
         {
@@ -414,5 +495,32 @@ namespace GetSkills.Models.Tests
             Assert.IsNotNull(result);
         }
 
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
+        [TestMethod()]
+        public void SuccessStoryController_Delete_Test()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = ctl.Delete(131);
+            Assert.IsNotNull(result);
+        }
+
+        /// <summary>
+        /// Case of normal record
+        /// </summary>
+        [TestMethod()]
+        public void SuccessStoryController_DeleteConfirmed_Test()
+        {
+            // Initialization
+            SuccessStoryController ctl = new SuccessStoryController();
+
+            // To test if it is null
+            var result = ctl.DeleteConfirmed(131);
+            Assert.IsNotNull(result);
+        }
     }
 }
