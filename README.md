@@ -1,13 +1,12 @@
 # 761_VEL
 The project for VEL@SE761
 
-Project Name: GetSkills
+`Project Name`: 
+GetSkills
 
-Project Organization:
-
+`Project Organization`:
 `GetSkills`
-
-	`App_Data` 
+	`App_Data`
 	The data which will be run by this app should be  saved here. Normally, it's database.
   
   	`App_Start` 
