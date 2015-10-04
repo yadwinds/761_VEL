@@ -21,11 +21,10 @@
                      alt="Story teller's portrait img">
             </div>           
             <div class="col-md-5">
-                <div class="fb-share-button" data-href=@Url data-layout="button">FB</div>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url=@Url data-count="none">Tweet</a>
-                <div class="g-plus" data-action="share" data-href=@Url data-annotation="none">Google+</div>
-                <script type="IN/Share" data-href=@Url>
-                </script>
+                <span class='st_facebook_large' st_url=@Url displayText='Facebook'></span>
+                <span class='st_twitter_large' st_url=@Url displayText='Tweet'></span>
+                <span class='st_linkedin_large' st_url=@Url displayText='LinkedIn'></span>
+                <span class='st_googleplus_large' st_url=@Url displayText='Google+'></span>
             </div>
             <div class="col-sm-7">
                 <h1>@Html.DisplayFor(modelItem => Model.successStory.brief)</h1>

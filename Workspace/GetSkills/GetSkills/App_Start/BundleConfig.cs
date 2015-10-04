@@ -28,7 +28,8 @@ namespace GetSkills
                       "~/Scripts/facebookSDK.js",
                       "~/Scripts/twitterSDK.js",
                       "~/Scripts/google+SDK.js",
-                      "~/Scripts/linkedinSDK.js"));
+                      "~/Scripts/linkedinSDK.js",
+                      "~/Scripts/shareThis.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

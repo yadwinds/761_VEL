@@ -46,11 +46,10 @@
                         </p>
 
                         @{var link = "//" + item.brief + "/Detail/" + item.success_story_id.ToString();}
-                        <div class="fb-share-button" data-href=@link data-layout="button">FB</div>
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-url=@link data-count="none">Tweet</a>
-                        <div class="g-plus" data-action="share" data-href=@link data-annotation="none">Google+</div>
-                        <script type="IN/Share" data-href=@link>
-                        </script>
+                        <span class='st_facebook_large' st_url=@link displayText='Facebook'></span>
+                        <span class='st_twitter_large' st_url=@link displayText='Tweet'></span>
+                        <span class='st_linkedin_large' st_url=@link displayText='LinkedIn'></span>
+                        <span class='st_googleplus_large' st_url=@link displayText='Google+'></span>
                     </div>
                     <div class="col-md-5">
                         <img class="featurette-image img-responsive center-block"
