@@ -249,5 +249,39 @@ namespace GetSkills.Tests.Controllers
             var result = ctl.ExternalLoginConfirmation(model,url);
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void AccountController_SendCode_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+            SendCodeViewModel model = new SendCodeViewModel();
+
+            // To test if it is null
+            var result = ctl.SendCode(model);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AccountController_LogOff_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+
+            // To test if it is null
+            // var result = ctl.LogOff();
+            // Assert.IsNotNull(result)();
+        }
+
+        [TestMethod]
+        public void AccountController_ExternalLoginFailure_Test()
+        {
+            // Initialization
+            AccountController ctl = new AccountController();
+
+            // To test if it is null
+            var result = ctl.ExternalLoginFailure();
+            Assert.IsNotNull(result);
+        }
     }
 }
