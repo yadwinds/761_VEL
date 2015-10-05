@@ -20,7 +20,7 @@ namespace GetSkills
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-            Application.Lock();      
+            Application.Lock();      //Lock application, set up count and then unlock
             Application["count"] = 0;
             Application.UnLock();    
 
