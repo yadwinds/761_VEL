@@ -24,11 +24,11 @@
         <h1>GetSkills</h1>
         <p>Project Organization</p>
     </div>
-    <div>    
+    <div>
         <ul>
             <li>
                 <h3>App_Data</h3>
-                <label>The data which will be run by this app should be  saved here. Normally, it's database.</label>
+                <label>The data which will be run by this app should be  saved here. Normally, it's database. It may also contents count.txt file which records the website visitor numbers.</label>
             </li>
             <li>
                 <h3>App_Start</h3>
@@ -92,7 +92,7 @@
                 <ul>
                     <li>
                         <h4>HomeController.cs</h4>
-                        <label>Controller class for actions on Homepage.</label>
+                        <label>Controller class for actions on Homepage. Also included the main method of website visitor counter function.</label>
                     </li>
                     <li>
                         <h4>SuccessStoryController.cs</h4>
@@ -157,8 +157,8 @@
                         <h4>success_story.cs</h4>
                         <label>Data model class for the table (success_story) with additional setting for data validation.</label>
                     </li>
-				
-				</ul>
+
+                </ul>
             </li>
             <li>
                 <h3>Scripts</h3>
@@ -189,7 +189,7 @@
             <li>
                 <h3>Views</h3>
                 <label>Dynamic htmls, which also known as views, should be saved here</label>
-				<ul>
+                <ul>
                     <li>
                         <h4>Home</h4>
                         <label>All the general pages are saved in this folder.</label>
@@ -212,63 +212,63 @@
                             </li>
                         </ul>
                     </li>
-					<li>
-						<h4>SuccessStory</h4>
-						<label>All the pages of success story is saved in this folder.</label>
-						<ul>
-							<li>
-								<h5>Create.cshtml</h5>
-								<label>Add page of the success story admin function.</label>
-							</li>
-							<li>
-								<h5>Delete.cshtml</h5>
-								<label>Delete page of the success story admin function.</label>
-							</li>
-							<li>
-								<h5>Detail.cshtml</h5>
-								<label>Detail page of the success story for client view.</label>
-							</li>
-							<li>
-								<h5>Edit.cshtml</h5>
-								<label>Edit page of the success story admin function.</label>
-							</li>
-							<li>
-								<h5>Index.cshtml</h5>
-								<label>List page of the success story admin function.</label>
-							</li>
-							<li>
-								<h5>List.cshtml</h5>
-								<label>List page of the success story for client view.</label>
-							</li>
-						</ul>
-					</li>
+                    <li>
+                        <h4>SuccessStory</h4>
+                        <label>All the pages of success story is saved in this folder.</label>
+                        <ul>
+                            <li>
+                                <h5>Create.cshtml</h5>
+                                <label>Add page of the success story admin function.</label>
+                            </li>
+                            <li>
+                                <h5>Delete.cshtml</h5>
+                                <label>Delete page of the success story admin function.</label>
+                            </li>
+                            <li>
+                                <h5>Detail.cshtml</h5>
+                                <label>Detail page of the success story for client view.</label>
+                            </li>
+                            <li>
+                                <h5>Edit.cshtml</h5>
+                                <label>Edit page of the success story admin function.</label>
+                            </li>
+                            <li>
+                                <h5>Index.cshtml</h5>
+                                <label>List page of the success story admin function.</label>
+                            </li>
+                            <li>
+                                <h5>List.cshtml</h5>
+                                <label>List page of the success story for client view.</label>
+                            </li>
+                        </ul>
+                    </li>
 
-					<li>
-						<h4>TeamProfile</h4>
-						<label>All the pages of team profile is saved in this folder.</label>
-						<ul>
-							<li>
-								<h5>Create.cshtml</h5>
-								<label>Add page of the team profile admin function.</label>
-							</li>
-							<li>
-								<h5>Delete.cshtml</h5>
-								<label>Delete page of the team profile admin function.</label>
-							</li>
-							<li>
-								<h5>Edit.cshtml</h5>
-								<label>Edit page of the success team profile function.</label>
-							</li>
-							<li>
-								<h5>Index.cshtml</h5>
-								<label>List page of the team profile admin function.</label>
-							</li>
-							<li>
-								<h5>List.cshtml</h5>
-								<label>List page of the team profile for client view.</label>
-							</li>
-						</ul>
-					</li>
+                    <li>
+                        <h4>TeamProfile</h4>
+                        <label>All the pages of team profile is saved in this folder.</label>
+                        <ul>
+                            <li>
+                                <h5>Create.cshtml</h5>
+                                <label>Add page of the team profile admin function.</label>
+                            </li>
+                            <li>
+                                <h5>Delete.cshtml</h5>
+                                <label>Delete page of the team profile admin function.</label>
+                            </li>
+                            <li>
+                                <h5>Edit.cshtml</h5>
+                                <label>Edit page of the success team profile function.</label>
+                            </li>
+                            <li>
+                                <h5>Index.cshtml</h5>
+                                <label>List page of the team profile admin function.</label>
+                            </li>
+                            <li>
+                                <h5>List.cshtml</h5>
+                                <label>List page of the team profile for client view.</label>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <h4>TestAutomation</h4>
                         <label>All the pages of test automation are saved in this folder.</label>
@@ -279,7 +279,17 @@
                             </li>
                         </ul>
                     </li>
-				</ul>
+                    <li>
+                        <h4>Shared</h4>
+                        <label>The Shared folder is used to store views shared between controllers (master pages and layout pages).</label>
+                        <ul>
+                            <li>
+                                <h5>_Layout.cshtml</h5>
+                                <label>This file has been modified to display the website visitor counter on all website pages.</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li>
                 <h3>Global.asax</h3>
@@ -300,35 +310,40 @@
         <h1>GetSkills.Tests</h1>
         <p>NUnit Test Project Organization</p>
     </div>
-    <div>    
+    <div>
         <ul>
             <li>
                 <h3>Controllers</h3>
                 <label>Sub folder for NUnit test of controller classes.</label>
-				<ul>
-					<li>
-						<h4>AccountControllerTest.cs</h3>
-						<label>NUnit test class.</label>
-					</li>
-					<li>
-						<h4>HomeControllerTest.cs</h3>
-						<label>NUnit test class.</label>
-					</li>
-					<li>
-						<h4>ManageControllerTest.cs</h3>
-						<label>NUnit test class.</label>
-					</li>
+                <ul>
+                    <li>
+                        <h4>
+                            AccountControllerTest.cs</h3>
+                            <label>NUnit test class.</label>
+                    </li>
+                    <li>
+                        <h4>
+                            HomeControllerTest.cs</h3>
+                            <label>NUnit test class.</label>
+                    </li>
+                    <li>
+                        <h4>
+                            ManageControllerTest.cs</h3>
+                            <label>NUnit test class.</label>
+                    </li>
 
-					<li>
-						<h4>SuccessStoryControllerTests.cs</h3>
-						<label>NUnit test class for the controller of success story pages.</label>
-					</li>
-					<li>
-						<h4>TeamProfilesControllersTest.cs</h3>
-						<label>NUnit test class for the controller of team profile pages.</label>
-					</li>
-		        </ul>
-			</li>
+                    <li>
+                        <h4>
+                            SuccessStoryControllerTests.cs</h3>
+                            <label>NUnit test class for the controller of success story pages.</label>
+                    </li>
+                    <li>
+                        <h4>
+                            TeamProfilesControllersTest.cs</h3>
+                            <label>NUnit test class for the controller of team profile pages.</label>
+                    </li>
+                </ul>
+            </li>
             <li>
                 <h3>App.config</h3>
                 <label>The configuration file for NUnit test.</label>
