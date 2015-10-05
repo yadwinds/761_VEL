@@ -20,9 +20,9 @@ namespace GetSkills
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-            Application.Lock();      //临界变量,使用加锁功能,其他用户不能访问。
+            Application.Lock();      
             Application["count"] = 0;
-            Application.UnLock();     //临界变量被解锁。
+            Application.UnLock();    
 
         }
 
