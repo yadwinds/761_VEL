@@ -470,6 +470,7 @@
       <DependentUpon>GetSkills.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
+    <None Include="Properties\PublishProfiles\GetSkillsLab.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\facebookSDK.js" />
     <Content Include="Scripts\holder.min.js" />
