@@ -423,6 +423,7 @@
     <Content Include="images\recruitment_hr.jpg" />
     <Content Include="images\researchbooks-300x184.jpg" />
     <Content Include="images\search-icon-hi.png" />
+    <Content Include="images\shutterstock_242224885.jpg" />
     <Content Include="images\Story_20150909155340255_untitled.png" />
     <Content Include="images\Story_20150909192627226_avril-lavigne.jpg" />
     <Content Include="images\Story_20150909195721136_Taylor-Alison-Swift.jpg" />
@@ -469,6 +470,7 @@
       <DependentUpon>GetSkills.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
+    <None Include="Properties\PublishProfiles\GetSkillsLab.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\facebookSDK.js" />
     <Content Include="Scripts\holder.min.js" />
