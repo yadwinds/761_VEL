@@ -12,12 +12,11 @@ namespace GetSkills.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class test_attempt_details
+    public partial class MSSsmaDmTables
     {
-        public int attemptdetailsid { get; set; }
-        public int attemptid { get; set; }
-        public int questionid { get; set; }
-        public int answerid { get; set; }
-        public int status { get; set; }
+        public int object_id { get; set; }
+        public int schema_id { get; set; }
+        public Nullable<byte> status { get; set; }
+        public System.DateTime dm_start_time { get; set; }
     }
 }

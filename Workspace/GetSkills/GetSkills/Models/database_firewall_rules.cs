@@ -12,12 +12,13 @@ namespace GetSkills.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class test_attempt_details
+    public partial class database_firewall_rules
     {
-        public int attemptdetailsid { get; set; }
-        public int attemptid { get; set; }
-        public int questionid { get; set; }
-        public int answerid { get; set; }
-        public int status { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

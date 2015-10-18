@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GetSkillsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GetSkillsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="board">
           <Key>
             <PropertyRef Name="board_id" />
@@ -21,26 +21,9 @@
           <Property Name="category_name" Type="varchar" MaxLength="100" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“def.getskills.class_students”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="class_students">
           <Key>
-            <PropertyRef Name="class_session_code" />
-            <PropertyRef Name="student_id" />
-            <PropertyRef Name="student_name" />
-            <PropertyRef Name="attendee_id" />
-            <PropertyRef Name="attendee_url" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="fname" />
-            <PropertyRef Name="lname" />
-            <PropertyRef Name="stream" />
-            <PropertyRef Name="pno" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="time" />
-            <PropertyRef Name="duration" />
-            <PropertyRef Name="startingtimestamp" />
-            <PropertyRef Name="endingtimestamp" />
-            <PropertyRef Name="status" />
+            <PropertyRef Name="ssma$rowid" />
           </Key>
           <Property Name="class_session_code" Type="int" Nullable="false" />
           <Property Name="student_id" Type="int" Nullable="false" />
@@ -58,6 +41,7 @@
           <Property Name="startingtimestamp" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="endingtimestamp" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="ssma$rowid" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="classes">
           <Key>
@@ -67,7 +51,7 @@
           <Property Name="class_session_code" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="class_title" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="manager_id" Type="int" Nullable="false" />
-          <Property Name="description" Type="text" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="time" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="total_users" Type="int" Nullable="false" />
@@ -115,7 +99,7 @@
           <Property Name="filename" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="subject" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="1000" Nullable="false" />
-          <Property Name="upload_date" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="upload_date" Type="datetime" Nullable="false" />
           <Property Name="uploadedby" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
@@ -193,7 +177,7 @@
           <Property Name="from_userid" Type="int" Nullable="false" />
           <Property Name="read" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
-          <Property Name="datetime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datetime" Type="datetime2" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="grade">
           <Key>
@@ -218,21 +202,9 @@
           <Property Name="class_session_code" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“def.getskills.interview_students”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="interview_students">
           <Key>
-            <PropertyRef Name="class_session_code" />
-            <PropertyRef Name="student_id" />
-            <PropertyRef Name="student_name" />
-            <PropertyRef Name="attendee_id" />
-            <PropertyRef Name="attendee_url" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="time" />
-            <PropertyRef Name="duration" />
-            <PropertyRef Name="startingtimestamp" />
-            <PropertyRef Name="endingtimestamp" />
-            <PropertyRef Name="status" />
+            <PropertyRef Name="ssma$rowid" />
           </Key>
           <Property Name="class_session_code" Type="int" Nullable="false" />
           <Property Name="student_id" Type="int" Nullable="false" />
@@ -245,6 +217,7 @@
           <Property Name="startingtimestamp" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="endingtimestamp" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="ssma$rowid" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="interviews">
           <Key>
@@ -254,7 +227,7 @@
           <Property Name="class_session_code" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="class_title" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="manager_id" Type="int" Nullable="false" />
-          <Property Name="message" Type="text" Nullable="false" />
+          <Property Name="message" Type="varchar(max)" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="time" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="total_users" Type="int" Nullable="false" />
@@ -316,8 +289,8 @@
           <Property Name="order_daysid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_id" Type="int" Nullable="false" />
           <Property Name="day_id" Type="int" Nullable="false" />
-          <Property Name="from_time" Type="time" Precision="0" Nullable="false" />
-          <Property Name="to_time" Type="time" Precision="0" Nullable="false" />
+          <Property Name="from_time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="to_time" Type="time" Precision="7" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="order_subjects">
@@ -336,10 +309,10 @@
           <Property Name="payment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="course_id" Type="int" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="amount" Type="float" Nullable="false" />
-          <Property Name="txn_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="amount" Type="real" Nullable="false" />
+          <Property Name="txn_id" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="payment_status" Type="int" Nullable="false" />
-          <Property Name="datetime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datetime" Type="datetime2" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="permissions">
           <Key>
@@ -355,10 +328,10 @@
             <PropertyRef Name="profile_id" />
           </Key>
           <Property Name="profile_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="pic" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="detail" Type="varchar" MaxLength="1000" Nullable="false" />
-          <Property Name="linked_url" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pic" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="detail" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="linked_url" Type="nvarchar" MaxLength="512" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="question_answers">
@@ -367,7 +340,7 @@
           </Key>
           <Property Name="answerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="questionid" Type="int" Nullable="false" />
-          <Property Name="answer" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="answer" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="correct" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
@@ -420,7 +393,7 @@
           <Property Name="user_id" Type="int" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
           <Property Name="totalhours" Type="int" Nullable="false" />
-          <Property Name="datetime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datetime" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="grade_id" Type="int" Nullable="false" />
           <Property Name="board_id" Type="int" Nullable="false" />
           <Property Name="txnid" Type="int" Nullable="false" />
@@ -437,7 +410,7 @@
           <Property Name="subject" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="code" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="teacher_assigned" Type="int" Nullable="false" />
-          <Property Name="attendence" Type="float" Nullable="false" />
+          <Property Name="attendence" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="subject">
           <Key>
@@ -456,7 +429,7 @@
           <Property Name="pic" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="sort_number" Type="int" />
           <Property Name="brief" Type="varchar" MaxLength="1200" Nullable="false" />
-          <Property Name="detail_description" Type="varchar" MaxLength="6000" Nullable="false" />
+          <Property Name="detail_description" Type="varchar(max)" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="success_story_category">
@@ -491,7 +464,7 @@
           <Property Name="education" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="grade" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="subject" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="details" Type="varchar" MaxLength="10000" Nullable="false" />
+          <Property Name="details" Type="varchar(max)" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="teacher_subject_details">
@@ -501,7 +474,7 @@
           <Property Name="quali_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
           <Property Name="subjects" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="attendence" Type="float" Nullable="false" />
+          <Property Name="attendence" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="teammembers">
           <Key>
@@ -536,7 +509,7 @@
           <Property Name="userid" Type="int" Nullable="false" />
           <Property Name="session_id" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="testid" Type="int" Nullable="false" />
-          <Property Name="datetime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datetime" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="score" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
@@ -546,7 +519,7 @@
           </Key>
           <Property Name="questionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="testid" Type="int" Nullable="false" />
-          <Property Name="question" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="question" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tests">
@@ -555,12 +528,12 @@
           </Key>
           <Property Name="testid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="currentid" Type="int" Nullable="false" />
-          <Property Name="testcode" Type="varchar" MaxLength="10" />
-          <Property Name="testname" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="testcode" Type="nvarchar" MaxLength="10" />
+          <Property Name="testname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
           <Property Name="subjectid" Type="int" Nullable="false" />
           <Property Name="topicid" Type="int" Nullable="false" />
-          <Property Name="datecreated" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datecreated" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ispublished" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
@@ -596,7 +569,7 @@
           <Property Name="to_userid" Type="int" Nullable="false" />
           <Property Name="email_read" Type="int" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
-          <Property Name="datetime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="datetime" Type="datetime2" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -618,46 +591,100 @@
           <Property Name="fb_id" Type="varchar" MaxLength="100" />
           <Property Name="signup_source" Type="int" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“def.getskills.users_permissions”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="users_permissions">
           <Key>
-            <PropertyRef Name="user_type" />
-            <PropertyRef Name="permission_id" />
+            <PropertyRef Name="ssma$rowid" />
           </Key>
           <Property Name="user_type" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="permission_id" Type="int" Nullable="false" />
+          <Property Name="ssma$rowid" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="videos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="video" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="status" Type="bool" Nullable="false" />
+          <Property Name="video" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
           <Property Name="time" Type="bigint" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“def.getskills.visitor_enquiry”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="visitor_enquiry">
           <Key>
-            <PropertyRef Name="VisitorEnquiryID" />
-            <PropertyRef Name="VisitorName" />
-            <PropertyRef Name="visitor_mobile" />
-            <PropertyRef Name="visitor_email" />
-            <PropertyRef Name="visitor_enquiry" />
-            <PropertyRef Name="status" />
+            <PropertyRef Name="ssma$rowid" />
           </Key>
           <Property Name="VisitorEnquiryID" Type="int" Nullable="false" />
-          <Property Name="VisitorName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="visitor_mobile" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="visitor_email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="visitor_enquiry" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="status" Type="tinyint" Nullable="false" />
+          <Property Name="VisitorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="visitor_mobile" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="visitor_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="visitor_enquiry" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="ssma$rowid" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
+        <EntityType Name="MSSsmaDmNCKeyColumns">
+          <Key>
+            <PropertyRef Name="object_id" />
+            <PropertyRef Name="key_name" />
+            <PropertyRef Name="key_type" />
+            <PropertyRef Name="key_column_id" />
+          </Key>
+          <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="key_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="key_type" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="key_column_id" Type="int" Nullable="false" />
+          <Property Name="index_column_id" Type="int" />
+          <Property Name="is_disabled" Type="bit" />
+          <Property Name="referenced_object_id" Type="int" />
+          <Property Name="delete_referential_action" Type="tinyint" />
+          <Property Name="update_referential_action" Type="tinyint" />
+          <Property Name="is_not_for_replication" Type="bit" />
+          <Property Name="is_not_trusted" Type="bit" />
+          <Property Name="referenced_column_id" Type="int" />
+        </EntityType>
+        <EntityType Name="MSSsmaDmTables">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="schema_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="dm_start_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'getskills.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Function Name="sp_MSSsmaDmDisableConstraints" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="m2ss">
+          <Parameter Name="key_type" Type="char" Mode="In" />
+          <Parameter Name="mode" Type="int" Mode="In" />
+          <Parameter Name="parallel_load" Type="int" Mode="In" />
+          <Parameter Name="minimal_logging" Type="int" Mode="In" />
+          <Parameter Name="error_log" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_MSSsmaDmFixConstraints" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="m2ss">
+          <Parameter Name="key_type" Type="char" Mode="In" />
+          <Parameter Name="mode" Type="int" Mode="In" />
+          <Parameter Name="parallel_load" Type="int" Mode="In" />
+          <Parameter Name="minimal_logging" Type="int" Mode="In" />
+          <Parameter Name="error_log" Type="nvarchar" Mode="InOut" />
+        </Function>
         <EntityContainer Name="GetSkillsModelStoreContainer">
           <EntitySet Name="board" EntityType="Self.board" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="category" EntityType="Self.category" Schema="getskills" store:Type="Tables" />
+          <EntitySet Name="class_students" EntityType="Self.class_students" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="classes" EntityType="Self.classes" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="client_details" EntityType="Self.client_details" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="contact_us" EntityType="Self.contact_us" Schema="getskills" store:Type="Tables" />
@@ -671,6 +698,7 @@
           <EntitySet Name="emails" EntityType="Self.emails" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="grade" EntityType="Self.grade" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="interview_schedules" EntityType="Self.interview_schedules" Schema="getskills" store:Type="Tables" />
+          <EntitySet Name="interview_students" EntityType="Self.interview_students" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="interviews" EntityType="Self.interviews" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="manager_details" EntityType="Self.manager_details" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="mapping" EntityType="Self.mapping" Schema="getskills" store:Type="Tables" />
@@ -702,57 +730,20 @@
           <EntitySet Name="uploadtest" EntityType="Self.uploadtest" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="user_emails" EntityType="Self.user_emails" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="getskills" store:Type="Tables" />
+          <EntitySet Name="users_permissions" EntityType="Self.users_permissions" Schema="getskills" store:Type="Tables" />
           <EntitySet Name="videos" EntityType="Self.videos" Schema="getskills" store:Type="Tables" />
-          <EntitySet Name="class_students" EntityType="Self.class_students" store:Type="Tables" store:Schema="getskills">
-            <DefiningQuery>SELECT
-`class_students`.`class_session_code`, 
-`class_students`.`student_id`, 
-`class_students`.`student_name`, 
-`class_students`.`attendee_id`, 
-`class_students`.`attendee_url`, 
-`class_students`.`email`, 
-`class_students`.`fname`, 
-`class_students`.`lname`, 
-`class_students`.`stream`, 
-`class_students`.`pno`, 
-`class_students`.`date`, 
-`class_students`.`time`, 
-`class_students`.`duration`, 
-`class_students`.`startingtimestamp`, 
-`class_students`.`endingtimestamp`, 
-`class_students`.`status`
-FROM `class_students` AS `class_students`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="interview_students" EntityType="Self.interview_students" store:Type="Tables" store:Schema="getskills">
-            <DefiningQuery>SELECT
-`interview_students`.`class_session_code`, 
-`interview_students`.`student_id`, 
-`interview_students`.`student_name`, 
-`interview_students`.`attendee_id`, 
-`interview_students`.`attendee_url`, 
-`interview_students`.`date`, 
-`interview_students`.`time`, 
-`interview_students`.`duration`, 
-`interview_students`.`startingtimestamp`, 
-`interview_students`.`endingtimestamp`, 
-`interview_students`.`status`
-FROM `interview_students` AS `interview_students`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="users_permissions" EntityType="Self.users_permissions" store:Type="Tables" store:Schema="getskills">
-            <DefiningQuery>SELECT
-`users_permissions`.`user_type`, 
-`users_permissions`.`permission_id`
-FROM `users_permissions` AS `users_permissions`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="visitor_enquiry" EntityType="Self.visitor_enquiry" store:Type="Tables" store:Schema="getskills">
-            <DefiningQuery>SELECT
-`visitor_enquiry`.`VisitorEnquiryID`, 
-`visitor_enquiry`.`VisitorName`, 
-`visitor_enquiry`.`visitor_mobile`, 
-`visitor_enquiry`.`visitor_email`, 
-`visitor_enquiry`.`visitor_enquiry`, 
-`visitor_enquiry`.`status`
-FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
+          <EntitySet Name="visitor_enquiry" EntityType="Self.visitor_enquiry" Schema="getskills" store:Type="Tables" />
+          <EntitySet Name="MSSsmaDmNCKeyColumns" EntityType="Self.MSSsmaDmNCKeyColumns" Schema="m2ss" store:Type="Tables" />
+          <EntitySet Name="MSSsmaDmTables" EntityType="Self.MSSsmaDmTables" Schema="m2ss" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -776,6 +767,28 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="category_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="class_students">
+          <Key>
+            <PropertyRef Name="ssma_rowid" />
+          </Key>
+          <Property Name="class_session_code" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="student_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="attendee_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="attendee_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stream" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pno" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="startingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="ssma_rowid" Type="Guid" Nullable="false" />
+        </EntityType>
         <EntityType Name="classes">
           <Key>
             <PropertyRef Name="class_id" />
@@ -784,8 +797,8 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="class_session_code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="class_title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="manager_id" Type="Int32" Nullable="false" />
-          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="total_users" Type="Int32" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
@@ -832,7 +845,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="filename" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="subject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="upload_date" Type="DateTime" Nullable="false" />
+          <Property Name="upload_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="uploadedby" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
@@ -855,7 +868,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="subject_id" Type="Int32" Nullable="false" />
           <Property Name="topic_id" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="price" Type="Decimal" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
           <Property Name="status" Type="Int32" />
         </EntityType>
         <EntityType Name="courses_category">
@@ -910,7 +923,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="from_userid" Type="Int32" Nullable="false" />
           <Property Name="read" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
-          <Property Name="datetime" Type="DateTime" Nullable="false" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="grade">
           <Key>
@@ -927,13 +940,30 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="client_id" Type="Int32" Nullable="false" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="message" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isAccepted" Type="Int32" Nullable="false" />
           <Property Name="mode" Type="Int32" Nullable="false" />
           <Property Name="class_session_code" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="interview_students">
+          <Key>
+            <PropertyRef Name="ssma_rowid" />
+          </Key>
+          <Property Name="class_session_code" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="student_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="attendee_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="attendee_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="startingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="ssma_rowid" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityType Name="interviews">
           <Key>
@@ -943,8 +973,8 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="class_session_code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="class_title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="manager_id" Type="Int32" Nullable="false" />
-          <Property Name="message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="total_users" Type="Int32" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
@@ -963,7 +993,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1005,8 +1035,8 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="order_daysid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="order_id" Type="Int32" Nullable="false" />
           <Property Name="day_id" Type="Int32" Nullable="false" />
-          <Property Name="from_time" Type="Time" Nullable="false" />
-          <Property Name="to_time" Type="Time" Nullable="false" />
+          <Property Name="from_time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="to_time" Type="Time" Nullable="false" Precision="7" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="order_subjects">
@@ -1026,9 +1056,9 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="course_id" Type="Int32" Nullable="false" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="amount" Type="Single" Nullable="false" />
-          <Property Name="txn_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txn_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="payment_status" Type="Int32" Nullable="false" />
-          <Property Name="datetime" Type="DateTime" Nullable="false" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="permissions">
           <Key>
@@ -1044,10 +1074,10 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
             <PropertyRef Name="profile_id" />
           </Key>
           <Property Name="profile_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="pic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="linked_url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="linked_url" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="question_answers">
@@ -1056,7 +1086,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           </Key>
           <Property Name="answerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="questionid" Type="Int32" Nullable="false" />
-          <Property Name="answer" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="correct" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
@@ -1109,7 +1139,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="totalhours" Type="Int32" Nullable="false" />
-          <Property Name="datetime" Type="DateTime" Nullable="false" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="grade_id" Type="Int32" Nullable="false" />
           <Property Name="board_id" Type="Int32" Nullable="false" />
           <Property Name="txnid" Type="Int32" Nullable="false" />
@@ -1124,7 +1154,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="sub_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="subject" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="teacher_assigned" Type="Int32" Nullable="false" />
           <Property Name="attendence" Type="Single" Nullable="false" />
         </EntityType>
@@ -1145,7 +1175,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="pic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sort_number" Type="Int32" />
           <Property Name="brief" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="detail_description" Type="String" MaxLength="6000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detail_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="success_story_category">
@@ -1180,7 +1210,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="education" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="grade" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="subject" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="details" Type="String" MaxLength="10000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="teacher_subject_details">
@@ -1225,7 +1255,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="userid" Type="Int32" Nullable="false" />
           <Property Name="session_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="testid" Type="Int32" Nullable="false" />
-          <Property Name="datetime" Type="DateTime" Nullable="false" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="score" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
@@ -1235,7 +1265,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           </Key>
           <Property Name="questionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="testid" Type="Int32" Nullable="false" />
-          <Property Name="question" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="tests">
@@ -1244,12 +1274,12 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           </Key>
           <Property Name="testid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="currentid" Type="Int32" Nullable="false" />
-          <Property Name="testcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="testname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="testcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="testname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="subjectid" Type="Int32" Nullable="false" />
           <Property Name="topicid" Type="Int32" Nullable="false" />
-          <Property Name="datecreated" Type="DateTime" Nullable="false" />
+          <Property Name="datecreated" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ispublished" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
@@ -1285,7 +1315,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="to_userid" Type="Int32" Nullable="false" />
           <Property Name="email_read" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
-          <Property Name="datetime" Type="DateTime" Nullable="false" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -1296,115 +1326,95 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <Property Name="user_pswd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="user_type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="student_status" Type="Int32" Nullable="false" />
           <Property Name="isAuthenticated" Type="Int32" Nullable="false" />
           <Property Name="approved" Type="Int32" Nullable="false" />
-          <Property Name="created_on" Type="DateTime" Nullable="false" />
-          <Property Name="updated_on" Type="DateTime" Nullable="false" />
-          <Property Name="lastLoginAt" Type="DateTime" Nullable="false" />
+          <Property Name="created_on" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="updated_on" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="lastLoginAt" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fb_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="signup_source" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users_permissions">
+          <Key>
+            <PropertyRef Name="ssma_rowid" />
+          </Key>
+          <Property Name="user_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="permission_id" Type="Int32" Nullable="false" />
+          <Property Name="ssma_rowid" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityType Name="videos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="video" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="video" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
           <Property Name="time" Type="Int64" Nullable="false" />
-        </EntityType>
-        <EntityType Name="class_students">
-          <Key>
-            <PropertyRef Name="class_session_code" />
-            <PropertyRef Name="student_id" />
-            <PropertyRef Name="student_name" />
-            <PropertyRef Name="attendee_id" />
-            <PropertyRef Name="attendee_url" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="fname" />
-            <PropertyRef Name="lname" />
-            <PropertyRef Name="stream" />
-            <PropertyRef Name="pno" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="time" />
-            <PropertyRef Name="duration" />
-            <PropertyRef Name="startingtimestamp" />
-            <PropertyRef Name="endingtimestamp" />
-            <PropertyRef Name="status" />
-          </Key>
-          <Property Name="class_session_code" Type="Int32" Nullable="false" />
-          <Property Name="student_id" Type="Int32" Nullable="false" />
-          <Property Name="student_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="attendee_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="attendee_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="stream" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="pno" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="duration" Type="Int32" Nullable="false" />
-          <Property Name="startingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="endingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="interview_students">
-          <Key>
-            <PropertyRef Name="class_session_code" />
-            <PropertyRef Name="student_id" />
-            <PropertyRef Name="student_name" />
-            <PropertyRef Name="attendee_id" />
-            <PropertyRef Name="attendee_url" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="time" />
-            <PropertyRef Name="duration" />
-            <PropertyRef Name="startingtimestamp" />
-            <PropertyRef Name="endingtimestamp" />
-            <PropertyRef Name="status" />
-          </Key>
-          <Property Name="class_session_code" Type="Int32" Nullable="false" />
-          <Property Name="student_id" Type="Int32" Nullable="false" />
-          <Property Name="student_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="attendee_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="attendee_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="duration" Type="Int32" Nullable="false" />
-          <Property Name="startingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="endingtimestamp" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="users_permissions">
-          <Key>
-            <PropertyRef Name="user_type" />
-            <PropertyRef Name="permission_id" />
-          </Key>
-          <Property Name="user_type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="permission_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="visitor_enquiry">
           <Key>
-            <PropertyRef Name="VisitorEnquiryID" />
-            <PropertyRef Name="VisitorName" />
-            <PropertyRef Name="visitor_mobile" />
-            <PropertyRef Name="visitor_email" />
-            <PropertyRef Name="visitor_enquiry1" />
-            <PropertyRef Name="status" />
+            <PropertyRef Name="ssma_rowid" />
           </Key>
           <Property Name="VisitorEnquiryID" Type="Int32" Nullable="false" />
-          <Property Name="VisitorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="visitor_mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="visitor_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="visitor_enquiry1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="SByte" Nullable="false" />
+          <Property Name="VisitorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visitor_mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visitor_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visitor_enquiry1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="ssma_rowid" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MSSsmaDmNCKeyColumns">
+          <Key>
+            <PropertyRef Name="object_id" />
+            <PropertyRef Name="key_name" />
+            <PropertyRef Name="key_type" />
+            <PropertyRef Name="key_column_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" />
+          <Property Name="key_name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="key_type" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="key_column_id" Type="Int32" Nullable="false" />
+          <Property Name="index_column_id" Type="Int32" />
+          <Property Name="is_disabled" Type="Boolean" />
+          <Property Name="referenced_object_id" Type="Int32" />
+          <Property Name="delete_referential_action" Type="Byte" />
+          <Property Name="update_referential_action" Type="Byte" />
+          <Property Name="is_not_for_replication" Type="Boolean" />
+          <Property Name="is_not_trusted" Type="Boolean" />
+          <Property Name="referenced_column_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MSSsmaDmTables">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" />
+          <Property Name="schema_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dm_start_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="GetSkillsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="board" EntityType="Self.board" />
           <EntitySet Name="category" EntityType="Self.category" />
+          <EntitySet Name="class_students" EntityType="Self.class_students" />
           <EntitySet Name="classes" EntityType="Self.classes" />
           <EntitySet Name="client_details" EntityType="Self.client_details" />
           <EntitySet Name="contact_us" EntityType="Self.contact_us" />
@@ -1418,6 +1428,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <EntitySet Name="emails" EntityType="Self.emails" />
           <EntitySet Name="grade" EntityType="Self.grade" />
           <EntitySet Name="interview_schedules" EntityType="Self.interview_schedules" />
+          <EntitySet Name="interview_students" EntityType="Self.interview_students" />
           <EntitySet Name="interviews" EntityType="Self.interviews" />
           <EntitySet Name="manager_details" EntityType="Self.manager_details" />
           <EntitySet Name="mapping" EntityType="Self.mapping" />
@@ -1449,11 +1460,26 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
           <EntitySet Name="uploadtest" EntityType="Self.uploadtest" />
           <EntitySet Name="user_emails" EntityType="Self.user_emails" />
           <EntitySet Name="users" EntityType="Self.users" />
-          <EntitySet Name="videos" EntityType="Self.videos" />
-          <EntitySet Name="class_students" EntityType="Self.class_students" />
-          <EntitySet Name="interview_students" EntityType="Self.interview_students" />
           <EntitySet Name="users_permissions" EntityType="Self.users_permissions" />
+          <EntitySet Name="videos" EntityType="Self.videos" />
           <EntitySet Name="visitor_enquiry" EntityType="Self.visitor_enquiry" />
+          <EntitySet Name="MSSsmaDmNCKeyColumns" EntityType="Self.MSSsmaDmNCKeyColumns" />
+          <EntitySet Name="MSSsmaDmTables" EntityType="Self.MSSsmaDmTables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <FunctionImport Name="sp_MSSsmaDmDisableConstraints">
+            <Parameter Name="key_type" Mode="In" Type="String" />
+            <Parameter Name="mode" Mode="In" Type="Int32" />
+            <Parameter Name="parallel_load" Mode="In" Type="Int32" />
+            <Parameter Name="minimal_logging" Mode="In" Type="Int32" />
+            <Parameter Name="error_log" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MSSsmaDmFixConstraints">
+            <Parameter Name="key_type" Mode="In" Type="String" />
+            <Parameter Name="mode" Mode="In" Type="Int32" />
+            <Parameter Name="parallel_load" Mode="In" Type="Int32" />
+            <Parameter Name="minimal_logging" Mode="In" Type="Int32" />
+            <Parameter Name="error_log" Mode="InOut" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -1476,6 +1502,29 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
                 <ScalarProperty Name="category_id" ColumnName="category_id" />
                 <ScalarProperty Name="category_name" ColumnName="category_name" />
                 <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="class_students">
+            <EntityTypeMapping TypeName="GetSkillsModel.class_students">
+              <MappingFragment StoreEntitySet="class_students">
+                <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="attendee_id" ColumnName="attendee_id" />
+                <ScalarProperty Name="attendee_url" ColumnName="attendee_url" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="stream" ColumnName="stream" />
+                <ScalarProperty Name="pno" ColumnName="pno" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="startingtimestamp" ColumnName="startingtimestamp" />
+                <ScalarProperty Name="endingtimestamp" ColumnName="endingtimestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ssma_rowid" ColumnName="ssma$rowid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1648,6 +1697,24 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
                 <ScalarProperty Name="mode" ColumnName="mode" />
                 <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
                 <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="interview_students">
+            <EntityTypeMapping TypeName="GetSkillsModel.interview_students">
+              <MappingFragment StoreEntitySet="interview_students">
+                <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="attendee_id" ColumnName="attendee_id" />
+                <ScalarProperty Name="attendee_url" ColumnName="attendee_url" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="startingtimestamp" ColumnName="startingtimestamp" />
+                <ScalarProperty Name="endingtimestamp" ColumnName="endingtimestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ssma_rowid" ColumnName="ssma$rowid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2054,6 +2121,15 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="users_permissions">
+            <EntityTypeMapping TypeName="GetSkillsModel.users_permissions">
+              <MappingFragment StoreEntitySet="users_permissions">
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="permission_id" ColumnName="permission_id" />
+                <ScalarProperty Name="ssma_rowid" ColumnName="ssma$rowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="videos">
             <EntityTypeMapping TypeName="GetSkillsModel.videos">
               <MappingFragment StoreEntitySet="videos">
@@ -2061,53 +2137,6 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
                 <ScalarProperty Name="video" ColumnName="video" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="time" ColumnName="time" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="class_students">
-            <EntityTypeMapping TypeName="GetSkillsModel.class_students">
-              <MappingFragment StoreEntitySet="class_students">
-                <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="student_name" ColumnName="student_name" />
-                <ScalarProperty Name="attendee_id" ColumnName="attendee_id" />
-                <ScalarProperty Name="attendee_url" ColumnName="attendee_url" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="stream" ColumnName="stream" />
-                <ScalarProperty Name="pno" ColumnName="pno" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="time" ColumnName="time" />
-                <ScalarProperty Name="duration" ColumnName="duration" />
-                <ScalarProperty Name="startingtimestamp" ColumnName="startingtimestamp" />
-                <ScalarProperty Name="endingtimestamp" ColumnName="endingtimestamp" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="interview_students">
-            <EntityTypeMapping TypeName="GetSkillsModel.interview_students">
-              <MappingFragment StoreEntitySet="interview_students">
-                <ScalarProperty Name="class_session_code" ColumnName="class_session_code" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="student_name" ColumnName="student_name" />
-                <ScalarProperty Name="attendee_id" ColumnName="attendee_id" />
-                <ScalarProperty Name="attendee_url" ColumnName="attendee_url" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="time" ColumnName="time" />
-                <ScalarProperty Name="duration" ColumnName="duration" />
-                <ScalarProperty Name="startingtimestamp" ColumnName="startingtimestamp" />
-                <ScalarProperty Name="endingtimestamp" ColumnName="endingtimestamp" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="users_permissions">
-            <EntityTypeMapping TypeName="GetSkillsModel.users_permissions">
-              <MappingFragment StoreEntitySet="users_permissions">
-                <ScalarProperty Name="user_type" ColumnName="user_type" />
-                <ScalarProperty Name="permission_id" ColumnName="permission_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2120,9 +2149,52 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
                 <ScalarProperty Name="visitor_email" ColumnName="visitor_email" />
                 <ScalarProperty Name="visitor_enquiry1" ColumnName="visitor_enquiry" />
                 <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ssma_rowid" ColumnName="ssma$rowid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MSSsmaDmNCKeyColumns">
+            <EntityTypeMapping TypeName="GetSkillsModel.MSSsmaDmNCKeyColumns">
+              <MappingFragment StoreEntitySet="MSSsmaDmNCKeyColumns">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="key_name" ColumnName="key_name" />
+                <ScalarProperty Name="key_type" ColumnName="key_type" />
+                <ScalarProperty Name="key_column_id" ColumnName="key_column_id" />
+                <ScalarProperty Name="index_column_id" ColumnName="index_column_id" />
+                <ScalarProperty Name="is_disabled" ColumnName="is_disabled" />
+                <ScalarProperty Name="referenced_object_id" ColumnName="referenced_object_id" />
+                <ScalarProperty Name="delete_referential_action" ColumnName="delete_referential_action" />
+                <ScalarProperty Name="update_referential_action" ColumnName="update_referential_action" />
+                <ScalarProperty Name="is_not_for_replication" ColumnName="is_not_for_replication" />
+                <ScalarProperty Name="is_not_trusted" ColumnName="is_not_trusted" />
+                <ScalarProperty Name="referenced_column_id" ColumnName="referenced_column_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSSsmaDmTables">
+            <EntityTypeMapping TypeName="GetSkillsModel.MSSsmaDmTables">
+              <MappingFragment StoreEntitySet="MSSsmaDmTables">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="schema_id" ColumnName="schema_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="dm_start_time" ColumnName="dm_start_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="GetSkillsModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_MSSsmaDmDisableConstraints" FunctionName="GetSkillsModel.Store.sp_MSSsmaDmDisableConstraints" />
+          <FunctionImportMapping FunctionImportName="sp_MSSsmaDmFixConstraints" FunctionName="GetSkillsModel.Store.sp_MSSsmaDmFixConstraints" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2140,7 +2212,7 @@ FROM `visitor_enquiry` AS `visitor_enquiry`</DefiningQuery>
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

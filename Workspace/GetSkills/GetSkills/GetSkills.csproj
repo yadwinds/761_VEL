@@ -229,6 +229,9 @@
     <Compile Include="Models\course_price.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\demo_requests.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -274,6 +277,12 @@
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\mapping_subjects.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSSsmaDmNCKeyColumns.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSSsmaDmTables.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\newemailgroups.cs">
