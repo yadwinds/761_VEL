@@ -169,7 +169,7 @@ namespace GetSkills.Controllers
             StoryIndexViewModel editView = new StoryIndexViewModel();
 
             editView.successStory = new success_story();
-            editView.successStory.pic = "~/Images/no_image.jpg";
+            editView.successStory.pic = "~/Images/successstory/no_image.jpg";
 
             editView.allCategoryList = (from ca in db.category
                                         select new CategoryCheckBoxModel
@@ -215,13 +215,13 @@ namespace GetSkills.Controllers
                         ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
                     }
 
-                    var uploadDir = "~/images";
+                    var uploadDir = "~/images/successstory";
                     var newFileName = String.Format("{0}_{1}_{2}", "Story", DateTime.Now.ToString("yyyyMMddHHmmssfff"), Path.GetFileName(editView.picFile.FileName));
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), newFileName);
                     editView.picFile.SaveAs(imagePath);
 
                     var imageUrl = Path.Combine(uploadDir, Path.GetFileName(imagePath));
-                    story.pic = "~/images/" + newFileName;
+                    story.pic = "~/images/successstory/" + newFileName;
                 }
 
                 story.status = 1;
@@ -336,13 +336,13 @@ namespace GetSkills.Controllers
                         ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
                     }
 
-                    var uploadDir = "~/images";
+                    var uploadDir = "~/images/successstory";
                     var newFileName = String.Format("{0}_{1}_{2}", "Story", DateTime.Now.ToString("yyyyMMddHHmmssfff"), Path.GetFileName(editView.picFile.FileName));
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), newFileName);
                     editView.picFile.SaveAs(imagePath);
 
                     var imageUrl = Path.Combine(uploadDir, Path.GetFileName(imagePath));
-                    story.pic = "~/images/" + newFileName;
+                    story.pic = "~/images/successstory/" + newFileName;
                 }
 
                 db.Entry(story).State = EntityState.Modified;

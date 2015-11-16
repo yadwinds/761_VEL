@@ -6,36 +6,19 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-// 28 Sep. 2015     Miranda    Add datatype for textarea edit.  
-// 01 Oct. 2015     MIranda    Add Validation to varchar items.  
-//------------------------------------------------------------------------------
 
 namespace GetSkills.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class profile
     {
         public int profile_id { get; set; }
-
-        [StringLength(100)]
         public string pic { get; set; }
-
-        [StringLength(50)]
-        [Required(ErrorMessage = "Member name is required")]
         public string name { get; set; }
-
-        [DataType(DataType.MultilineText)]
-        [StringLength(1000)]
-        [Required(ErrorMessage = "Detail is required")]
         public string detail { get; set; }
-
-        [StringLength(512)]
-        [Required(ErrorMessage = "Linkedin profile is required")]
         public string linked_url { get; set; }
-
         public int status { get; set; }
     }
 }

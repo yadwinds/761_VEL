@@ -229,6 +229,9 @@
     <Compile Include="Models\course_price.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\demo_requests.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
@@ -274,6 +277,12 @@
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\mapping_subjects.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSSsmaDmNCKeyColumns.cs">
+      <DependentUpon>GetSkills.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSSsmaDmTables.cs">
       <DependentUpon>GetSkills.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\newemailgroups.cs">
@@ -405,8 +414,6 @@
     <Content Include="images\Jared_Leto.jpg" />
     <Content Include="images\justin-bieber.jpg" />
     <Content Include="images\Ken_Stabler.jpg" />
-    <Content Include="images\Profile_20151001203728372_1626040.jpg" />
-    <Content Include="images\Profile_20151001214302866_23bd9e8.jpg" />
     <Content Include="images\Scarlett-Johansson.jpg" />
     <Content Include="images\google-plus.png" />
     <Content Include="images\icons.png" />
@@ -423,14 +430,36 @@
     <Content Include="images\recruitment_hr.jpg" />
     <Content Include="images\researchbooks-300x184.jpg" />
     <Content Include="images\search-icon-hi.png" />
-    <Content Include="images\Story_20150909155340255_untitled.png" />
-    <Content Include="images\Story_20150909192627226_avril-lavigne.jpg" />
-    <Content Include="images\Story_20150909195721136_Taylor-Alison-Swift.jpg" />
+    <Content Include="images\shutterstock_242224885.jpg" />
     <Content Include="images\student_01.jpg" />
     <Content Include="images\student_02.jpg" />
     <Content Include="images\student_03.jpg" />
     <Content Include="images\student_04.jpg" />
+    <Content Include="images\successstory\a.jpeg" />
+    <Content Include="images\successstory\app.png" />
+    <Content Include="images\successstory\b.jpeg" />
+    <Content Include="images\successstory\facebook.png" />
+    <Content Include="images\successstory\google-plus.png" />
+    <Content Include="images\successstory\jb.jpeg" />
+    <Content Include="images\successstory\linked-in.ico" />
+    <Content Include="images\successstory\mayun.jpeg" />
+    <Content Include="images\successstory\no_image.jpg" />
+    <Content Include="images\successstory\re.jpeg" />
+    <Content Include="images\successstory\Story_20150909155340255_untitled.png" />
+    <Content Include="images\successstory\Story_20150909192627226_avril-lavigne.jpg" />
+    <Content Include="images\successstory\Story_20150909195721136_Taylor-Alison-Swift.jpg" />
+    <Content Include="images\successstory\Story_20151003231219645_Untitled.jpg" />
+    <Content Include="images\successstory\student.jpg" />
+    <Content Include="images\successstory\twitter2.ico" />
+    <Content Include="images\successstory\work.jpg" />
     <Content Include="images\teacher.png" />
+    <Content Include="images\teamprofile\no_image.jpg" />
+    <Content Include="images\teamprofile\Profile_20151001203728372_1626040.jpg" />
+    <Content Include="images\teamprofile\Profile_20151001214302866_23bd9e8.jpg" />
+    <Content Include="images\teamprofile\Profile_20151003050803886_12119907_887825884637325_8303401986010035099_o.jpg" />
+    <Content Include="images\teamprofile\Profile_20151005085844601_image.jpeg" />
+    <Content Include="images\teamprofile\Profile_20151006230935006__MG_7054.JPG" />
+    <Content Include="images\teamprofile\Profile_20151009062953525_1897.jpg" />
     <Content Include="images\temp-books-place-holder-300x184.jpg" />
     <Content Include="images\test-automation-header.jpg" />
     <Content Include="images\testautomation\BambooServer.png" />
@@ -469,6 +498,7 @@
       <DependentUpon>GetSkills.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\GetSkills.pubxml" />
+    <None Include="Properties\PublishProfiles\GetSkillsLab.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\facebookSDK.js" />
     <Content Include="Scripts\holder.min.js" />

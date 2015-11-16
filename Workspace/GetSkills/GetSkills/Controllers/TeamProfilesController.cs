@@ -98,13 +98,13 @@ namespace GetSkills.Controllers
                         ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
                     }
 
-                    var uploadDir = "~/images";
+                    var uploadDir = "~/images/teamprofile";
                     var newFileName = String.Format("{0}_{1}_{2}", "Profile", DateTime.Now.ToString("yyyyMMddHHmmssfff"), Path.GetFileName(editView.picFile.FileName));
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), newFileName);
                     editView.picFile.SaveAs(imagePath);
 
                     var imageUrl = Path.Combine(uploadDir, Path.GetFileName(imagePath));
-                    pro.pic = "~/images/" + newFileName;
+                    pro.pic = "~/images/teamprofile/" + newFileName;
                 }
 
                 pro.status = 1;
@@ -166,13 +166,13 @@ namespace GetSkills.Controllers
                         ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
                     }
 
-                    var uploadDir = "~/images";
+                    var uploadDir = "~/images/teamprofile";
                     var newFileName = String.Format("{0}_{1}_{2}", "Profile", DateTime.Now.ToString("yyyyMMddHHmmssfff"), Path.GetFileName(editView.picFile.FileName));
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), newFileName);
                     editView.picFile.SaveAs(imagePath);
 
                     var imageUrl = Path.Combine(uploadDir, Path.GetFileName(imagePath));
-                    pro.pic = "~/images/" + newFileName;
+                    pro.pic = "~/images/teamprofile/" + newFileName;
                 }
 
                 db.Entry(pro).State = EntityState.Modified;
