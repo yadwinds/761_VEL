@@ -520,8 +520,6 @@
     <Content Include="Scripts\shareThis.js" />
     <Content Include="Scripts\twitterSDK.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="StaticPages\footer.html" />
-    <Content Include="StaticPages\header.html" />
     <Content Include="StaticPages\index.html" />
     <Content Include="StaticPages\login.html" />
     <Content Include="StaticPages\login2.html" />
@@ -574,6 +572,9 @@
     <Content Include="Views\TeamProfiles\Edit.cshtml" />
     <Content Include="Views\TeamProfiles\Index.cshtml" />
     <Content Include="Views\TestAutomation\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\VisitorCounter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

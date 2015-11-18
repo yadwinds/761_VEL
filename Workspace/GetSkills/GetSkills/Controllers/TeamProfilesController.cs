@@ -12,12 +12,14 @@ using GetSkills.Models;
 
 namespace GetSkills.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class TeamProfilesController : Controller
     {
         private GetSkillsEntities db = new GetSkillsEntities();
 
         // GET: TeamProfiles
         // Team profile index page for administrators
+        [ValidateAntiForgeryToken]
         public ActionResult Index()
         {
             List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
@@ -33,8 +35,10 @@ namespace GetSkills.Controllers
 
         // GET: TeamProfiles
         // Team profile page for clients
+        [AllowAnonymous]
         public ActionResult List()
         {
+            var identity = User.Identity;
             List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
             List<ProfileIndexViewModel> viewList = new List<ProfileIndexViewModel>();
             foreach (var pro in profileList)
@@ -47,6 +51,7 @@ namespace GetSkills.Controllers
         }
 
         // GET: TeamProfiles/Details/5
+        [ValidateAntiForgeryToken]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -63,6 +68,7 @@ namespace GetSkills.Controllers
 
         // GET: TeamProfiles/Create
         // Team profile create page for administrators
+        [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
             ProfileIndexViewModel editView = new ProfileIndexViewModel();
@@ -119,6 +125,7 @@ namespace GetSkills.Controllers
 
         // GET: TeamProfiles/Edit/5
         // Team profile edit page for administrators
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -185,6 +192,7 @@ namespace GetSkills.Controllers
 
         // GET: TeamProfiles/Delete/5
         // Team profile delete page for administrators
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)

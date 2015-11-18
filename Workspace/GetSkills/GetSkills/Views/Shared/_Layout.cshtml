@@ -9,6 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @Html.Partial("Header");
 
     <!--div id="page_container" class="container body-content">-->
     <div class="container" id="page_container">
@@ -19,12 +20,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
-    <script>$("<div>").load("/StaticPages/header.html").appendTo("body")</script>
-    <script>$("<div>").load("/StaticPages/footer.html").appendTo("body")</script>
    
-    
-
-    <div align="center">Hey! You are the No. @HttpContext.Current.Application["count"].ToString() Visitor of Getskills' website. ^_^</div>
+    @Html.Partial("Footer");
+    @Html.Partial("VisitorCounter");
 </body>
 </html>
