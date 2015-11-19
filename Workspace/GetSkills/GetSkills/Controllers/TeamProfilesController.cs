@@ -12,7 +12,7 @@ using GetSkills.Models;
 
 namespace GetSkills.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class TeamProfilesController : Controller
     {
         private GetSkillsEntities db = new GetSkillsEntities();
@@ -38,7 +38,6 @@ namespace GetSkills.Controllers
         [AllowAnonymous]
         public ActionResult List()
         {
-            var identity = User.Identity;
             List<profile> profileList = (from pro in db.profile where pro.status == 1 select pro).ToList();
             List<ProfileIndexViewModel> viewList = new List<ProfileIndexViewModel>();
             foreach (var pro in profileList)
